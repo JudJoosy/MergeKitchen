@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
             }
                 if (touch.fingerId == 1)
             {
-                print("Player is conitnuing to touch the screen")
+                print("Player is conitnuing to touch the screen");
             }
         }
     }
