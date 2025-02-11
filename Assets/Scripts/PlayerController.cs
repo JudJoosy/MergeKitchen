@@ -13,6 +13,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print("Player is touching screen");
+        foreach(Touch touch in Input.touches)
+        {
+            if (touch.fingerId == 0)
+            {
+                print("Player is touching the screen");
+            }
+                if (touch.fingerId == 1)
+            {
+                print("Player is conitnuing to touch the screen")
+            }
+        }
     }
 }
