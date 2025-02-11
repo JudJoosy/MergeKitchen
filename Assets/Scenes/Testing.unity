@@ -400,6 +400,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b25b41842f325e043a8fa4578c2976b9, type: 3}
+--- !u!1001 &3778575116284115839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.305
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.72337884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.68499935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.06287835
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.05954229
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -79.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 72.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592791072371426301, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -72.458
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452769750155448613, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836,
+        type: 3}
+      propertyPath: m_Name
+      value: Cooking (aka burnt pancake)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef4b5b0fbd9bb0c4fa2f5ef5990c9836, type: 3}
 --- !u!1001 &8319737569202890943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -476,3 +544,4 @@ SceneRoots:
   - {fileID: 2014750698}
   - {fileID: 2525777826772979226}
   - {fileID: 8319737569202890943}
+  - {fileID: 3778575116284115839}
