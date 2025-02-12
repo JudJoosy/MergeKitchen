@@ -1,34 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 //(This script will serve to allow the player to tap on the screen ) 
 
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
+    private PlayerInput playerInput;
+    private InputAction touchPositionAction;
+    private InputAction touchPressAction;
+ 
+    //The following part is more used for testing purposes 
+    public Color newColor;
+
+   
+    private void Awake()
+    {
+        playerInput=GetComponent<PlayerInput>();
+        touchPressAction = playerInput.actions.FindAction("Touch");
+        touchPressAction = playerInput.actions.FindAction("TouchPress");
+    }
     private void OnEnable()
     {
-      
-    }
-    void Start()
-    {
-        
-    }
+        touchPressAction.performed += TouchPress;
 
-    // Update is called once per frame
-    void Update()
-    {
-        print("Player is touching screen");
-        foreach(Touch touch in Input.touches)
-        {
-            if (touch.fingerId == 0)
-            {
-                print("Player is touching the screen");
-            }
-                if (touch.fingerId == 1)
-            {
-                print("Player is conitnuing to touch the screen");
-            }
-        }
     }
+    private void OnDisable()
+    {
+        touchPressAction.performed -= TouchPress;
+
+    }
+    private void TouchPress(InputAction.CallbackContext context)
+    {
+        float value = context.ReadValue<float>();
+        Debug.Log("The button is indeed pressed ");
+
+    }
+    
+
 }
