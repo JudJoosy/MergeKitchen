@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-//(This script will serve to allow the player to tap on the screen ) 
 
+
+//Authors :Uribe-Hernandez,Fernando
+//Updated 2/12/2025
+//(This script will serve to allow the player to tap on the screen ) 
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
    
     private void Awake()
     {
+      
         playerInput=GetComponent<PlayerInput>();
         touchPressAction = playerInput.actions.FindAction("Touch");
         touchPressAction = playerInput.actions.FindAction("TouchPress");
