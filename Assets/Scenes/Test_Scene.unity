@@ -152,15 +152,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientPrefabs:
-  - {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e, type: 3}
-  - {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8, type: 3}
-  - {fileID: 919132149155446097, guid: 982342becb7f1354e848c8b8e9a410b6, type: 3}
-  - {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c, type: 3}
-  - {fileID: 919132149155446097, guid: ed31eb70a13693249a106094a9e86f0d, type: 3}
-  - {fileID: 919132149155446097, guid: 5638b599ec7159d40a74ec19796d82b1, type: 3}
-  ingredientCount: 8
+  - {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
+  - {fileID: 2350284839554241873, guid: e2620f541d597ff4c9e7a8b35eec87a2, type: 3}
+  - {fileID: 7735371491455308405, guid: e02e841ce0f19dd44bfbf2a9ae9a53bb, type: 3}
+  - {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003, type: 3}
+  - {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06, type: 3}
+  - {fileID: 2185201842584178971, guid: cfbd089687a3e084891964ac1a234a45, type: 3}
+  ingredientCount: 12
   spawnAreaSize: {x: 60, y: 20}
-  minSpacing: 5
+  minSpacing: 8.76
+  spawnHeight: 2.65
 --- !u!4 &733207565
 Transform:
   m_ObjectHideFlags: 0
