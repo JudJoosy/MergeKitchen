@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,11 +10,10 @@ public class Ingredient : MonoBehaviour
 	 private static List<Ingredient> selectedIngredients = new List<Ingredient>(); // Stores tapped ingredients
 	 private static Dictionary<string, string[]> mergeRecipes = new Dictionary<string, string[]>()
 	 {
-		  { "Pepper.prefab", new string[] { "Salt", "Salt" } },
-		  { "Salt and pepper.prefab", new string[] { "Salt", "Pepper" } },
-		  { "Fancy Salt and pepper.prefab", new string[] { "Salt", "Pepper", "Thyme" } },
-		  { "The holy trinity.prefab", new string[] { "Garlic_Prop", "Onion_Prop", "Thyme" } },
-		  { "Garlic fries.prefab", new string[] { "Garlic_Prop", "Potato_Prop", "Salt" } }
+		  { "Salt and pepper", new string[] { "Salt", "Pepper" } },
+		  { "Fancy Salt and pepper", new string[] { "Salt", "Pepper", "Thyme" } },
+		  { "The holy trinity", new string[] { "Garlic_Prop", "Onion_Prop", "Thyme" } },
+		  { "Garlic fries", new string[] { "Garlic_Prop", "Potato_Prop", "Salt" } }
 	 };
 
 	 void OnMouseDown()  // Detects tap or click on the ingredient
@@ -23,6 +22,24 @@ public class Ingredient : MonoBehaviour
 		 {
 			 selectedIngredients.Add(this);
 		 }
+
+		 if (selectedIngredients.Count >= 2)  // Try merging when two or more are selected
+		 {
+			 TryMerge();
+		 }
+
+		 Debug.Log("Clicked on ingredient: " + ingredientType); // Log ingredient name
+		 if (!selectedIngredients.Contains(this))
+		 {
+			 selectedIngredients.Add(this);
+		 }
+
+		 Debug.Log("Selected ingredients: " + string.Join(", ", selectedIngredients.Select(i => i.ingredientType))); // Log all selected ingredients
+
+		  LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack().setOnComplete(() =>
+		  {
+			  LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
+		  });
 
 		 if (selectedIngredients.Count >= 2)  // Try merging when two or more are selected
 		 {
@@ -63,6 +80,8 @@ public class Ingredient : MonoBehaviour
 
 	 void MergeIngredients(string newDishType)
 	 {
+		 if (selectedIngredients.Count == 0) return; // Prevent errors
+
 		 Vector3 spawnPosition = Vector3.zero;
 		 foreach (Ingredient ingredient in selectedIngredients)
 		 {
@@ -70,7 +89,20 @@ public class Ingredient : MonoBehaviour
 		 }
 		 spawnPosition /= selectedIngredients.Count;
 
-		 GameObject newDish = Instantiate(Resources.Load<GameObject>("Dishes_Models/" + newDishType), spawnPosition, Quaternion.identity);
+		 GameObject dishPrefab = Resources.Load<GameObject>("Dishes/" + newDishType);
+		 if (dishPrefab == null)
+		 {
+			 Debug.LogError("Dish not found in Resources: " + newDishType);
+			 return;
+		 }
+
+		 Debug.Log("✅ Spawning dish: " + newDishType);
+
+		 GameObject newDish = Instantiate(dishPrefab, spawnPosition, Quaternion.identity);
+
+		 List<Ingredient> ingredientsToDestroy = new List<Ingredient>(selectedIngredients);
+
+		 selectedIngredients.Clear();
 
 		 foreach (Ingredient ingredient in selectedIngredients)
 		 {
