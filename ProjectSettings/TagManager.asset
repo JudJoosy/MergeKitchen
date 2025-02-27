@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Salt
   - PepperPrefab
+  - Event
   layers:
   - Default
   - TransparentFX
