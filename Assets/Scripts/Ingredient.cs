@@ -23,25 +23,24 @@ public class Ingredient : MonoBehaviour
 			 selectedIngredients.Add(this);
 		 }
 
-		 if (selectedIngredients.Count >= 2)  // Try merging when two or more are selected
+		 IngredientSelectionManager.Instance.SelectIngredient(this);
+		 List<Ingredient> selected = IngredientSelectionManager.Instance.GetSelectedIngredients();
+
+		 if (selected.Count >= 2)  // Try merging when two or more are selected
 		 {
 			 TryMerge();
 		 }
 
 		 Debug.Log("Clicked on ingredient: " + ingredientType); // Log ingredient name
-		 if (!selectedIngredients.Contains(this))
-		 {
-			 selectedIngredients.Add(this);
-		 }
-
 		 Debug.Log("Selected ingredients: " + string.Join(", ", selectedIngredients.Select(i => i.ingredientType))); // Log all selected ingredients
 
-		  LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack().setOnComplete(() =>
-		  {
-			  LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
-		  });
+		 // visual effect for selection
+		 LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack().setOnComplete(() =>
+		 {
+			 LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
+		 });
 
-		 if (selectedIngredients.Count >= 2)  // Try merging when two or more are selected
+		 if (selected.Count >= 2)  // Try merging when two or more are selected
 		 {
 			 TryMerge();
 		 }
@@ -49,11 +48,13 @@ public class Ingredient : MonoBehaviour
 
 	 void TryMerge()
 	 {
+	    List<Ingredient> selected = IngredientSelectionManager.Instance.GetSelectedIngredients();
+
 		foreach (var recipe in mergeRecipes)
 		{
-			if (MatchesRecipe(recipe.Value))
+			if (MatchesRecipe(selected, recipe.Value))
 			{
-				MergeIngredients(recipe.Key);
+				MergeIngredients(recipe.Key, selected);
 				return;
 			}
 		}
@@ -61,33 +62,30 @@ public class Ingredient : MonoBehaviour
 		ResetSelection();
 	 }
 
-	 bool MatchesRecipe(string[] requiredIngredients)
+	 bool MatchesRecipe(List<Ingredient> selected, string[] requiredIngredients)
 	 {
-		 if (selectedIngredients.Count != requiredIngredients.Length) return false;
-		 List<string> selectedTypes = new List<string>();
-		 foreach (Ingredient ingredient in selectedIngredients)
-		 {
-			 selectedTypes.Add(ingredient.ingredientType);
-		 }
+		if (selected.Count != requiredIngredients.Length) return false;
 
-		 selectedTypes.Sort();
-		 List<string> sortedRecipe = new List<string>(requiredIngredients);
-		 sortedRecipe.Sort();
+		HashSet<string> selectedTypes = new HashSet<string>(selected.Select(i => i.ingredientType));
+		HashSet<string> recipeTypes = new HashSet<string>(requiredIngredients);
 
-
-		 return selectedTypes.SequenceEqual(sortedRecipe);
+		return selectedTypes.SetEquals(recipeTypes);
 	 }
 
-	 void MergeIngredients(string newDishType)
+	 //merging mechanic 
+	 void MergeIngredients(string newDishType, List<Ingredient> selected)
 	 {
-		 if (selectedIngredients.Count == 0) return; // Prevent errors
+		 if (selected.Count == 0) return; // Prevent errors
 
+		 // calculate the spawn position (average of selected ingredients)
 		 Vector3 spawnPosition = Vector3.zero;
-		 foreach (Ingredient ingredient in selectedIngredients)
+		 foreach (Ingredient ingredient in selected)
 		 {
 			 spawnPosition += ingredient.transform.position;
 		 }
-		 spawnPosition /= selectedIngredients.Count;
+		 spawnPosition /= selected.Count;
+
+		 Debug.Log("Calculated spawn position: " + spawnPosition);  // Debug log for spawn position
 
 		 GameObject dishPrefab = Resources.Load<GameObject>("Dishes/" + newDishType);
 		 if (dishPrefab == null)
@@ -96,24 +94,57 @@ public class Ingredient : MonoBehaviour
 			 return;
 		 }
 
-		 Debug.Log("✅ Spawning dish: " + newDishType);
-
 		 GameObject newDish = Instantiate(dishPrefab, spawnPosition, Quaternion.identity);
 
-		 List<Ingredient> ingredientsToDestroy = new List<Ingredient>(selectedIngredients);
+		 newDish.transform.SetParent(null);
 
-		 selectedIngredients.Clear();
+         DishManager dishManager = FindObjectOfType<DishManager>();
+		 if (dishManager != null)
+		 {
+			 dishManager.MakeDishDisappear(newDish);
+		 }
 
-		 foreach (Ingredient ingredient in selectedIngredients)
+		 Debug.Log("✅ Spawning dish: " + newDishType);
+
+		 PlayerStats.Instance.AddCurrency(50);
+
+		 foreach (Ingredient ingredient in selected)
 		 {
 			 Destroy(ingredient.gameObject);
 		 }
 
-		 selectedIngredients.Clear();
+		 IngredientSelectionManager.Instance.ResetSelection();
+
+		
 	 }
 
-	 void ResetSelection()
+	 
+
+	 public void ResetSelection()
 	 {
 		 selectedIngredients.Clear();
 	 }
+
+	 IEnumerator ShrinkAndDestroy(GameObject dish, float duration)
+	 {
+		 Debug.Log("Shrinking and destroying dish...");  // Debug log to check if coroutine starts
+		 Vector3 originalScale = dish.transform.localScale;
+		 float elapsed = 0f;
+
+		 // Ensure the dish isn't already too small or scaled incorrectly
+		 if (dish == null)
+		 {
+			 yield break;
+		 }
+
+		 while (elapsed < duration)
+		 {
+			 float scale = Mathf.Lerp(1f, 0f, elapsed / duration);
+             dish.transform.localScale = originalScale * scale;
+             elapsed += Time.deltaTime;
+             yield return null;
+		 }
+
+		 Destroy(dish);
+	 }			
 }
