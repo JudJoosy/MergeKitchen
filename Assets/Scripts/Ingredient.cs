@@ -16,14 +16,28 @@ public class Ingredient : MonoBehaviour
 		  { "Garlic fries", new string[] { "Garlic_Prop", "Potato_Prop", "Salt" } }
 	 };
 
+	 private Color normalColor;
+	 private Color glowColor = Color.yellow;
+
+	 private Renderer ingredientRenderer;
+
 	 void OnMouseDown()  // Detects tap or click on the ingredient
 	 {
-		 if (!selectedIngredients.Contains(this))
+		 if (selectedIngredients.Contains(this))
 		 {
-			 selectedIngredients.Add(this);
+			 selectedIngredients.Remove(this);
+			 IngredientSelectionManager.Instance.DeselectIngredient(this);
+			 
+			 ApplyGlowEffect(false);
+		 }
+		 else
+		 {
+			 selectedIngredients.Add(this); 
+			 IngredientSelectionManager.Instance.SelectIngredient(this);
+			
+			 ApplyGlowEffect(true);
 		 }
 
-		 IngredientSelectionManager.Instance.SelectIngredient(this);
 		 List<Ingredient> selected = IngredientSelectionManager.Instance.GetSelectedIngredients();
 
 		 if (selected.Count >= 2)  // Try merging when two or more are selected
@@ -34,15 +48,47 @@ public class Ingredient : MonoBehaviour
 		 Debug.Log("Clicked on ingredient: " + ingredientType); // Log ingredient name
 		 Debug.Log("Selected ingredients: " + string.Join(", ", selectedIngredients.Select(i => i.ingredientType))); // Log all selected ingredients
 
+		 void ApplyGlowEffect(bool isSelected)
+		 {
+			 if (ingredientRenderer == null)
+			 {
+				 Debug.LogWarning("Ingredient does not have a Renderer component, skipping glow effect.");
+				 return;
+			 }
+
+			 if (isSelected)
+			 {
+				 ingredientRenderer.material.color = glowColor;
+				 LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack();
+			 }
+			 else
+			 {
+				 ingredientRenderer.material.color = normalColor;
+				 LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
+			 }
+		 }
+
 		 // visual effect for selection
 		 LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack().setOnComplete(() =>
 		 {
 			 LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
 		 });
+	 }
 
-		 if (selected.Count >= 2)  // Try merging when two or more are selected
+	 void ChangeColor(Color color)
+	 {
+		 LeanTween.color(gameObject, color, 0.3f); // Change color with smooth animation
+	 }
+
+	 void EnableGlow(bool enable)
+	 {
+		 if (enable)
 		 {
-			 TryMerge();
+			 LeanTween.color(gameObject, Color.yellow, 0.5f).setLoopPingPong(); // Pulsing glow effect
+		 }
+		 else
+		 {
+			LeanTween.color(gameObject, normalColor, 0.3f); // Reset color to normal
 		 }
 	 }
 
@@ -117,8 +163,6 @@ public class Ingredient : MonoBehaviour
 
 		
 	 }
-
-	 
 
 	 public void ResetSelection()
 	 {

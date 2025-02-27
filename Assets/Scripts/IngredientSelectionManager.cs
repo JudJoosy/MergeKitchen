@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class IngredientSelectionManager : MonoBehaviour
 {
-	public static IngredientSelectionManager Instance;
-	private List<Ingredient> selectedIngredients = new List<Ingredient>();
+	public static IngredientSelectionManager _instance;
+	public static IngredientSelectionManager Instance { get { return _instance; } }
 
-	private void Awake()
+	private List<Ingredient> selectedIngredients = new List<Ingredient>();  // Stores currently selected ingredients
+
+
+    void Awake()
 	{
-		if (Instance == null)
-			Instance = this;
-		else
+		if (_instance != null && _instance != this)
+		{
 			Destroy(gameObject);
+		}
+		else
+		{
+			_instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
 	}
 
 	public void SelectIngredient(Ingredient ingredient)
@@ -20,6 +28,14 @@ public class IngredientSelectionManager : MonoBehaviour
 		if (!selectedIngredients.Contains(ingredient))
 		{
 			selectedIngredients.Add(ingredient);
+		}
+	}
+
+	public void DeselectIngredient(Ingredient ingredient)
+	{
+		if (selectedIngredients.Contains(ingredient))
+		{
+			selectedIngredients.Remove(ingredient);
 		}
 	}
 
