@@ -6,189 +6,58 @@ using UnityEngine.EventSystems;
 
 public class Ingredient : MonoBehaviour
 {
-	 public string ingredientType;  // Name of the ingredient
-	 private static List<Ingredient> selectedIngredients = new List<Ingredient>(); // Stores tapped ingredients
-	 private static Dictionary<string, string[]> mergeRecipes = new Dictionary<string, string[]>()
+	 public string ingredientType;  // Name of the Ingredient
+	 private Vector3 offset;
+	 private bool isDragging = false;
+
+	 private void OnMouseDown()
 	 {
-		  { "Salt and pepper", new string[] { "Salt", "Pepper" } },
-		  { "Fancy Salt and pepper", new string[] { "Salt", "Pepper", "Thyme" } },
-		  { "The holy trinity", new string[] { "Garlic_Prop", "Onion_Prop", "Thyme" } },
-		  { "Garlic fries", new string[] { "Garlic_Prop", "Potato_Prop", "Salt" } }
-	 };
-
-	 private Color normalColor;
-	 private Color glowColor = Color.yellow;
-
-	 private Renderer ingredientRenderer;
-
-	 void OnMouseDown()  // Detects tap or click on the ingredient
-	 {
-		 if (selectedIngredients.Contains(this))
-		 {
-			 selectedIngredients.Remove(this);
-			 IngredientSelectionManager.Instance.DeselectIngredient(this);
-			 
-			 ApplyGlowEffect(false);
-		 }
-		 else
-		 {
-			 selectedIngredients.Add(this); 
-			 IngredientSelectionManager.Instance.SelectIngredient(this);
-			
-			 ApplyGlowEffect(true);
-		 }
-
-		 List<Ingredient> selected = IngredientSelectionManager.Instance.GetSelectedIngredients();
-
-		 if (selected.Count >= 2)  // Try merging when two or more are selected
-		 {
-			 TryMerge();
-		 }
-
-		 Debug.Log("Clicked on ingredient: " + ingredientType); // Log ingredient name
-		 Debug.Log("Selected ingredients: " + string.Join(", ", selectedIngredients.Select(i => i.ingredientType))); // Log all selected ingredients
-
-		 void ApplyGlowEffect(bool isSelected)
-		 {
-			 if (ingredientRenderer == null)
-			 {
-				 Debug.LogWarning("Ingredient does not have a Renderer component, skipping glow effect.");
-				 return;
-			 }
-
-			 if (isSelected)
-			 {
-				 ingredientRenderer.material.color = glowColor;
-				 LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack();
-			 }
-			 else
-			 {
-				 ingredientRenderer.material.color = normalColor;
-				 LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
-			 }
-		 }
-
-		 // visual effect for selection
-		 LeanTween.scale(gameObject, Vector3.one * 1.2f, 0.1f).setEaseOutBack().setOnComplete(() =>
-		 {
-			 LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInBack();
-		 });
+		 // Store the offset between the mouse and the object position
+		 offset = transform.position - GetMouseWorldPos();
+		 isDragging = true;
 	 }
 
-	 void ChangeColor(Color color)
+	 private void OnMouseDrag()
 	 {
-		 LeanTween.color(gameObject, color, 0.3f); // Change color with smooth animation
-	 }
-
-	 void EnableGlow(bool enable)
-	 {
-		 if (enable)
+		 if (isDragging)
 		 {
-			 LeanTween.color(gameObject, Color.yellow, 0.5f).setLoopPingPong(); // Pulsing glow effect
-		 }
-		 else
-		 {
-			LeanTween.color(gameObject, normalColor, 0.3f); // Reset color to normal
+			 transform.position = GetMouseWorldPos() + offset;
 		 }
 	 }
 
-	 void TryMerge()
+	 private void OnMouseUp()
 	 {
-	    List<Ingredient> selected = IngredientSelectionManager.Instance.GetSelectedIngredients();
-
-		foreach (var recipe in mergeRecipes)
-		{
-			if (MatchesRecipe(selected, recipe.Value))
-			{
-				MergeIngredients(recipe.Key, selected);
-				return;
-			}
-		}
-
-		ResetSelection();
+		 isDragging = false;
 	 }
 
-	 bool MatchesRecipe(List<Ingredient> selected, string[] requiredIngredients)
+	 private Vector3 GetMouseWorldPos()
 	 {
-		if (selected.Count != requiredIngredients.Length) return false;
-
-		HashSet<string> selectedTypes = new HashSet<string>(selected.Select(i => i.ingredientType));
-		HashSet<string> recipeTypes = new HashSet<string>(requiredIngredients);
-
-		return selectedTypes.SetEquals(recipeTypes);
+		 Vector3 mousePoint = Input.mousePosition;
+		 mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
+		 return Camera.main.ScreenToWorldPoint(mousePoint);
 	 }
 
-	 //merging mechanic 
-	 void MergeIngredients(string newDishType, List<Ingredient> selected)
+	 private void OnTriggerEnter(Collider other)
 	 {
-		 if (selected.Count == 0) return; // Prevent errors
+		 Ingredient otherIngredient = other.GetComponent<Ingredient>();
 
-		 // calculate the spawn position (average of selected ingredients)
-		 Vector3 spawnPosition = Vector3.zero;
-		 foreach (Ingredient ingredient in selected)
+		 if (otherIngredient != null && otherIngredient.ingredientType == ingredientType)
 		 {
-			 spawnPosition += ingredient.transform.position;
+			 MergeIngredients(otherIngredient);
 		 }
-		 spawnPosition /= selected.Count;
-
-		 Debug.Log("Calculated spawn position: " + spawnPosition);  // Debug log for spawn position
-
-		 GameObject dishPrefab = Resources.Load<GameObject>("Dishes/" + newDishType);
-		 if (dishPrefab == null)
-		 {
-			 Debug.LogError("Dish not found in Resources: " + newDishType);
-			 return;
-		 }
-
-		 GameObject newDish = Instantiate(dishPrefab, spawnPosition, Quaternion.identity);
-
-		 newDish.transform.SetParent(null);
-
-         DishManager dishManager = FindObjectOfType<DishManager>();
-		 if (dishManager != null)
-		 {
-			 dishManager.MakeDishDisappear(newDish);
-		 }
-
-		 Debug.Log("✅ Spawning dish: " + newDishType);
-
-		 PlayerStats.Instance.AddCurrency(50);
-
-		 foreach (Ingredient ingredient in selected)
-		 {
-			 Destroy(ingredient.gameObject);
-		 }
-
-		 IngredientSelectionManager.Instance.ResetSelection();
-
-		
 	 }
 
-	 public void ResetSelection()
+	 private void MergeIngredients(Ingredient otherIngredient)
 	 {
-		 selectedIngredients.Clear();
+		 // Calculate the position where both ingredients are
+		 Vector3 mergePosition = (transform.position + otherIngredient.transform.position) / 2;
+
+		 // Destroy both ingredients when they merge
+		 Destroy(otherIngredient.gameObject);
+		 Destroy(gameObject);
+
+		 // For now, just log the merge event
+		 Debug.Log("Merged " + ingredientType + " with " + otherIngredient.ingredientType);
 	 }
-
-	 IEnumerator ShrinkAndDestroy(GameObject dish, float duration)
-	 {
-		 Debug.Log("Shrinking and destroying dish...");  // Debug log to check if coroutine starts
-		 Vector3 originalScale = dish.transform.localScale;
-		 float elapsed = 0f;
-
-		 // Ensure the dish isn't already too small or scaled incorrectly
-		 if (dish == null)
-		 {
-			 yield break;
-		 }
-
-		 while (elapsed < duration)
-		 {
-			 float scale = Mathf.Lerp(1f, 0f, elapsed / duration);
-             dish.transform.localScale = originalScale * scale;
-             elapsed += Time.deltaTime;
-             yield return null;
-		 }
-
-		 Destroy(dish);
-	 }			
 }
+

@@ -4,49 +4,50 @@ using UnityEngine;
 
 public class IngredientSelectionManager : MonoBehaviour
 {
-	public static IngredientSelectionManager _instance;
-	public static IngredientSelectionManager Instance { get { return _instance; } }
+	 public static IngredientSelectionManager instance { get; private set; }
 
-	private List<Ingredient> selectedIngredients = new List<Ingredient>();  // Stores currently selected ingredients
+	 private List<Ingredient> selectedIngredients = new List<Ingredient>();  // Stores currently selected ingredients
 
-
-    void Awake()
-	{
-		if (_instance != null && _instance != this)
-		{
+	 void Awake()
+	 {
+		 if (instance != null && instance != this)
+		 {
 			Destroy(gameObject);
-		}
-		else
-		{
-			_instance = this;
-			DontDestroyOnLoad(gameObject);
-		}
-	}
+		 }
+		 else
+		 {
+			 instance = this;
+			 DontDestroyOnLoad(gameObject);
+		 }
+	 }
 
-	public void SelectIngredient(Ingredient ingredient)
-	{
-		if (!selectedIngredients.Contains(ingredient))
-		{
-			selectedIngredients.Add(ingredient);
-		}
-	}
+	 public void SelectIngredient(Ingredient ingredient)
+	 {
+		 if (!selectedIngredients.Contains(ingredient))
+		 {
+			 selectedIngredients.Add(ingredient);
 
-	public void DeselectIngredient(Ingredient ingredient)
-	{
-		if (selectedIngredients.Contains(ingredient))
-		{
-			selectedIngredients.Remove(ingredient);
-		}
-	}
+			 // Optional: Prevent selecting more than 2 ingredients
+			 if (selectedIngredients.Count > 2)
+			 {
+				 selectedIngredients.RemoveAt(0); // Remove the oldest selection
+			 }
+		 }
+	 }
 
-	public List<Ingredient> GetSelectedIngredients()
-	{
-		return selectedIngredients;
-	}
+	 public void DeselectIngredient(Ingredient ingredient)
+	 {
+		 selectedIngredients.Remove(ingredient);
+	 }
 
-	public void ResetSelection()
-	{
-		selectedIngredients.Clear();
-	}
+	 public List<Ingredient> GetSelectedIngredients()
+	 {
+		 return new List<Ingredient>(selectedIngredients); // Return a copy to prevent external modifications
+	 }
+
+	 public void ResetSelection()
+	 {
+		 selectedIngredients.Clear();
+	 }
 
 }
