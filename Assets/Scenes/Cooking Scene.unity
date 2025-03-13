@@ -1370,8 +1370,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176789557}
+  - component: {fileID: 176789558}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CookingIcons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,6 +1399,19 @@ Transform:
   - {fileID: 1725196098}
   m_Father: {fileID: 117145093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &176789558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176789556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookingBox: {fileID: 176789557}
 --- !u!1 &190114755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 510874766}
+  - component: {fileID: 510874767}
   m_Layer: 0
   m_Name: InventoryIcons
   m_TagString: Untagged
@@ -2939,6 +2954,25 @@ Transform:
   - {fileID: 1427980671}
   m_Father: {fileID: 117145093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &510874767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510874765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fe05dde1fbca44aadbfd712f026627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots:
+  - {fileID: 1803186694}
+  - {fileID: 2122464418}
+  saltPrefab: {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06,
+    type: 3}
+  pepperPrefab: {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003,
+    type: 3}
 --- !u!1 &519050719
 GameObject:
   m_ObjectHideFlags: 0
