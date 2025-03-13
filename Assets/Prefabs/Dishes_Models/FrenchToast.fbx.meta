@@ -3,7 +3,17 @@ guid: bb0e4e160a40bf745ae5bd0da0c95d58
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: French_Toast
+    second: {fileID: 2100000, guid: 955e19ad342356245aeea94354371164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plateforFrenchToast
+    second: {fileID: 2100000, guid: b7316c8bc36c35545982bc13e01b6cac, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -67,7 +77,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
