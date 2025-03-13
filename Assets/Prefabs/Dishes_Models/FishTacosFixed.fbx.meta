@@ -7,13 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BowlFortaco
+    second: {fileID: 2100000, guid: b97c718966094194fbb5729743cff4c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Cheese
     second: {fileID: 2100000, guid: 04cffa53d0fa92b4bbb054e69f942672, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Fish_2
+    second: {fileID: 2100000, guid: 8410a88fbc4de6e458a008ad51ed038c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fish_taco
+    second: {fileID: 2100000, guid: f37216cc4be8df2489f59690069d6ca8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Onion
+    second: {fileID: 2100000, guid: a144f9903cb107e49b6b45c98704328b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rice
     second: {fileID: 2100000, guid: 2b1359e740b010c42a9c9dab2849e0b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TacoShell
+    second: {fileID: 2100000, guid: 7acdb2b3e1401d24fa562d14893f1bf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert15
+    second: {fileID: 2100000, guid: fc2f798351993b1408c09be77e3ed015, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

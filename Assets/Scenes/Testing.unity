@@ -394,6 +394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteakBurrito
       objectReference: {fileID: 0}
+    - target: {fileID: 7484468418975526891, guid: 146258ce60075664f894007bdc61b2b2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a6c3b2519614444b80b7b514058dcc9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

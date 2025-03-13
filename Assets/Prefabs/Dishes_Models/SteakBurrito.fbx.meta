@@ -17,8 +17,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: PlateForBurritos
+    second: {fileID: 2100000, guid: 7a6c3b2519614444b80b7b514058dcc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Rice
     second: {fileID: 2100000, guid: 2b1359e740b010c42a9c9dab2849e0b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tortilla
+    second: {fileID: 2100000, guid: e104ae4f463995d4a9c01a8f2741b39e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: c8c94eec7906cc34e80aa5ea3b0eb432, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
