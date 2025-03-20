@@ -6,72 +6,77 @@ using UnityEngine.EventSystems;
 
 public class shopManager : MonoBehaviour
 {
-    public int[,] shopItems = new int[20,2];
+    public int[,] shopItems = new int[3,20]; // Fixing array indexing (0 - based)
     public float coins;
-    public Text CoinsText;
+    public Text coinsText;
 
     private void Start()
     {
-        CoinsText.text = "Coins:" + coins.ToString();
+       if (coinsText == null)
+       {
+           Debug.LogError("CoinsText is not assigned in the inspector!");
+           return;
+       }
 
-        //Shop ID's
-        shopItems[1, 1] = 1;
-        shopItems[1, 2] = 2;
-        shopItems[1, 3] = 3;
-        shopItems[1, 4] = 4;
-        shopItems[1, 5] = 5;
-        shopItems[1, 6] = 6;
-        shopItems[1, 7] = 7;
-        shopItems[1, 8] = 8;
-        shopItems[1, 9] = 9;
-        shopItems[1, 10] = 10;
-        shopItems[1, 11] = 11;
-        shopItems[1, 12] = 12;
-        shopItems[1, 13] = 13;
-        shopItems[1, 14] = 14;
-        shopItems[1, 15] = 15;
-        shopItems[1, 16] = 16;
-        shopItems[1, 17] = 17;
-        shopItems[1, 18] = 18;
-        shopItems[1, 19] = 19;
-        shopItems[1, 20] = 20;
+       UpdateCoinsUI(); // Calls a method to update the text
 
-        //Shop Price's
-        shopItems[2, 1] = 10;
-        shopItems[2, 2] = 25;
-        shopItems[2, 3] = 60;
-        shopItems[2, 4] = 125;
-        shopItems[2, 5] = 275;
-        shopItems[2, 6] = 600;
-        shopItems[2, 7] = 1250;
-        shopItems[2, 8] = 2500;
-        shopItems[2, 9] = 5000;
-        shopItems[2, 10] = 10000;
-        shopItems[2, 11] = 20000;
-        shopItems[2, 12] = 45000;
-        shopItems[2, 13] = 90000;
-        shopItems[2, 14] = 175000;
-        shopItems[2, 15] = 350000;
-        shopItems[2, 16] = 640000;
-        shopItems[2, 17] = 1250000;
-        shopItems[2, 18] = 2500000;
-        shopItems[2, 19] = 5000000;
-        shopItems[2, 20] = 10000000;
+       // Fixing array indexing (0 - based)
+       for (int i = 0; i < 20; i++)
+       {
+           shopItems[0, i] = i + 1; // Shop IDs (1 to 20)
+       }
 
+       // Assign shop prices
+       int[] prices = { 10, 25, 60, 125, 275, 600, 1250, 2500, 5000, 10000, 20000, 45000, 90000, 175000, 350000, 640000, 1250000, 2500000, 5000000, 10000000};
 
-
+       for (int i = 0; i < 20; i++)
+       {
+           shopItems[1, i] = prices[i]; //Assigning prices
+       }
     }
 
     public void Buy()
     {
-        GameObject buttonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+       GameObject buttonRef = EventSystem.current.currentSelectedGameObject;
 
-        if (coins >= shopItems[2, buttonRef.GetComponent<shopScript>().itemID])
-        {
-            coins -= shopItems[2, buttonRef.GetComponent<shopScript>().itemID];
+       if (buttonRef == null)
+       {
+           Debug.LogError("No button selected! ");
+           return;
+       }
 
-            CoinsText.text = "Coins" + coins.ToString();
-        }
+       ShopItem shopItem = buttonRef.GetComponent<ShopItem>();
+
+       if (shopItem == null)
+       {
+           Debug.LogError("ShopItem component missinng on button: "); 
+           return;
+       }
+
+       int itemID = shopItem.itemID;
+
+       if (coins >= shopItems[1, itemID])
+       {
+           coins -= shopItems[1, itemID];
+           UpdateCoinsUI(); // Update UI text
+          
+           UnlockManager.Instance.UnlockItem(itemID);
+       }
+       else
+       {
+           Debug.Log("Not enough coins!");
+       }
     }
 
+    private void UpdateCoinsUI()
+    {
+        if (coinsText != null)
+        {
+            coinsText.text = "Coins: " + coins.ToString();
+        }
+        else
+        {
+            Debug.LogError("coinsText is not assigned in Inspector!");
+        }
+    }
 }

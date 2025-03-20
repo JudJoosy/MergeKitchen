@@ -1,51 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 /*
 // [Lopez, Judith]
 */
 
 public class InventoryManager : MonoBehaviour
 {
-	public Transform[] inventorySlots; //Assign slots in Inspector
-	public GameObject saltPrefab, pepperPrefab; // Assign prefabs in inspector
+	public static InventoryManager Instance;
 
-	private void Start()
+	public List<GameObject> ingredientPreFabs; // Assign prefabs in Inspector
+
+	public Transform[] cookingSlots; // Assign UI slots in Inspector
+
+	public void SpawnIngredient(int itemID)
 	{
-		List<string> mergedIngredients = MergeManager.Instance.GetMergedIngredients();
-
-		foreach (string ingredient in mergedIngredients)
+		if (!UnlockManager.Instance.IsItemUnlocked(itemID))
 		{
-			SpawnInInventory(ingredient);
+			Debug.LogError("Ingredient not unlocked yet!");
+			return;
 		}
 
-		MergeManager.Instance.ClearMergedIngredients(); // Clear after spawning
-	}
+		GameObject ingredientPrefab = ingredientPreFabs[itemID];
 
-	void SpawnInInventory(string ingredient)
-	{
-		GameObject prefabToSpawn = null;
-
-		switch (ingredient)
+		foreach (Transform slot in cookingSlots)
 		{
-			case "Salt":
-				prefabToSpawn = saltPrefab;
-				break;
-			case "Pepper":
-				prefabToSpawn = pepperPrefab;
-				break;
-		}
-
-		if (prefabToSpawn != null)
-		{
-			foreach (Transform slot in inventorySlots)
+			if (slot.childCount == 0)
 			{
-				if (slot.childCount == 0) // Find an empty slot
-				{
-					Instantiate(prefabToSpawn, slot.position, Quaternion.identity, slot);
-					break;
-				}
+				Instantiate(ingredientPrefab, slot.position, Quaternion.identity, slot);
+				Debug.Log("Spawned ingredient: " + itemID);
+				return;
 			}
 		}
+
+		Debug.Log("No empty cooking slots available!");
 	}
+		
 }

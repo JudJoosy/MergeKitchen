@@ -199,7 +199,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -219,7 +219,7 @@ RectTransform:
   - {fileID: 581009053}
   - {fileID: 1915315100}
   - {fileID: 1492634934}
-  - {fileID: 1439706731}
+  - {fileID: 1268288455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 257856622}
   - component: {fileID: 257856621}
   - component: {fileID: 257856620}
+  - component: {fileID: 257856624}
   m_Layer: 5
   m_Name: Cheese_Button
   m_TagString: Untagged
@@ -648,6 +649,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257856618}
   m_CullTransparentMesh: 1
+--- !u!114 &257856624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257856618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 11
+  itemName: Cheese
+  itemIcon: {fileID: 0}
 --- !u!1 &264066794
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +677,7 @@ GameObject:
   - component: {fileID: 264066798}
   - component: {fileID: 264066797}
   - component: {fileID: 264066796}
+  - component: {fileID: 264066800}
   m_Layer: 5
   m_Name: Rice_Button
   m_TagString: Untagged
@@ -797,6 +814,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264066794}
   m_CullTransparentMesh: 1
+--- !u!114 &264066800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264066794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 17
+  itemName: Rice
+  itemIcon: {fileID: 0}
 --- !u!1 &278672183
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +842,7 @@ GameObject:
   - component: {fileID: 278672187}
   - component: {fileID: 278672186}
   - component: {fileID: 278672185}
+  - component: {fileID: 278672189}
   m_Layer: 5
   m_Name: Paprika_Button
   m_TagString: Untagged
@@ -946,6 +979,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278672183}
   m_CullTransparentMesh: 1
+--- !u!114 &278672189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278672183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 20
+  itemName: Paprika
+  itemIcon: {fileID: 0}
 --- !u!1 &291097801
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +1007,7 @@ GameObject:
   - component: {fileID: 291097805}
   - component: {fileID: 291097804}
   - component: {fileID: 291097803}
+  - component: {fileID: 291097807}
   m_Layer: 5
   m_Name: Fish_Button
   m_TagString: Untagged
@@ -1095,6 +1144,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291097801}
   m_CullTransparentMesh: 1
+--- !u!114 &291097807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291097801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 18
+  itemName: Fish
+  itemIcon: {fileID: 0}
 --- !u!1 &336170468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1251,7 @@ GameObject:
   - component: {fileID: 362977567}
   - component: {fileID: 362977566}
   - component: {fileID: 362977565}
+  - component: {fileID: 362977569}
   m_Layer: 5
   m_Name: Dough_Button
   m_TagString: Untagged
@@ -1323,6 +1388,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362977563}
   m_CullTransparentMesh: 1
+--- !u!114 &362977569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362977563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 9
+  itemName: Dough
+  itemIcon: {fileID: 0}
 --- !u!1 &388030237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1416,7 @@ GameObject:
   - component: {fileID: 388030241}
   - component: {fileID: 388030240}
   - component: {fileID: 388030239}
+  - component: {fileID: 388030243}
   m_Layer: 5
   m_Name: Lobster
   m_TagString: Untagged
@@ -1472,6 +1553,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388030237}
   m_CullTransparentMesh: 1
+--- !u!114 &388030243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388030237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 16
+  itemName: Lobster
+  itemIcon: {fileID: 0}
 --- !u!1 &428695077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,6 +2030,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72d1611a8a39b548a3804549116f27e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &614302178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614302180}
+  - component: {fileID: 614302179}
+  m_Layer: 0
+  m_Name: UnlockManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &614302179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614302178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockedItems: 
+--- !u!4 &614302180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614302178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 153.1635, y: 435.02936, z: -7.815876}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616431353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2518,7 @@ GameObject:
   - component: {fileID: 819597624}
   - component: {fileID: 819597623}
   - component: {fileID: 819597622}
+  - component: {fileID: 819597626}
   m_Layer: 5
   m_Name: Bread_Button
   m_TagString: Untagged
@@ -2513,6 +2655,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819597620}
   m_CullTransparentMesh: 1
+--- !u!114 &819597626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819597620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 10
+  itemName: Bread
+  itemIcon: {fileID: 0}
 --- !u!1 &832571803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +2683,7 @@ GameObject:
   - component: {fileID: 832571807}
   - component: {fileID: 832571806}
   - component: {fileID: 832571805}
+  - component: {fileID: 832571809}
   m_Layer: 5
   m_Name: Chili_Pepper
   m_TagString: Untagged
@@ -2662,6 +2820,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832571803}
   m_CullTransparentMesh: 1
+--- !u!114 &832571809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832571803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 19
+  itemName: Chilipepper
+  itemIcon: {fileID: 0}
 --- !u!1 &837442256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,6 +2914,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837442256}
   m_CullTransparentMesh: 1
+--- !u!1001 &838794604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.4537663
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -14.236103
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -64.6309
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954281572084341648, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041017253641388522, guid: 83aac7a4e95456b4487189124b948b33,
+        type: 3}
+      propertyPath: m_Name
+      value: 'GameManager '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83aac7a4e95456b4487189124b948b33, type: 3}
 --- !u!1 &913956714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,6 +2995,7 @@ GameObject:
   - component: {fileID: 913956718}
   - component: {fileID: 913956717}
   - component: {fileID: 913956716}
+  - component: {fileID: 913956720}
   m_Layer: 5
   m_Name: Potato_Button
   m_TagString: Untagged
@@ -2890,6 +3132,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913956714}
   m_CullTransparentMesh: 1
+--- !u!114 &913956720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913956714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 6
+  itemName: Potato
+  itemIcon: {fileID: 0}
 --- !u!1 &925711206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3376,7 @@ GameObject:
   - component: {fileID: 931225777}
   - component: {fileID: 931225776}
   - component: {fileID: 931225775}
+  - component: {fileID: 931225779}
   m_Layer: 5
   m_Name: Thyme_Button
   m_TagString: Untagged
@@ -3255,6 +3513,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931225773}
   m_CullTransparentMesh: 1
+--- !u!114 &931225779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931225773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 3
+  itemName: Thyme
+  itemIcon: {fileID: 0}
 --- !u!1 &945239018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,6 +3699,7 @@ GameObject:
   - component: {fileID: 956518781}
   - component: {fileID: 956518780}
   - component: {fileID: 956518779}
+  - component: {fileID: 956518783}
   m_Layer: 5
   m_Name: Egg_Button
   m_TagString: Untagged
@@ -3562,6 +3836,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956518777}
   m_CullTransparentMesh: 1
+--- !u!114 &956518783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956518777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 12
+  itemName: Egg
+  itemIcon: {fileID: 0}
 --- !u!1 &1062667499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,6 +4101,7 @@ GameObject:
   - component: {fileID: 1174566588}
   - component: {fileID: 1174566587}
   - component: {fileID: 1174566586}
+  - component: {fileID: 1174566590}
   m_Layer: 5
   m_Name: Butter_Button
   m_TagString: Untagged
@@ -3948,6 +4238,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174566584}
   m_CullTransparentMesh: 1
+--- !u!114 &1174566590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174566584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 8
+  itemName: Butter
+  itemIcon: {fileID: 0}
 --- !u!1 &1198085391
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,6 +4604,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264336513}
   m_CullTransparentMesh: 1
+--- !u!1 &1268288452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268288455}
+  - component: {fileID: 1268288454}
+  - component: {fileID: 1268288453}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1268288453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268288452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'coins:'
+--- !u!222 &1268288454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268288452}
+  m_CullTransparentMesh: 1
+--- !u!224 &1268288455
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268288452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4052, y: 2.4052, z: 2.4052}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 21485946}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -199, y: 754}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1276511600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4957,7 @@ GameObject:
   - component: {fileID: 1378694892}
   - component: {fileID: 1378694891}
   - component: {fileID: 1378694890}
+  - component: {fileID: 1378694894}
   m_Layer: 5
   m_Name: Tortilla_Button
   m_TagString: Untagged
@@ -4709,6 +5094,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378694888}
   m_CullTransparentMesh: 1
+--- !u!114 &1378694894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378694888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 14
+  itemName: Tortilla
+  itemIcon: {fileID: 0}
 --- !u!1 &1390951617
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +5201,7 @@ GameObject:
   - component: {fileID: 1428682819}
   - component: {fileID: 1428682818}
   - component: {fileID: 1428682817}
+  - component: {fileID: 1428682821}
   m_Layer: 5
   m_Name: Onion_Button
   m_TagString: Untagged
@@ -4937,85 +5338,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428682815}
   m_CullTransparentMesh: 1
---- !u!1 &1439706730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1439706731}
-  - component: {fileID: 1439706733}
-  - component: {fileID: 1439706732}
-  m_Layer: 5
-  m_Name: CoinsText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1439706731
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439706730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 21485946}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165.4, y: 749.44}
-  m_SizeDelta: {x: 455.277, y: 60.89}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1439706732
+--- !u!114 &1428682821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439706730}
+  m_GameObject: {fileID: 1428682815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 5
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Coins: 0'
---- !u!222 &1439706733
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439706730}
-  m_CullTransparentMesh: 1
+  itemID: 4
+  itemName: Onion
+  itemIcon: {fileID: 0}
 --- !u!1 &1443332490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5366,7 @@ GameObject:
   - component: {fileID: 1443332494}
   - component: {fileID: 1443332493}
   - component: {fileID: 1443332492}
+  - component: {fileID: 1443332496}
   m_Layer: 5
   m_Name: Pepper_Button
   m_TagString: Untagged
@@ -5165,6 +5503,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443332490}
   m_CullTransparentMesh: 1
+--- !u!114 &1443332496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443332490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 2
+  itemName: Pepper
+  itemIcon: {fileID: 0}
 --- !u!1 &1464032320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 10000
-  CoinsText: {fileID: 1439706732}
+  coinsText: {fileID: 1268288453}
 --- !u!4 &1506019107
 Transform:
   m_ObjectHideFlags: 0
@@ -5978,6 +6331,7 @@ GameObject:
   - component: {fileID: 1768052181}
   - component: {fileID: 1768052180}
   - component: {fileID: 1768052179}
+  - component: {fileID: 1768052183}
   m_Layer: 5
   m_Name: Shrimp_Button
   m_TagString: Untagged
@@ -6114,6 +6468,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768052177}
   m_CullTransparentMesh: 1
+--- !u!114 &1768052183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768052177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 15
+  itemName: Shrimp
+  itemIcon: {fileID: 0}
 --- !u!1 &1782519791
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,6 +6577,7 @@ GameObject:
   - component: {fileID: 1805754563}
   - component: {fileID: 1805754562}
   - component: {fileID: 1805754565}
+  - component: {fileID: 1805754566}
   m_Layer: 5
   m_Name: Salt_Button
   m_TagString: Untagged
@@ -6344,6 +6714,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 1
   ShopManager: {fileID: 1506019105}
+--- !u!114 &1805754566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805754560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 1
+  itemName: Salt
+  itemIcon: {fileID: 0}
 --- !u!1 &1805901222
 GameObject:
   m_ObjectHideFlags: 0
@@ -6425,6 +6810,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805901222}
   m_CullTransparentMesh: 1
+--- !u!1001 &1842742009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2943487014199026833, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: moneyText
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049521461290025291, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_Name
+      value: Currency
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 181.21495
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 287.4253
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.455468
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791256994630357458, guid: e8106db999237c045bce64b61433300f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8106db999237c045bce64b61433300f, type: 3}
 --- !u!1 &1915315099
 GameObject:
   m_ObjectHideFlags: 0
@@ -6553,6 +7011,7 @@ GameObject:
   - component: {fileID: 1919579710}
   - component: {fileID: 1919579709}
   - component: {fileID: 1919579708}
+  - component: {fileID: 1919579712}
   m_Layer: 5
   m_Name: Garlic_Button
   m_TagString: Untagged
@@ -6689,6 +7148,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919579706}
   m_CullTransparentMesh: 1
+--- !u!114 &1919579712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919579706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 5
+  itemName: Garlic
+  itemIcon: {fileID: 0}
 --- !u!1 &1925473214
 GameObject:
   m_ObjectHideFlags: 0
@@ -6702,6 +7176,7 @@ GameObject:
   - component: {fileID: 1925473218}
   - component: {fileID: 1925473217}
   - component: {fileID: 1925473216}
+  - component: {fileID: 1925473220}
   m_Layer: 5
   m_Name: Steak_Button
   m_TagString: Untagged
@@ -6838,6 +7313,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925473214}
   m_CullTransparentMesh: 1
+--- !u!114 &1925473220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925473214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 13
+  itemName: Steak
+  itemIcon: {fileID: 0}
 --- !u!1 &1940116423
 GameObject:
   m_ObjectHideFlags: 0
@@ -7044,6 +7534,7 @@ GameObject:
   - component: {fileID: 1978806520}
   - component: {fileID: 1978806519}
   - component: {fileID: 1978806518}
+  - component: {fileID: 1978806522}
   m_Layer: 5
   m_Name: Milk_Button
   m_TagString: Untagged
@@ -7180,6 +7671,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978806516}
   m_CullTransparentMesh: 1
+--- !u!114 &1978806522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978806516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c145cf997ce14c42b977ec575598d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 7
+  itemName: Milk
+  itemIcon: {fileID: 0}
 --- !u!1 &2017383377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7347,3 +7853,6 @@ SceneRoots:
   - {fileID: 21485946}
   - {fileID: 1276511603}
   - {fileID: 1506019107}
+  - {fileID: 838794604}
+  - {fileID: 1842742009}
+  - {fileID: 614302180}
