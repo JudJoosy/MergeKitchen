@@ -1457,8 +1457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fe05dde1fbca44aadbfd712f026627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientPreFabs: []
   cookingSlots: []
-  ingredientPrefabs: []
 --- !u!1 &151477088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,8 +4303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fe05dde1fbca44aadbfd712f026627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientPreFabs: []
   cookingSlots: []
-  ingredientPrefabs: []
 --- !u!1 &511094177
 GameObject:
   m_ObjectHideFlags: 0
