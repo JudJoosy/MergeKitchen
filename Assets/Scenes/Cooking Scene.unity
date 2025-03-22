@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 51372335}
+  - component: {fileID: 51372336}
   m_Layer: 0
   m_Name: Tortilla
   m_TagString: Untagged
@@ -154,6 +155,21 @@ Transform:
   - {fileID: 1682204905}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51372336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51372334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &60560413
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,6 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 70906700}
+  - component: {fileID: 70906701}
   m_Layer: 0
   m_Name: Onion
   m_TagString: Untagged
@@ -408,6 +425,24 @@ Transform:
   - {fileID: 609321311}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70906701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70906699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 8552857416717888327, guid: 3ec03131b2827f04fb894b3938e73130,
+    type: 3}
+  slotModel: {fileID: 440163145853142451, guid: 3ec03131b2827f04fb894b3938e73130,
+    type: 3}
+  ingredient: {fileID: 8552857416717888327, guid: 3ec03131b2827f04fb894b3938e73130,
+    type: 3}
 --- !u!1 &77868798
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +710,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91530113}
   m_CullTransparentMesh: 1
+--- !u!1 &103544990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bb3f5bb3ad1c13442a4be179a3e24bd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 68102903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &117145093 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4434439343598601528, guid: b3236ff9455be124c890138115034bd4,
@@ -690,6 +731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151477089}
+  - component: {fileID: 151477090}
   m_Layer: 0
   m_Name: Lobster
   m_TagString: Untagged
@@ -713,6 +755,21 @@ Transform:
   - {fileID: 1956356710}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151477090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151477088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &168731858
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 201621248}
+  - component: {fileID: 201621249}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Untagged
@@ -998,6 +1056,21 @@ Transform:
   - {fileID: 1596395880}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201621249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201621247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &203377318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217305709}
+  - component: {fileID: 217305710}
   m_Layer: 0
   m_Name: Chili Pepper
   m_TagString: Untagged
@@ -1151,6 +1225,21 @@ Transform:
   - {fileID: 1775715577}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &217305710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217305708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &287809092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 304032483}
+  - component: {fileID: 304032484}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -1437,6 +1527,21 @@ Transform:
   - {fileID: 203377319}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &304032484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304032482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &316515307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316515308}
+  - component: {fileID: 316515309}
   m_Layer: 0
   m_Name: Salt
   m_TagString: Untagged
@@ -1469,6 +1575,24 @@ Transform:
   - {fileID: 1050310006}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &316515309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316515307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: -1646839281547344206, guid: 083e21a543192da49a02bf1be5cc7d06,
+    type: 3}
+  slotModel: {fileID: 1918206090610001810, guid: fb2b87f303b63a7418d5563ed5ac4089,
+    type: 3}
+  ingredient: {fileID: -1646839281547344206, guid: 083e21a543192da49a02bf1be5cc7d06,
+    type: 3}
 --- !u!1 &366222515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1604,7 @@ GameObject:
   - component: {fileID: 366222516}
   - component: {fileID: 366222517}
   - component: {fileID: 366222518}
+  - component: {fileID: 366222519}
   m_Layer: 5
   m_Name: SmallCookingSlot
   m_TagString: Untagged
@@ -1550,6 +1675,21 @@ MonoBehaviour:
   m_Text: 'MMMMMM
 
 '
+--- !u!114 &366222519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366222515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &367518664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1701,7 @@ GameObject:
   - component: {fileID: 367518665}
   - component: {fileID: 367518666}
   - component: {fileID: 367518667}
+  - component: {fileID: 367518668}
   m_Layer: 5
   m_Name: SmallCookingSlot (1)
   m_TagString: Untagged
@@ -1631,6 +1772,21 @@ MonoBehaviour:
   m_Text: 'MMMMMM
 
 '
+--- !u!114 &367518668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367518664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &374991434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374991435}
+  - component: {fileID: 374991436}
   m_Layer: 0
   m_Name: Butter
   m_TagString: Untagged
@@ -1663,6 +1820,21 @@ Transform:
   - {fileID: 1966811606}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &374991436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374991434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &398903853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,6 +2230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567530180}
+  - component: {fileID: 567530181}
   m_Layer: 0
   m_Name: Shrimp
   m_TagString: Untagged
@@ -2081,6 +2254,21 @@ Transform:
   - {fileID: 1372948113}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &567530181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567530179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!224 &609321311 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7394160543376674511, guid: 5ef7b06be2ed8cd40b09c58684f9306d,
@@ -2538,6 +2726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755317894}
+  - component: {fileID: 755317895}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Untagged
@@ -2561,6 +2750,21 @@ Transform:
   - {fileID: 77868799}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755317895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755317893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &761981709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +2996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841152044}
+  - component: {fileID: 841152045}
   m_Layer: 0
   m_Name: Garlic
   m_TagString: Untagged
@@ -2815,6 +3020,24 @@ Transform:
   - {fileID: 449957727}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841152045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841152043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 576550374802924239, guid: c6a2d80880ed2fb42b7a7d0915f639e5,
+    type: 3}
+  slotModel: {fileID: 4145741359724207610, guid: d8194d95b91eebd4984269cf4af84487,
+    type: 3}
+  ingredient: {fileID: 576550374802924239, guid: c6a2d80880ed2fb42b7a7d0915f639e5,
+    type: 3}
 --- !u!1 &922600777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3342,7 @@ GameObject:
   - component: {fileID: 948373130}
   - component: {fileID: 948373132}
   - component: {fileID: 948373131}
+  - component: {fileID: 948373133}
   m_Layer: 5
   m_Name: BigSlot
   m_TagString: Untagged
@@ -3187,6 +3411,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 948373129}
   m_CullTransparentMesh: 1
+--- !u!114 &948373133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948373129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &950332571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950332572}
+  - component: {fileID: 950332573}
   m_Layer: 0
   m_Name: paprika
   m_TagString: Untagged
@@ -3219,6 +3459,21 @@ Transform:
   - {fileID: 696906354}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950332573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950332571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!224 &968388993 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1033093301676712603, guid: 35c4e7dd4b442ae408cc8d20c53d27e2,
@@ -3476,6 +3731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994746481}
+  - component: {fileID: 994746482}
   m_Layer: 0
   m_Name: Dough
   m_TagString: Untagged
@@ -3499,6 +3755,21 @@ Transform:
   - {fileID: 993478724}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994746482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994746480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1012527112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,6 +4322,7 @@ GameObject:
   - component: {fileID: 1159906379}
   - component: {fileID: 1159906378}
   - component: {fileID: 1159906377}
+  - component: {fileID: 1159906380}
   m_Layer: 5
   m_Name: SmallCookingSlot (4)
   m_TagString: Untagged
@@ -4121,6 +4393,21 @@ RectTransform:
   m_AnchoredPosition: {x: 250.90118, y: -906.1116}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1159906380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159906376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!224 &1181087512 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426767439456262385, guid: cd4ea8e1c91973f48adca60f0b4c3fbe,
@@ -4138,6 +4425,7 @@ GameObject:
   - component: {fileID: 1186230227}
   - component: {fileID: 1186230228}
   - component: {fileID: 1186230229}
+  - component: {fileID: 1186230230}
   m_Layer: 5
   m_Name: SmallCookingSlot (2)
   m_TagString: Untagged
@@ -4208,6 +4496,21 @@ MonoBehaviour:
   m_Text: 'MMMMMM
 
 '
+--- !u!114 &1186230230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186230226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1271912128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4474,6 +4777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275871884}
+  - component: {fileID: 1275871885}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -4497,6 +4801,21 @@ Transform:
   - {fileID: 976250130}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275871885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275871883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1372948112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,6 +5034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415073395}
+  - component: {fileID: 1415073396}
   m_Layer: 0
   m_Name: Potato
   m_TagString: Untagged
@@ -4738,6 +5058,21 @@ Transform:
   - {fileID: 1836693026}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1415073396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415073394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1424424164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4962,6 +5297,7 @@ GameObject:
   - component: {fileID: 1520738957}
   - component: {fileID: 1520738958}
   - component: {fileID: 1520738959}
+  - component: {fileID: 1520738960}
   m_Layer: 5
   m_Name: SmallCookingSlot (3)
   m_TagString: Untagged
@@ -5032,6 +5368,21 @@ MonoBehaviour:
   m_Text: 'MMMMMM
 
 '
+--- !u!114 &1520738960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520738956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1596395879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,6 +5513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598293693}
+  - component: {fileID: 1598293694}
   m_Layer: 0
   m_Name: Pepper
   m_TagString: Untagged
@@ -5185,6 +5537,24 @@ Transform:
   - {fileID: 968388993}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598293694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598293692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: -4450078141958876324, guid: 7690b7a221a6e83459f2b84db16ae003,
+    type: 3}
+  slotModel: {fileID: 7958736104794301657, guid: 421cd442932d5404988eb0d4b9f59f6d,
+    type: 3}
+  ingredient: {fileID: -4450078141958876324, guid: 7690b7a221a6e83459f2b84db16ae003,
+    type: 3}
 --- !u!1 &1601194968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,6 +5564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1601194969}
+  - component: {fileID: 1601194970}
   m_Layer: 0
   m_Name: 'Milk '
   m_TagString: Untagged
@@ -5217,6 +5588,21 @@ Transform:
   - {fileID: 1271912129}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1601194970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601194968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1623807687
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,6 +5680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638553967}
+  - component: {fileID: 1638553968}
   m_Layer: 0
   m_Name: cheese
   m_TagString: Untagged
@@ -5317,6 +5704,21 @@ Transform:
   - {fileID: 1424424165}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1638553968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638553966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1662247675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5326,6 +5728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1662247676}
+  - component: {fileID: 1662247677}
   m_Layer: 0
   m_Name: Thyme
   m_TagString: Untagged
@@ -5349,6 +5752,30 @@ Transform:
   - {fileID: 1181087512}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662247677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662247675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 6536022268115095412, guid: cfbd089687a3e084891964ac1a234a45,
+    type: 3}
+  slotModel: {fileID: 806196553066789747, guid: 73d765ce3d468984baa506529854530a,
+    type: 3}
+  ingredient: {fileID: 6536022268115095412, guid: cfbd089687a3e084891964ac1a234a45,
+    type: 3}
+--- !u!1 &1667252715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 87464fbec25474b42bf60d578830a9ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410779879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1682204904
 GameObject:
   m_ObjectHideFlags: 0
@@ -5886,6 +6313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879317485}
+  - component: {fileID: 1879317486}
   m_Layer: 0
   m_Name: Bread
   m_TagString: Untagged
@@ -5909,6 +6337,21 @@ Transform:
   - {fileID: 1903177938}
   m_Father: {fileID: 621523143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879317486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879317484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393841e9a0cf3d8429f88fc6cba7b0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedIngredient: {fileID: 0}
+  slotModel: {fileID: 0}
+  ingredient: {fileID: 0}
 --- !u!1 &1901622894
 GameObject:
   m_ObjectHideFlags: 0
@@ -7293,6 +7736,96 @@ PrefabInstance:
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 2062856328}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[0].dishName
+      value: ' Salt and pepper'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[1].dishName
+      value: Fancy Salt and Pepper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[2].dishName
+      value: The Holy Trinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[3].dishName
+      value: The Holy Trinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[0].dishModel
+      value: 
+      objectReference: {fileID: 103544990}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[1].dishModel
+      value: 
+      objectReference: {fileID: 1667252715}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[2].dishModel
+      value: 
+      objectReference: {fileID: 1667252715}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[3].dishModel
+      value: 
+      objectReference: {fileID: 1667252715}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[0].recipeName
+      value: Salt and Pepper
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[0].ingredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[1].ingredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[2].ingredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[3].ingredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[0].requiredIngredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[1].requiredIngredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[2].requiredIngredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
+      propertyPath: recipes.Array.data[3].requiredIngredients.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2594109305251115596, guid: b11fb1e2c32858f438d0080e711e845d,
         type: 3}
       propertyPath: m_Name

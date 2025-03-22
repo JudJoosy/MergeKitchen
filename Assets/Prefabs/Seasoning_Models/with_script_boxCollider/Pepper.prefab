@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Pepper
+  ingredientData: {fileID: 0}
 --- !u!114 &-4450078141958876324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientModel: {fileID: 9017684224641638786}
+  ingredientName: 
+  ingredientID: 0
   ingredientType: Pepper
+  quantity: 0

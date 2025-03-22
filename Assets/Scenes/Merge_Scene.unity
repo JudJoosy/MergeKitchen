@@ -195,12 +195,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8106db999237c045bce64b61433300f, type: 3}
---- !u!1 &469525422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3443899149527738660, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4305703539629662699}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646002033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,8 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookingManager: {fileID: 0}
-  ingredientModel: {fileID: 469525422}
+  ingredientData: {fileID: 0}
 --- !u!4 &1300813872
 Transform:
   m_ObjectHideFlags: 0
