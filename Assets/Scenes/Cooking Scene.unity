@@ -7409,8 +7409,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4373578212772148997, guid: daa5c8346055b924587b4fb3e117a65d,
         type: 3}
+      propertyPath: inventorySlotPrefab
+      value: 
+      objectReference: {fileID: 621523142}
+    - target: {fileID: 4373578212772148997, guid: daa5c8346055b924587b4fb3e117a65d,
+        type: 3}
       propertyPath: inventory.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373578212772148997, guid: daa5c8346055b924587b4fb3e117a65d,
+        type: 3}
+      propertyPath: inventoryItems.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373578212772148997, guid: daa5c8346055b924587b4fb3e117a65d,
         type: 3}
@@ -7763,6 +7773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
         type: 3}
+      propertyPath: selectedIngredients.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
+        type: 3}
       propertyPath: recipes.Array.data[0].dishModel
       value: 
       objectReference: {fileID: 103544990}
@@ -7794,12 +7809,12 @@ PrefabInstance:
     - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
         type: 3}
       propertyPath: recipes.Array.data[1].ingredients.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
         type: 3}
       propertyPath: recipes.Array.data[2].ingredients.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2269830732357356520, guid: b11fb1e2c32858f438d0080e711e845d,
         type: 3}
