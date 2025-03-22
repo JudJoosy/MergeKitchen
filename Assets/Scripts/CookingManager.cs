@@ -21,27 +21,55 @@ public class CookingManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (Instance == null)
-		{
-			Instance = this;
-		}
+		// Singleton pattern: ensures only one instance of CookingManager exists
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("More than one instance of CookingManager found in the scene!");
+        }
 	}
 
-	
+    //
+    void Start()
+    {
+        // Ensure that cooking slots are assigned
+        if (cookingSlot1 == null || cookingSlot2 == null)
+        {
+            Debug.LogError("Cooking slots are not assigned in the inspector.");
+        }
+
+        // Ensure that craftedDishSpawnPoint is assigned
+        if (craftedDishSpawnPoint == null)
+        {
+            Debug.LogError("Crafted dish spawn point is not assigned in the inspector.");
+        }
+    }
+    //
+	//
 	public void AddIngredient(IngredientData ingredient)
 	{
-		if (selectedIngredients.Count < 2) // Limiting to 2 ingredients for now
-		{
-			selectedIngredients.Add(ingredient);
-			Debug.Log("Added: " + ingredient.ingredientName);
-		}
-		else
-		{
-			Debug.Log("Max ingredients reached!");
-		}
+		// Check if ingredient is null
+        if (ingredient == null)
+        {
+            Debug.LogError("Ingredient is null!");
+            return;
+        }
+
+        if (selectedIngredients.Count < 2) // Limiting to 2 ingredients for now
+        {
+            selectedIngredients.Add(ingredient);
+            Debug.Log("Added: " + ingredient.ingredientName);
+        }
+        else
+        {
+            Debug.Log("Max ingredients reached!");
+        }
 	}
-
-
+    //
+    //
 	public void CookDish()
     {  
       foreach (RecipeData recipe in recipes)
@@ -58,38 +86,56 @@ public class CookingManager : MonoBehaviour
       cookingAnimator.SetTrigger("Failure");
       Debug.Log("Invalid combination!");
     }
-
-
+    //
+    //
 	public bool CheckRecipeMatch(RecipeData recipe)
 	{
-		if (recipe == null)
+		// Check if recipe is null
+        if (recipe == null)
         {
-          Debug.Log("No recipe found");
-          return false; // ✅ Always return something
+            Debug.Log("No recipe found");
+            return false;
         }
 
-        if (recipe.Ingredients.Count > 0)
+        // Ensure Ingredients list is not null and has ingredients to check
+        if (recipe.Ingredients != null && recipe.Ingredients.Count > 0)
         {
-           return true;
+            return true;
         }
 
-        return false; // ✅ Default return value
+        Debug.Log("Recipe has no valid ingredients");
+        return false;
 	}
-
-
+    //
+    //
 	private void SpawnCraftedDish(RecipeData recipe)
 	{
-		GameObject craftedDish = Instantiate(recipe.dishModel, craftedDishSpawnPoint.position, Quaternion.identity);
-        craftedDish.name = recipe.dishName;
+		if (craftedDishSpawnPoint != null && recipe.dishModel != null)
+        {
+            GameObject craftedDish = Instantiate(recipe.dishModel, craftedDishSpawnPoint.position, Quaternion.identity);
+            craftedDish.name = recipe.dishName;
+        }
+        else
+        {
+            Debug.LogError("Crafted dish spawn point or dish model is null!");
+        }
 	}
-
-
+    //
+    //
 	private void RemoveUsedIngredients()
 	{
-		foreach (IngredientData ingredient in selectedIngredients)
+		// Ensure InventoryManager instance is available
+        if (InventoryManager.Instance != null)
         {
-          InventoryManager.Instance.RemoveFromInventory(ingredient);
+            foreach (IngredientData ingredient in selectedIngredients)
+            {
+                InventoryManager.Instance.RemoveFromInventory(ingredient);
+            }
+            selectedIngredients.Clear();
         }
-        selectedIngredients.Clear();
+        else
+        {
+            Debug.LogError("InventoryManager instance is null!");
+        }
 	}
 }
