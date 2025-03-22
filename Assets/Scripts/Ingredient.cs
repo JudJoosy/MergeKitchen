@@ -6,9 +6,18 @@ using UnityEngine.EventSystems;
 
 public class Ingredient : MonoBehaviour
 {
+	 // Declare the ingredientModel as a reference to a GameObject (3D model)
+	 public GameObject ingredientModel;  // Reference to the 3D model of the ingredient
+
+	 // Other properties of the ingredient (e.g., name, type, etc.)
+	 public string ingredientName;
+	 public int ingredientID;
+
 	 public string ingredientType;  // Name of the Ingredient
 	 private Vector3 offset;
 	 private bool isDragging = false;
+
+	 public int quantity;  // Define quantity as an integer
 
 	 private void OnMouseDown()
 	 {

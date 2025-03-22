@@ -85,15 +85,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3569066242015759837}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1140668117498341804}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -1921421900419158372}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2493559693354870331}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5013dbc4337e9714683fa858e09fa8e8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4450078141958876324}
   m_SourcePrefab: {fileID: 100100000, guid: 5013dbc4337e9714683fa858e09fa8e8, type: 3}
 --- !u!1 &9017684224641638786 stripped
 GameObject:
@@ -101,19 +105,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8206730427296488659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3569066242015759837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9017684224641638786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientType: Pepper
 --- !u!65 &1140668117498341804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,3 +153,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2493559693354870331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017684224641638786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: Pepper
+--- !u!114 &-4450078141958876324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017684224641638786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientType: Pepper

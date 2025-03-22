@@ -631,8 +631,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b42b10fd653707e4d8046ba4582104d9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 11
   itemName: Cheese
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: b42b10fd653707e4d8046ba4582104d9, type: 3}
 --- !u!1 &264066794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,8 +1370,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4505346a3c674a546b44b5339de1b587, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 9
   itemName: Dough
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 4505346a3c674a546b44b5339de1b587, type: 3}
 --- !u!1 &388030237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,8 +2637,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b7d48db863472384d962cb3739813943, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 10
   itemName: Bread
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: b7d48db863472384d962cb3739813943, type: 3}
 --- !u!1 &832571803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,8 +3114,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7b91f542c3db4824e93cf8a0d3eadc56, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3146,7 +3146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 6
   itemName: Potato
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 7b91f542c3db4824e93cf8a0d3eadc56, type: 3}
 --- !u!1 &925711206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3495,8 +3495,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3fb4d8aa5ab4a9544855c58fdc1a5723, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3527,7 +3527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3
   itemName: Thyme
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 3fb4d8aa5ab4a9544855c58fdc1a5723, type: 3}
 --- !u!1 &945239018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,8 +3818,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 02b7fcc1022184b45af168888b63411f, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3850,7 +3850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 12
   itemName: Egg
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 02b7fcc1022184b45af168888b63411f, type: 3}
 --- !u!1 &1062667499
 GameObject:
   m_ObjectHideFlags: 0
@@ -4220,8 +4220,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6aee6ff857a35714ebb5ae579f9968da, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 8
   itemName: Butter
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 6aee6ff857a35714ebb5ae579f9968da, type: 3}
 --- !u!1 &1198085391
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,8 +5320,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b2ccd853fbde12d459a3d23aa4f4b98d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5352,7 +5352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4
   itemName: Onion
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: b2ccd853fbde12d459a3d23aa4f4b98d, type: 3}
 --- !u!1 &1443332490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5485,8 +5485,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9b1f82c9e6ec6a847816e8d03ea55c4d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5517,7 +5517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 2
   itemName: Pepper
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 9b1f82c9e6ec6a847816e8d03ea55c4d, type: 3}
 --- !u!1 &1464032320
 GameObject:
   m_ObjectHideFlags: 0
@@ -6682,8 +6682,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c51ebe95d4e502c4d8d0f28c53db148b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6728,7 +6728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 1
   itemName: Salt
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: c51ebe95d4e502c4d8d0f28c53db148b, type: 3}
 --- !u!1 &1805901222
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,8 +7130,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 11857da7a678ad64db2aab7a4c7b337b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7162,7 +7162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 5
   itemName: Garlic
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 11857da7a678ad64db2aab7a4c7b337b, type: 3}
 --- !u!1 &1925473214
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,8 +7653,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 82027038c1ddd6941a4a99c27ead0c5b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7685,7 +7685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 7
   itemName: Milk
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 82027038c1ddd6941a4a99c27ead0c5b, type: 3}
 --- !u!1 &2017383377
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,40 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 /*
 // [Lopez, Judith]
 */
 
 public class InventoryManager : MonoBehaviour
 {
+	public Ingredient storedIngredient;  // The ingredient in this inventory slot
+	public GameObject slotModel;  // Visual representation of the slot (optional)
+	public List<Ingredient> inventory = new List<Ingredient>();  // List of ingredients in inventory
+	public GameObject inventorySlotPrefab;  // Prefab for the inventory slot (UI element)
+	public Transform inventoryParent;  // Parent to place inventory slots
+
+	public InventorySlot[] inventorySlots;  // Array of inventory slots
+
 	public static InventoryManager Instance;
+    public List<IngredientData> inventoryItems = new List<IngredientData>();
 
-	public List<GameObject> ingredientPreFabs; // Assign prefabs in Inspector
+	private void Awake()
+    {
+        Instance = this;
+    }
 
-	public Transform[] cookingSlots; // Assign UI slots in Inspector
+    public void AddToInventory(IngredientData ingredient)
+    {
+        inventoryItems.Add(ingredient);
+    }
 
-	public void SpawnIngredient(int itemID)
+    public void RemoveFromInventory(IngredientData ingredient)
+    {
+        inventoryItems.Remove(ingredient);
+    }
+
+
+	// Add a new ingredient to the inventory
+	public void AddToInventory(Ingredient ingredient)
 	{
-		if (!UnlockManager.Instance.IsItemUnlocked(itemID))
+		// Check if the ingredient already exists in the inventory
+		var existingIngredient = inventory.Find(item => item.ingredientName == ingredient.ingredientName);
+		if (existingIngredient != null)
 		{
-			Debug.LogError("Ingredient not unlocked yet!");
-			return;
+			// If it exists, increase the quantity
+			existingIngredient.quantity++;
+		}
+		else
+		{
+			// If it doesn't exist, add it as a new ingredient
+			inventory.Add(ingredient);
 		}
 
-		GameObject ingredientPrefab = ingredientPreFabs[itemID];
+		// Update the UI after adding the ingredient to inventory
+		UpdateInventoryUI();
+	}
 
-		foreach (Transform slot in cookingSlots)
+
+	// Example function where SetIngredient might be called
+	public void AddIngredientToSlot(Ingredient ingredient)
+	{
+		foreach (var slot in inventorySlots)
 		{
-			if (slot.childCount == 0)
+			if (slot.storedIngredient == null) // Check if slot is empty
 			{
-				Instantiate(ingredientPrefab, slot.position, Quaternion.identity, slot);
-				Debug.Log("Spawned ingredient: " + itemID);
-				return;
+				slot.SetIngredient(ingredient);  // Call the SetIngredient method to assign the ingredient
+				break;
 			}
 		}
+	}
 
-		Debug.Log("No empty cooking slots available!");
+
+	// Update the inventory UI
+	void UpdateInventoryUI()
+	{
+		// Clear existing UI slots
+		foreach (Transform child in inventoryParent)
+		{
+			Destroy(child.gameObject);
+		}
+
+		// Create new slots for each ingredient in the inventory
+		foreach (Ingredient ingredient in inventory)
+		{
+			GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryParent);
+			newSlot.GetComponent<InventorySlot>().SetIngredient(ingredient);  // Set the ingredient in the slot
+		}
 	}
 		
 }

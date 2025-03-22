@@ -85,15 +85,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8186937775148267550}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6907209593844904690}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4139751137438955257}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4513277636437038147}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 576550374802924239}
   m_SourcePrefab: {fileID: 100100000, guid: 4f924620b5c50e04c8a277165d02b47c, type: 3}
 --- !u!1 &381803822861688234 stripped
 GameObject:
@@ -101,19 +105,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 688234201916612859}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8186937775148267550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381803822861688234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientType: Garlic_Prop
 --- !u!65 &6907209593844904690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,3 +153,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4513277636437038147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381803822861688234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: Garlic
+--- !u!114 &576550374802924239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381803822861688234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientType: Garlic_Prop

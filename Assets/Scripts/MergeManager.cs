@@ -4,37 +4,31 @@ using UnityEngine;
 
 public class MergeManager : MonoBehaviour
 {
-  public static MergeManager Instance; //singleton to access this
+  public InventoryManager inventoryManager;  // Reference to Inventory Manager
 
-  private List<string> mergedIngredients = new List<string>();
-
-  private void Awake()
+  // Merge two identical ingredients
+  public void MergeIngredients(Ingredient ingredient1, Ingredient ingredient2)
   {
-	 if (Instance == null)
+	 if (ingredient1 != null && ingredient2 != null)
 	 {
-		 Instance = this;
-		 DontDestroyOnLoad(gameObject); //Kepp this manager across scenes
+		 // Accessing the ingredientName from the Ingredient objects
+		  Debug.Log("Merging " + ingredient1.ingredientName + " (Quantity: " + ingredient1.quantity + ") with " + ingredient2.ingredientName + " (Quantity: " + ingredient2.quantity + ")");
 	 }
 	 else
 	 {
-		 Destroy(gameObject);
+		  Debug.LogError("One or both ingredients are null.");
 	 }
   }
 
-  public void MergeIngredients(string ingredientName)
+  // Create a new merged ingredient
+  Ingredient CreateMergedIngredient(Ingredient ingredient)
   {
-	  // Add merged ingredient to the list 
-	  mergedIngredients.Add(ingredientName);
+	  Ingredient newIngredient = new Ingredient
+	  {
+		ingredientName = ingredient.ingredientName + "_merged",  // Example of the merged name
+		ingredientModel = ingredient.ingredientModel,  // Using the same model
+		quantity = 1  // New ingredient starts with a quantity of 1
+      };
+	 return newIngredient;
   }
-
-  public List<string> GetMergedIngredients()
-  {
-	  return mergedIngredients;
-  }
-
-  public void ClearMergedIngredients()
-  {
-	  mergedIngredients.Clear();
-  }
-
 }

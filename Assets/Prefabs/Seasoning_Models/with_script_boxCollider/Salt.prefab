@@ -85,15 +85,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9204177779394590735}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6715604481853657278}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4808095987069406468}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4206216440522781895}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2826cb0eef4d45e4d9c7cdaba721052e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1646839281547344206}
   m_SourcePrefab: {fileID: 100100000, guid: 2826cb0eef4d45e4d9c7cdaba721052e, type: 3}
 --- !u!1 &2685440809815277647 stripped
 GameObject:
@@ -101,19 +105,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2992065678815378718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9204177779394590735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2685440809815277647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ingredientType: Salt
 --- !u!65 &6715604481853657278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,3 +153,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4206216440522781895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685440809815277647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: Salt
+--- !u!114 &-1646839281547344206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685440809815277647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientType: Salt

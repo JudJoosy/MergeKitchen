@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //
@@ -7,11 +7,18 @@ using UnityEngine;
 
 public class CookingManager : MonoBehaviour
 {
-	public static CookingManager Instance;
-	private List<string> currentIngredients = new List<string>();
+	public static CookingManager Instance;  // Singleton reference
 
-	public int playerMoney = 0; //player's money
-	
+	public List<RecipeData> recipes; // Assign all recipes in the inspector
+	public List<IngredientData> selectedIngredients = new List<IngredientData>(); // ✅ Declare it
+
+	public Transform cookingSlot1, cookingSlot2; // Drag and drop locations for ingredients
+    public Transform craftedDishSpawnPoint; // Where the new dish appears
+    public GameObject cookingUIPanel; // UI panel for showing crafting
+
+	public Animator cookingAnimator;
+
+
 	private void Awake()
 	{
 		if (Instance == null)
@@ -20,21 +27,69 @@ public class CookingManager : MonoBehaviour
 		}
 	}
 
-	public void AddIngredient(string ingredient)
+	
+	public void AddIngredient(IngredientData ingredient)
 	{
-		currentIngredients.Add(ingredient);
-
-		if (currentIngredients.Contains("Salt") && currentIngredients.Contains("Pepper"))
+		if (selectedIngredients.Count < 2) // Limiting to 2 ingredients for now
 		{
-			CreateDish();
+			selectedIngredients.Add(ingredient);
+			Debug.Log("Added: " + ingredient.ingredientName);
+		}
+		else
+		{
+			Debug.Log("Max ingredients reached!");
 		}
 	}
 
-	void CreateDish()
-	{
-		Debug.Log("Dish made! Earned money.");
-		playerMoney += 50; //add money for making Dish
 
-		currentIngredients.Clear(); //reset for next dish
+	public void CookDish()
+    {  
+      foreach (RecipeData recipe in recipes)
+      {
+        if (CheckRecipeMatch(recipe))
+        {
+            Debug.Log("Crafted: " + recipe.dishName);
+            cookingAnimator.SetTrigger("Success");
+            SpawnCraftedDish(recipe);
+            RemoveUsedIngredients();
+            return;
+        }
+      }
+      cookingAnimator.SetTrigger("Failure");
+      Debug.Log("Invalid combination!");
+    }
+
+
+	public bool CheckRecipeMatch(RecipeData recipe)
+	{
+		if (recipe == null)
+        {
+          Debug.Log("No recipe found");
+          return false; // ✅ Always return something
+        }
+
+        if (recipe.Ingredients.Count > 0)
+        {
+           return true;
+        }
+
+        return false; // ✅ Default return value
+	}
+
+
+	private void SpawnCraftedDish(RecipeData recipe)
+	{
+		GameObject craftedDish = Instantiate(recipe.dishModel, craftedDishSpawnPoint.position, Quaternion.identity);
+        craftedDish.name = recipe.dishName;
+	}
+
+
+	private void RemoveUsedIngredients()
+	{
+		foreach (IngredientData ingredient in selectedIngredients)
+        {
+          InventoryManager.Instance.RemoveFromInventory(ingredient);
+        }
+        selectedIngredients.Clear();
 	}
 }
