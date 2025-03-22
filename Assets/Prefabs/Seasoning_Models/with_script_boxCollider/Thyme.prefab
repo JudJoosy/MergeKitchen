@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Thyme
+  ingredientData: {fileID: 11400000, guid: 2cf227a7a60f74646b1a1a213602967a, type: 2}
 --- !u!114 &6536022268115095412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredientModel: {fileID: 2185201842584178971}
+  ingredientName: 
+  ingredientID: 0
   ingredientType: Thyme
+  quantity: 0
