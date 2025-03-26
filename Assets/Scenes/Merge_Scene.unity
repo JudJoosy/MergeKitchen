@@ -206,12 +206,22 @@ PrefabInstance:
     - target: {fileID: 8536282898285503117, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
       propertyPath: minSpacing
-      value: 8
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536282898285503117, guid: 2fb5ee34791f4c44a993630ab83e494d,
+        type: 3}
+      propertyPath: spawnInterval
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8536282898285503117, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
       propertyPath: spawnAreaSize.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536282898285503117, guid: 2fb5ee34791f4c44a993630ab83e494d,
+        type: 3}
+      propertyPath: maxIngredientCount
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8536282898285503117, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
@@ -943,8 +953,8 @@ Camera:
   m_GameObject: {fileID: 2128203154}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5169811, g: 0.39287564, b: 0.18240654, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
