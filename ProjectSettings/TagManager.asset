@@ -7,6 +7,7 @@ TagManager:
   - Salt
   - PepperPrefab
   - Event
+  - Pause
   layers:
   - Default
   - TransparentFX
