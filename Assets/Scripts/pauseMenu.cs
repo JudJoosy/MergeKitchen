@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class pauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    [SerializeField] GameObject PauseMenu;
 
-    private void Update()
+    public void Pause()
     {
-      
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 }
