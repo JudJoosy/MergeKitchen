@@ -46,8 +46,8 @@ public class Ingredient : MonoBehaviour
 		 return Camera.main.ScreenToWorldPoint(mousePoint);
 	 }
 
-	 private void OnTriggerEnter(Collider other)
-	 {
+	 private void OnTriggerEnter(UnityEngine.Collider other)
+    {
 		 Ingredient otherIngredient = other.GetComponent<Ingredient>();
 
 		 if (otherIngredient != null && otherIngredient.ingredientType == ingredientType)

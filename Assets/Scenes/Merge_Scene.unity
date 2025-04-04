@@ -264,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
@@ -274,7 +274,7 @@ PrefabInstance:
     - target: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
         type: 3}
@@ -651,6 +651,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624772408}
   m_CullTransparentMesh: 1
+--- !u!1 &1880165046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1880165048}
+  - component: {fileID: 1880165047}
+  m_Layer: 0
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1880165047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880165046}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1288128, y: 1, z: 1}
+  m_Center: {x: 0.06440663, y: 0, z: 0}
+--- !u!4 &1880165048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880165046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -66, z: 0}
+  m_LocalScale: {x: 59.27768, y: 10.503174, z: 14.576}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1977244686 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3143643330886380736, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
@@ -1353,3 +1406,4 @@ SceneRoots:
   - {fileID: 4305703539629662699}
   - {fileID: 124733740}
   - {fileID: 1300813872}
+  - {fileID: 1880165048}
