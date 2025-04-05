@@ -15,8 +15,8 @@ public class Collider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // screenBounds=Camera.main.ScreenToWorldPoint (new Vector3(Screen.width, Screen.height,Camera.main.transform.position.x));
-       // screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
+       screenBounds=Camera.main.ScreenToWorldPoint (new Vector3(Screen.width, Screen.height,Camera.main.transform.position.x));
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.y));
 
     }
 
@@ -24,9 +24,9 @@ public class Collider : MonoBehaviour
     void Update()
     {
        // //Vector3 currentPosition = transform.position;
-       // Vector3 viewPos = transform.position;
-       // viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x, screenBounds.x * -1);
-       // viewPos.x = Mathf.Clamp(viewPos.y, screenBounds.y, screenBounds.y * -1);
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x, screenBounds.x * -1);
+       viewPos.x = Mathf.Clamp(viewPos.y, screenBounds.y, screenBounds.y * -1);
        // transform.position = viewPos;
     }
     private void OnTriggerEnter(UnityEngine.Collider other)
