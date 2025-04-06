@@ -689,7 +689,6 @@ GameObject:
   - component: {fileID: 2037316181}
   - component: {fileID: 2037316180}
   - component: {fileID: 2037316179}
-  - component: {fileID: 2037316182}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -747,18 +746,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2037316182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037316178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9686b046c492fb74b89c26e7badc1535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2063421436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1182,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MergerManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3443899149527738660, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1360,6 +1352,7 @@ PrefabInstance:
     - {fileID: 2554957051473794689, guid: b3236ff9455be124c890138115034bd4, type: 3}
     - {fileID: 4532271413812040040, guid: b3236ff9455be124c890138115034bd4, type: 3}
     - {fileID: 5049768506794385230, guid: b3236ff9455be124c890138115034bd4, type: 3}
+    - {fileID: 5454458147292921976, guid: b3236ff9455be124c890138115034bd4, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4434439343598601528, guid: b3236ff9455be124c890138115034bd4,
         type: 3}
