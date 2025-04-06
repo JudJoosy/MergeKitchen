@@ -9,23 +9,30 @@ public class InventoryManager : MonoBehaviour
 
     void Start()
     {
-        IngredientDataTransfer.collectedIngredients = new List<string> { "salt", "pepper" };
+        // Add new ingredients (Thyme, Onion, and Garlic) here as well.
+        IngredientDataTransfer.collectedIngredients = new List<string> { 
+            "salt", 
+            "pepper", 
+            "thyme", 
+            "onion", 
+            "garlic"
+        };
 
         CreateInventorySlots();
     }
 
-
     public void CreateInventorySlots()
     {
+        // Clear any existing slots in the inventory
         foreach (Transform child in inventoryPanel)
         {
             Destroy(child.gameObject);
         }
 
+        // Create a new slot for each ingredient
         foreach (string ing in IngredientDataTransfer.collectedIngredients)
         {
             GameObject slot = Instantiate(slotPrefab, inventoryPanel);
-
             slot.GetComponent<InventorySlot>().Setup(ing, cookingManager);
         }
 
