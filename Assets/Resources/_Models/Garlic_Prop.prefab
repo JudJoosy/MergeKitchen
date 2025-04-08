@@ -94,6 +94,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 576550374802924239}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4f924620b5c50e04c8a277165d02b47c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8475813528908697241}
   m_SourcePrefab: {fileID: 100100000, guid: 4f924620b5c50e04c8a277165d02b47c, type: 3}
 --- !u!1 &381803822861688234 stripped
 GameObject:
@@ -166,3 +170,15 @@ MonoBehaviour:
   ingredientID: 0
   ingredientType: Garlic_Prop
   quantity: 0
+--- !u!114 &-8475813528908697241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381803822861688234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abd73e1b1d52a441bfb8a525abc5b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
