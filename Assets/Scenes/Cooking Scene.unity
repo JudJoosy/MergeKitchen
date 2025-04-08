@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Garlic
-  quantity: 1
+  quantity: 0
   ingredientImage: {fileID: 564494267}
   quantityText: {fileID: 2025842904}
 --- !u!1 &675576872
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Thyme
-  quantity: 1
+  quantity: 0
   ingredientImage: {fileID: 675576876}
   quantityText: {fileID: 1269298527}
 --- !u!1 &698493053
@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Onion
-  quantity: 1
+  quantity: 0
   ingredientImage: {fileID: 1077555691}
   quantityText: {fileID: 1195673731}
 --- !u!1 &1100618054
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Pepper
-  quantity: 1
+  quantity: 0
   ingredientImage: {fileID: 1112157910}
   quantityText: {fileID: 909322326}
 --- !u!1001 &1186667630
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Salt
-  quantity: 1
+  quantity: 0
   ingredientImage: {fileID: 1506491082}
   quantityText: {fileID: 1989529034}
 --- !u!1 &1599953151
