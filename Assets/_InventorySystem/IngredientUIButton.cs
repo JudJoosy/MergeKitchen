@@ -1,27 +1,51 @@
 using UnityEngine;
-using UnityEngine.UI;  // Make sure this is included
-using TMPro;
+using UnityEngine.UI;
 
 public class IngredientUIButton : MonoBehaviour
 {
-    public Button button; // Declare the Button
+    public string ingredientName;
+    public Sprite ingredientSprite;
+
+    private Button button;
 
     void Start()
     {
-        button = GetComponent<Button>(); // Get the Button component
-        if (button != null)
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnIngredientClicked);
+    }
+
+    // When the ingredient button is clicked
+    public void OnIngredientClicked()
+    {
+        // Find the first available craft slot and place the ingredient there
+        CraftSlot[] craftSlots = FindObjectsOfType<CraftSlot>();
+
+        foreach (CraftSlot slot in craftSlots)
         {
-            button.onClick.AddListener(OnClick); // Add a listener for button click
+            if (slot.IsEmpty())  // Check if slot is empty
+            {
+                slot.SetIngredient(ingredientName, ingredientSprite);
+                break;  // Stop once an empty slot is filled
+            }
         }
-        else
+
+        // Once all slots are filled, check for the recipe
+        if (AreAllSlotsFilled(craftSlots))
         {
-            Debug.LogError("Button component not found on " + gameObject.name);
+            CookingManager.Instance.CheckForRecipe();  // Call the method to check the recipe
         }
     }
 
-    void OnClick()
+    // Check if all slots are filled
+    private bool AreAllSlotsFilled(CraftSlot[] craftSlots)
     {
-        // Handle the button click here
-        Debug.Log("Button clicked!");
+        foreach (CraftSlot slot in craftSlots)
+        {
+            if (slot.IsEmpty())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -1,37 +1,38 @@
 ﻿using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-namespace _InventorySystem
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public class InventorySlotUI : MonoBehaviour
+    public Image ingredientImage;
+    public string ingredientName; // The name of the ingredient, e.g., "salt", "pepper", etc.
+
+    private Transform originalParent;
+    private CanvasGroup canvasGroup;
+
+    private void Start()
     {
-        public string ingredientName;  // Name of the ingredient in this slot
-        public TextMeshProUGUI quantityText;  // Reference to the TextMeshProUGUI for quantity
-        public GameObject ingredientIcon;  // Reference to the ingredient icon (Sprite or Image)
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
 
-        // This will set up each slot with an ingredient's name, sprite, and quantity
-        public void SetupSlot(string ingredientName, Sprite ingredientSprite, int quantity)
-        {
-            this.ingredientName = ingredientName;
+    // When the drag starts, we store the original parent and make the slot temporarily disappear.
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        originalParent = transform.parent;
+        transform.SetParent(transform.root);
+        canvasGroup.blocksRaycasts = false; // To prevent other UI elements from blocking the drag
+    }
 
-            if (ingredientIcon != null)
-            {
-                ingredientIcon.GetComponent<SpriteRenderer>().sprite = ingredientSprite;  // Assign sprite to the icon
-            }
+    // During the drag, we move the ingredient.
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.position = eventData.position;
+    }
 
-            if (quantityText != null)
-            {
-                quantityText.text = "x" + quantity.ToString();  // Show the quantity
-            }
-        }
-
-        // Update the quantity in the UI slot (e.g., when an ingredient is added or removed)
-        public void UpdateQuantity(int newQuantity)
-        {
-            if (quantityText != null)
-            {
-                quantityText.text = "x" + newQuantity.ToString();
-            }
-        }
+    // When the drag ends, we check if it was dropped into a craft slot.
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        transform.SetParent(originalParent);
+        canvasGroup.blocksRaycasts = true; // Allow raycasting again
     }
 }
