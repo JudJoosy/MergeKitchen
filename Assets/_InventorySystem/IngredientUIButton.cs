@@ -1,20 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI;  // Make sure this is included
+using TMPro;
 
 public class IngredientUIButton : MonoBehaviour
 {
-    public Button ingredientButton;
-    public string ingredientName;
+    public Button button; // Declare the Button
 
     void Start()
     {
-        ingredientButton.onClick.AddListener(OnClick);
+        button = GetComponent<Button>(); // Get the Button component
+        if (button != null)
+        {
+            button.onClick.AddListener(OnClick); // Add a listener for button click
+        }
+        else
+        {
+            Debug.LogError("Button component not found on " + gameObject.name);
+        }
     }
 
     void OnClick()
     {
-        // Add the ingredient to the IngredientDatabase when the button is clicked
-        IngredientDatabase.Instance.AddIngredient(ingredientName);
-        Debug.Log("Ingredient Added: " + ingredientName);
+        // Handle the button click here
+        Debug.Log("Button clicked!");
     }
 }

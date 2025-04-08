@@ -163,6 +163,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientModel: {fileID: 2685440809815277647}
   ingredientName: Salt
-  ingredientID: 0
+  ingredientID: 1
   ingredientType: Salt
   quantity: 0
