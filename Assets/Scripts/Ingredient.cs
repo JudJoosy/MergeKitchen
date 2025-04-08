@@ -67,6 +67,7 @@ public class Ingredient : MonoBehaviour
         // Update the ingredient database with the quantity of merged ingredients
         IngredientDatabase.Instance.AddIngredient(ingredientName, 1);  // Add one of this ingredient
         IngredientDatabase.Instance.AddIngredient(otherIngredient.ingredientName, 1);  // Add the other ingredient as well
+        IngredientDatabase.Instance.AddIngredient(ingredientType, 1);
 
         // Optionally, if you want to increment the merged ingredient count or have a new type:
         // IngredientDatabase.Instance.AddIngredient("Merged_" + ingredientType, 1);  // Create a merged ingredient
