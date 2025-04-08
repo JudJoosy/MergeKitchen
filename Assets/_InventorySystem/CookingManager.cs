@@ -1,84 +1,93 @@
-
-using System.Collections.Generic;
-using System.Linq;
-using TMPro;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class CookingManager : MonoBehaviour
 {
-    public TextMeshProUGUI dishResultText;
-    private List<string> selectedIngredients = new List<string>();
-    private Dictionary<HashSet<string>, string> recipes = new Dictionary<HashSet<string>, string>(HashSetComparer.Instance);
+    public CraftSlot[] craftingSlots;
+    public Transform resultSpawnPoint;
+    public float resultDisplayTime = 3f;
+
+    public GameObject saltAndPepperPrefab;
+    public GameObject fancySaltAndPepperPrefab;
+    public GameObject holyTrinityPrefab;
+
+    private Dictionary<HashSet<string>, GameObject> recipeBook;
 
     void Start()
     {
-        // Define known recipes (order-independent)
-        recipes.Add(new HashSet<string> { "salt", "pepper" }, "Salt and Pepper Dish");
-        recipes.Add(new HashSet<string> { "salt", "pepper", "thyme" }, "Fancy Salt and Pepper Dish");
-        recipes.Add(new HashSet<string> { "thyme", "onion", "garlic" }, "Somewhat Holy Trinity Dish");
+        recipeBook = new Dictionary<HashSet<string>, GameObject>(HashSetComparer<string>.Instance)
+        {
+            { new HashSet<string> { "salt", "pepper" }, saltAndPepperPrefab },
+            { new HashSet<string> { "salt", "pepper", "thyme" }, fancySaltAndPepperPrefab },
+            { new HashSet<string> { "thyme", "onion", "garlic" }, holyTrinityPrefab },
+        };
     }
 
-    public void TryAddIngredient(string ingredient)
+    public void TryAddIngredient(string ingredientName, Sprite sprite)
     {
-        if (selectedIngredients.Contains(ingredient)) return;
-
-        selectedIngredients.Add(ingredient);
-        Debug.Log("Added ingredient: " + ingredient);
-
-        if (selectedIngredients.Count >= 2)
+        foreach (CraftSlot slot in craftingSlots)
         {
-            CookDish();
-        }
-    }
-
-    void CookDish()
-    {
-        var ingredientSet = new HashSet<string>(selectedIngredients);
-        string resultDish = "Unknown Dish";
-
-        foreach (var recipe in recipes)
-        {
-            if (recipe.Key.SetEquals(ingredientSet))
+            if (slot.IsEmpty())
             {
-                resultDish = recipe.Value;
-                break;
+                slot.SetIngredient(ingredientName, sprite);
+                CheckRecipe();
+                return;
             }
         }
 
-        ShowDishResult(resultDish);
-        selectedIngredients.Clear();
+        Debug.Log("All crafting slots are full.");
     }
 
-    void ShowDishResult(string dishName)
+    public void RemoveIngredient(string ingredientName)
     {
-        dishResultText.gameObject.SetActive(true);
-        dishResultText.text = $"You made: {dishName}!";
-        Debug.Log($"You made: {dishName}!");
-        Invoke(nameof(HideDishResult), 2f);
-    }
-
-    void HideDishResult()
-    {
-        dishResultText.gameObject.SetActive(false);
-    }
-}
-
-public class HashSetComparer : IEqualityComparer<HashSet<string>>
-{
-    public static readonly HashSetComparer Instance = new HashSetComparer();
-
-    public bool Equals(HashSet<string> x, HashSet<string> y)
-    {
-        return x.SetEquals(y);
-    }
-
-    public int GetHashCode(HashSet<string> obj)
-    {
-        int hash = 0;
-        foreach (var item in obj.OrderBy(i => i))
+        foreach (CraftSlot slot in craftingSlots)
         {
-            hash ^= item.GetHashCode();
+            if (!slot.IsEmpty() && slot.GetIngredientName() == ingredientName)
+            {
+                slot.Clear();
+                Debug.Log("Removed ingredient: " + ingredientName);
+                return;
+            }
         }
-        return hash;
+
+        Debug.Log("Ingredient not found in crafting slots.");
+    }
+
+    private void CheckRecipe()
+    {
+        HashSet<string> currentIngredients = new HashSet<string>();
+
+        foreach (CraftSlot slot in craftingSlots)
+        {
+            if (!slot.IsEmpty())
+                currentIngredients.Add(slot.GetIngredientName());
+        }
+
+        foreach (var recipe in recipeBook)
+        {
+            if (recipe.Key.SetEquals(currentIngredients))
+            {
+                Debug.Log("Valid recipe found!");
+                SpawnResult(recipe.Value);
+                ClearCraftingSlots();
+                return;
+            }
+        }
+
+        Debug.Log("No valid recipe found.");
+    }
+
+    private void SpawnResult(GameObject resultPrefab)
+    {
+        GameObject result = Instantiate(resultPrefab, resultSpawnPoint.position, Quaternion.identity);
+        Destroy(result, resultDisplayTime);
+    }
+
+    public void ClearCraftingSlots()
+    {
+        foreach (CraftSlot slot in craftingSlots)
+        {
+            slot.Clear();
+        }
     }
 }

@@ -3,39 +3,46 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject slotPrefab;
-    public Transform inventoryPanel;
-    public CookingManager cookingManager;
+    public InventorySlotUI[] slots;  // Assign the 5 inventory slots in the Inspector
+    public Sprite[] ingredientSprites;  // The 2D sprites for the ingredients
+    public string[] ingredientNames;  // Names of ingredients to match 1:1 with sprites
+
+    private Dictionary<string, int> ingredientCounts = new Dictionary<string, int>();
+    private Dictionary<string, Sprite> spriteLookup = new Dictionary<string, Sprite>();
 
     void Start()
     {
-        // Add new ingredients (Thyme, Onion, and Garlic) here as well.
-        IngredientDataTransfer.collectedIngredients = new List<string> { 
-            "salt", 
-            "pepper", 
-            "thyme", 
-            "onion", 
-            "garlic"
-        };
+        // Initialize sprite lookup (name -> sprite)
+        for (int i = 0; i < ingredientNames.Length; i++)
+        {
+            spriteLookup[ingredientNames[i]] = ingredientSprites[i];
+        }
 
-        CreateInventorySlots();
+        // Get the current inventory from the IngredientDatabase
+        ingredientCounts = IngredientDatabase.Instance.GetInventory();
+
+        // Populate the UI with the ingredients
+        PopulateUI();
     }
 
-    public void CreateInventorySlots()
+    void PopulateUI()
     {
-        // Clear any existing slots in the inventory
-        foreach (Transform child in inventoryPanel)
+        int index = 0;
+        foreach (var entry in ingredientCounts)
         {
-            Destroy(child.gameObject);
+            if (index >= slots.Length) break;
+
+            if (spriteLookup.ContainsKey(entry.Key))
+            {
+                slots[index].SetupSlot(entry.Key, spriteLookup[entry.Key], entry.Value);
+                index++;
+            }
         }
 
-        // Create a new slot for each ingredient
-        foreach (string ing in IngredientDataTransfer.collectedIngredients)
+        // Clear any unused slots
+        for (; index < slots.Length; index++)
         {
-            GameObject slot = Instantiate(slotPrefab, inventoryPanel);
-            slot.GetComponent<InventorySlot>().Setup(ing, cookingManager);
+            slots[index].UpdateQuantity(0);
         }
-
-        Debug.Log("Inventory slots created.");
     }
 }

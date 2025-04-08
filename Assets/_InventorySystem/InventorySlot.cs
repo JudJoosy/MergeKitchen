@@ -1,72 +1,48 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
     public string ingredientName;
+    public Sprite ingredientSprite;
     public CookingManager cookingManager;
+    public GameObject highlightVisual;
+    public TextMeshProUGUI countText;
 
-    // Add public fields for each model
-    public GameObject saltModel;
-    public GameObject pepperModel;
-    public GameObject thymeModel;
-    public GameObject onionModel;
-    public GameObject garlicModel;
+    private int count = 0;
+    private bool isSelected = false;
 
-    public GameObject ingredientModelHolder;  // Reference to the model holder in the prefab
-
-    public void Setup(string name, CookingManager manager)
+    public void Setup(string name, Sprite sprite, int quantity, CookingManager manager)
     {
         ingredientName = name;
+        ingredientSprite = sprite;
+        count = quantity;
         cookingManager = manager;
 
-        // Update the text (if you have text for the ingredient)
         GetComponentInChildren<TextMeshProUGUI>().text = name;
-
-        // Set the 3D model based on the ingredient
-        Set3DModel(name);
+        countText.text = count.ToString();
+        highlightVisual.SetActive(false);
     }
 
-    private void Set3DModel(string ingredient)
+    public void UpdateCount(int newCount)
     {
-        // Destroy any old model before adding the new one
-        foreach (Transform child in ingredientModelHolder.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        // Instantiate the correct 3D model based on the ingredient name
-        GameObject modelPrefab = GetIngredientModelPrefab(ingredient);
-
-        if (modelPrefab != null)
-        {
-            GameObject model = Instantiate(modelPrefab, ingredientModelHolder.transform);
-            model.transform.localPosition = Vector3.zero;  // Adjust the position as needed
-        }
-    }
-
-    private GameObject GetIngredientModelPrefab(string ingredient)
-    {
-        // Return the correct prefab based on the ingredient name
-        switch (ingredient)
-        {
-            case "salt":
-                return saltModel;
-            case "pepper":
-                return pepperModel;
-            case "thyme":
-                return thymeModel;
-            case "onion":
-                return onionModel;
-            case "garlic":
-                return garlicModel;
-            default:
-                return null;
-        }
+        count = newCount;
+        countText.text = count.ToString();
     }
 
     public void OnClick()
     {
-        cookingManager.TryAddIngredient(ingredientName);
+        if (isSelected)
+        {
+            cookingManager.RemoveIngredient(ingredientName);
+            highlightVisual.SetActive(false);
+            isSelected = false;
+        }
+        else
+        {
+            cookingManager.TryAddIngredient(ingredientName, ingredientSprite);
+            highlightVisual.SetActive(true);
+            isSelected = true;
+        }
     }
 }
