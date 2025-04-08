@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     private Dictionary<string, int> ingredientCounts = new Dictionary<string, int>(); // Dictionary to hold ingredient counts
     private Dictionary<string, Sprite> spriteLookup = new Dictionary<string, Sprite>(); // Dictionary to hold ingredient sprites
 
-    void Start()
+    void OnEnable()
     {
         // Create sprite lookup
         for (int i = 0; i < ingredientNames.Length; i++)
