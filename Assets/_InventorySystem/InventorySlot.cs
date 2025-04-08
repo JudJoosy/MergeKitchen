@@ -1,48 +1,37 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class InventorySlot : MonoBehaviour
+namespace _InventorySystem
 {
-    public string ingredientName;
-    public Sprite ingredientSprite;
-    public CookingManager cookingManager;
-    public GameObject highlightVisual;
-    public TextMeshProUGUI countText;
-
-    private int count = 0;
-    private bool isSelected = false;
-
-    public void Setup(string name, Sprite sprite, int quantity, CookingManager manager)
+    public class InventorySlotUI : MonoBehaviour
     {
-        ingredientName = name;
-        ingredientSprite = sprite;
-        count = quantity;
-        cookingManager = manager;
+        public string ingredientName;  // Name of the ingredient in this slot
+        public TextMeshProUGUI quantityText;  // Reference to the TextMeshProUGUI for quantity
+        public GameObject ingredientIcon;  // Reference to the ingredient icon (Sprite or Image)
 
-        GetComponentInChildren<TextMeshProUGUI>().text = name;
-        countText.text = count.ToString();
-        highlightVisual.SetActive(false);
-    }
-
-    public void UpdateCount(int newCount)
-    {
-        count = newCount;
-        countText.text = count.ToString();
-    }
-
-    public void OnClick()
-    {
-        if (isSelected)
+        // This will set up each slot with an ingredient's name, sprite, and quantity
+        public void SetupSlot(string ingredientName, Sprite ingredientSprite, int quantity)
         {
-            cookingManager.RemoveIngredient(ingredientName);
-            highlightVisual.SetActive(false);
-            isSelected = false;
+            this.ingredientName = ingredientName;
+
+            if (ingredientIcon != null)
+            {
+                ingredientIcon.GetComponent<SpriteRenderer>().sprite = ingredientSprite;  // Assign sprite to the icon
+            }
+
+            if (quantityText != null)
+            {
+                quantityText.text = "x" + quantity.ToString();  // Show the quantity
+            }
         }
-        else
+
+        // Update the quantity in the UI slot (e.g., when an ingredient is added or removed)
+        public void UpdateQuantity(int newQuantity)
         {
-            cookingManager.TryAddIngredient(ingredientName, ingredientSprite);
-            highlightVisual.SetActive(true);
-            isSelected = true;
+            if (quantityText != null)
+            {
+                quantityText.text = "x" + newQuantity.ToString();
+            }
         }
     }
 }

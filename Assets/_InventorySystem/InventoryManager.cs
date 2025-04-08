@@ -1,27 +1,25 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;  // Add this to use Dictionary and other generic collections
 
 public class InventoryManager : MonoBehaviour
 {
-    public InventorySlotUI[] slots;  // Assign the 5 inventory slots in the Inspector
-    public Sprite[] ingredientSprites;  // The 2D sprites for the ingredients
-    public string[] ingredientNames;  // Names of ingredients to match 1:1 with sprites
+    public InventorySlotUI[] slots; // Assign 5 in inspector
+    public Sprite[] ingredientSprites; // Match names with keys in inventory
+    public string[] ingredientNames; // Matches with sprites 1:1
 
-    private Dictionary<string, int> ingredientCounts = new Dictionary<string, int>();
-    private Dictionary<string, Sprite> spriteLookup = new Dictionary<string, Sprite>();
+    private Dictionary<string, int> ingredientCounts = new Dictionary<string, int>(); // Dictionary to hold ingredient counts
+    private Dictionary<string, Sprite> spriteLookup = new Dictionary<string, Sprite>(); // Dictionary to hold ingredient sprites
 
     void Start()
     {
-        // Initialize sprite lookup (name -> sprite)
+        // Create sprite lookup
         for (int i = 0; i < ingredientNames.Length; i++)
         {
             spriteLookup[ingredientNames[i]] = ingredientSprites[i];
         }
 
-        // Get the current inventory from the IngredientDatabase
-        ingredientCounts = IngredientDatabase.Instance.GetInventory();
-
-        // Populate the UI with the ingredients
+        // Load inventory from a game-wide tracker
+        ingredientCounts = IngredientDatabase.Instance.GetInventory(); // This needs to persist between scenes
         PopulateUI();
     }
 

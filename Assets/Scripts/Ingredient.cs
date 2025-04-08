@@ -1,72 +1,74 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.EventSystems; 
+﻿using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-	 // Declare the ingredientModel as a reference to a GameObject (3D model)
-	 public GameObject ingredientModel;  // Reference to the 3D model of the ingredient
+    // Declare the ingredientModel as a reference to a GameObject (3D model)
+    public GameObject ingredientModel;  // Reference to the 3D model of the ingredient
 
-	 // Other properties of the ingredient (e.g., name, type, etc.)
-	 public string ingredientName;
-	 public int ingredientID;
+    // Other properties of the ingredient (e.g., name, type, etc.)
+    public string ingredientName;
+    public int ingredientID;
 
-	 public string ingredientType;  // Name of the Ingredient
-	 private Vector3 offset;
-	 private bool isDragging = false;
+    public string ingredientType;  // Name of the Ingredient
+    private Vector3 offset;
+    private bool isDragging = false;
 
-	 public int quantity;  // Define quantity as an integer
+    public int quantity;  // Define quantity as an integer
 
-	 private void OnMouseDown()
-	 {
-		 // Store the offset between the mouse and the object position
-		 offset = transform.position - GetMouseWorldPos();
-		 isDragging = true;
-	 }
-
-	 private void OnMouseDrag()
-	 {
-		 if (isDragging)
-		 {
-			 transform.position = GetMouseWorldPos() + offset;
-		 }
-	 }
-
-	 private void OnMouseUp()
-	 {
-		 isDragging = false;
-	 }
-
-	 private Vector3 GetMouseWorldPos()
-	 {
-		 Vector3 mousePoint = Input.mousePosition;
-		 mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
-		 return Camera.main.ScreenToWorldPoint(mousePoint);
-	 }
-
-	 private void OnTriggerEnter(UnityEngine.Collider other)
+    private void OnMouseDown()
     {
-		 Ingredient otherIngredient = other.GetComponent<Ingredient>();
+        // Store the offset between the mouse and the object position
+        offset = transform.position - GetMouseWorldPos();
+        isDragging = true;
+    }
 
-		 if (otherIngredient != null && otherIngredient.ingredientType == ingredientType)
-		 {
-			 MergeIngredients(otherIngredient);
-		 }
-	 }
+    private void OnMouseDrag()
+    {
+        if (isDragging)
+        {
+            transform.position = GetMouseWorldPos() + offset;
+        }
+    }
 
-	 private void MergeIngredients(Ingredient otherIngredient)
-	 {
-		 // Calculate the position where both ingredients are
-		 Vector3 mergePosition = (transform.position + otherIngredient.transform.position) / 2;
+    private void OnMouseUp()
+    {
+        isDragging = false;
+    }
 
-		 // Destroy both ingredients when they merge
-		 Destroy(otherIngredient.gameObject);
-		 Destroy(gameObject);
+    private Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousePoint = Input.mousePosition;
+        mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
+    }
 
-		 // For now, just log the merge event
-		 Debug.Log("Merged " + ingredientType + " with " + otherIngredient.ingredientType);
-	 }
+    private void OnTriggerEnter(Collider other)
+    {
+        Ingredient otherIngredient = other.GetComponent<Ingredient>();
+
+        if (otherIngredient != null && otherIngredient.ingredientType == ingredientType)
+        {
+            MergeIngredients(otherIngredient);
+        }
+    }
+
+    private void MergeIngredients(Ingredient otherIngredient)
+    {
+        // Calculate the position where both ingredients are
+        Vector3 mergePosition = (transform.position + otherIngredient.transform.position) / 2;
+
+        // Destroy both ingredients when they merge
+        Destroy(otherIngredient.gameObject);
+        Destroy(gameObject);
+
+        // For now, just log the merge event
+        Debug.Log("Merged " + ingredientType + " with " + otherIngredient.ingredientType);
+
+        // Update the ingredient database with the quantity of merged ingredients
+        IngredientDatabase.Instance.AddIngredient(ingredientName, 1);  // Add one of this ingredient
+        IngredientDatabase.Instance.AddIngredient(otherIngredient.ingredientName, 1);  // Add the other ingredient as well
+
+        // Optionally, if you want to increment the merged ingredient count or have a new type:
+        // IngredientDatabase.Instance.AddIngredient("Merged_" + ingredientType, 1);  // Create a merged ingredient
+    }
 }
-

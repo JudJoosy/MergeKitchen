@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientModel: {fileID: 2185201842584178971}
   ingredientName: Thyme
-  ingredientID: 0
+  ingredientID: 3
   ingredientType: Thyme
   quantity: 0
 --- !u!114 &1228404049752464804

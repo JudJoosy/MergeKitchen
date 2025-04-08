@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientModel: {fileID: 9017684224641638786}
   ingredientName: Pepper
-  ingredientID: 0
+  ingredientID: 2
   ingredientType: Pepper
   quantity: 0
 --- !u!114 &3617571370120771543
