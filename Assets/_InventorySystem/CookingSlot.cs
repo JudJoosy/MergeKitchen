@@ -1,31 +1,31 @@
+using TMPro; // Add this if you're using TextMeshPro
 using UnityEngine;
 
 public class CookingSlot : MonoBehaviour
 {
-    public Transform slotPoint; // Point where the ingredient will spawn
-    public GameObject currentIngredient;
+    public string ingredient;  // Store the ingredient's name
+    public TextMeshProUGUI ingredientText;  // Reference to the TMP component
 
-    public bool IsEmpty => currentIngredient == null;
-
-    public void SetIngredient(GameObject ingredientPrefab)
+    // This method will be used to set the ingredient in the cooking slot
+    public void SetIngredient(string ingredient)
     {
-        if (!IsEmpty)
-            return;
+        if (string.IsNullOrEmpty(ingredient)) return;  // Avoid setting empty ingredients
+        this.ingredient = ingredient;
 
-        GameObject newIngredient = Instantiate(ingredientPrefab, slotPoint.position, Quaternion.identity);
-        newIngredient.transform.SetParent(slotPoint);
-        currentIngredient = newIngredient;
+        // Update the TMP text with the ingredient name
+        if (ingredientText != null)
+        {
+            ingredientText.text = ingredient;  // Display the ingredient name in TMP text
+        }
+        else
+        {
+            Debug.LogError("Ingredient TextMeshProUGUI not assigned on " + gameObject.name);
+        }
     }
 
-    public string GetIngredientName()
+    // Check if the slot is empty
+    public bool IsEmpty()
     {
-        return currentIngredient != null ? currentIngredient.name.Replace("(Clone)", "").Trim() : "";
-    }
-
-    public void ClearIngredient()
-    {
-        if (currentIngredient != null)
-            Destroy(currentIngredient);
-        currentIngredient = null;
+        return string.IsNullOrEmpty(ingredient);
     }
 }

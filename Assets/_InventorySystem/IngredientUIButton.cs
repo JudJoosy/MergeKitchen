@@ -1,19 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IngredientUIButton : MonoBehaviour
 {
-    public GameObject ingredientPrefab;
-    public CookingSlot[] cookingSlots;
+    public string ingredientName;
+    private Button button;
 
-    public void OnClick_AddIngredient()
+    void Start()
     {
-        foreach (CookingSlot slot in cookingSlots)
-        {
-            if (slot.IsEmpty)
-            {
-                slot.SetIngredient(ingredientPrefab);
-                break;
-            }
-        }
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+    }
+
+    void OnClick()
+    {
+        CookingSlotManager.Instance.TryPlaceIngredient(ingredientName);
     }
 }

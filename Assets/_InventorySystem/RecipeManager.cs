@@ -3,51 +3,35 @@ using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    public static RecipeManager Instance;
-
     public List<Recipe> recipes;
-    public Transform dishSpawnPoint;
 
-    private void Awake()
+    public GameObject CheckRecipe(List<string> inputIngredients)
     {
-        Instance = this;
-    }
-
-    // 💡 Add this Start method for testing!
-    void Start()
-    {
-        TryMakeDish(new List<string> { "Pepper", "Salt" });   // Should match Salt and Pepper Dish
-        TryMakeDish(new List<string> { "Salt", "Garlic" });   // Should return no match
-    }
-
-    public void TryMakeDish(List<string> inputIngredients)
-    {
-        inputIngredients.Sort();
-
         foreach (var recipe in recipes)
         {
-            var sortedRecipe = new List<string>(recipe.ingredientNames);
-            sortedRecipe.Sort();
-
-            if (IsMatch(inputIngredients, sortedRecipe))
+            if (AreIngredientsEqual(inputIngredients, recipe.ingredientNames))
             {
-                Debug.Log("Dish created: " + recipe.dishName);
-                Instantiate(recipe.dishPrefab, dishSpawnPoint.position, Quaternion.identity);
-                return;
+                return recipe.dishPrefab;
             }
         }
 
-        Debug.Log("No matching recipe found.");
+        return null;
     }
 
-    private bool IsMatch(List<string> input, List<string> recipe)
+    private bool AreIngredientsEqual(List<string> list1, List<string> list2)
     {
-        if (input.Count != recipe.Count)
+        if (list1.Count != list2.Count)
             return false;
 
-        for (int i = 0; i < input.Count; i++)
+        List<string> temp1 = new List<string>(list1);
+        List<string> temp2 = new List<string>(list2);
+
+        temp1.Sort();
+        temp2.Sort();
+
+        for (int i = 0; i < temp1.Count; i++)
         {
-            if (input[i] != recipe[i])
+            if (temp1[i] != temp2[i])
                 return false;
         }
 
