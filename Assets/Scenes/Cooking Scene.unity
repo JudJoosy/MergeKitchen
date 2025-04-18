@@ -467,7 +467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientImage: {fileID: 192963143}
-  ingredientText: {fileID: 1829774334}
 --- !u!1001 &207455325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,7 +702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientImage: {fileID: 264295755}
-  ingredientText: {fileID: 834409488}
 --- !u!1 &297901287
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +988,8 @@ MonoBehaviour:
   - {fileID: 264295757}
   - {fileID: 192963145}
   recipeManager: {fileID: 628157928}
-  dishPrefab: {fileID: 697572198}
+  dishPrefab: {fileID: 0}
+  dishSpawnPoint: {fileID: 697572199}
 --- !u!4 &479660291
 Transform:
   m_ObjectHideFlags: 0
@@ -1154,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Garlic
+  ingredientSprite: {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4, type: 3}
 --- !u!114 &564494271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,8 +1166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Garlic
-  icon: {fileID: 564494267}
+  ingredientText: {fileID: 2025842904}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &628157927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,21 +1198,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - ingredients:
-    - Salt
-    - Pepper
-    dishName: Salt and pepper
-  - ingredients:
-    - Salt
-    - Pepper
-    - Thyme
-    dishName: Fancy Salt and pepper
-  - ingredients:
-    - Thyme
-    - Onion
-    - Garlic
-    dishName: The holy trinity
-  dishPrefab: {fileID: 697572198}
+  - dishName: Salt and pepper
+    requiredIngredients: []
+  - dishName: Fancy Salt and pepper
+    requiredIngredients: []
+  - dishName: The holy trinity
+    requiredIngredients: []
 --- !u!4 &628157929
 Transform:
   m_ObjectHideFlags: 0
@@ -1376,6 +1367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Thyme
+  ingredientSprite: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
 --- !u!114 &675576880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,8 +1380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Thyme
-  icon: {fileID: 675576876}
+  ingredientText: {fileID: 1269298527}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &681058412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientImage: {fileID: 681058415}
-  ingredientText: {fileID: 1425994782}
 --- !u!1 &697572198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Onion
+  ingredientSprite: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
 --- !u!114 &1077555695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,8 +2436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Onion
-  icon: {fileID: 1077555691}
+  ingredientText: {fileID: 1195673731}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1100618054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2699,6 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Pepper
+  ingredientSprite: {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e, type: 3}
 --- !u!114 &1112157914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,8 +2704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Pepper
-  icon: {fileID: 1112157910}
+  ingredientText: {fileID: 909322326}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1195673729
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,18 +3013,7 @@ MonoBehaviour:
   - {fileID: 675576880}
   - {fileID: 1077555695}
   - {fileID: 564494271}
-  ingredientIcons:
-  - {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
-  - {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e, type: 3}
-  - {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
-  - {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
-  - {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4, type: 3}
-  ingredientNames:
-  - Salt
-  - Pepper
-  - Thyme
-  - Onion
-  - Garlic
+  recipeManager: {fileID: 628157928}
 --- !u!4 &1315556448
 Transform:
   m_ObjectHideFlags: 0
@@ -3559,6 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Salt
+  ingredientSprite: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
 --- !u!114 &1506491086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3571,8 +3554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Salt
-  icon: {fileID: 1506491082}
+  ingredientText: {fileID: 1989529034}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1558543338
 GameObject:
   m_ObjectHideFlags: 0
