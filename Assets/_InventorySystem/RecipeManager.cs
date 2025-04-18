@@ -1,40 +1,47 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Recipe
+{
+    public string dishName;
+    public List<string> requiredIngredients;
+}
+
 public class RecipeManager : MonoBehaviour
 {
-    public List<Recipe> recipes;
+    public static RecipeManager Instance { get; private set; }
 
-    public GameObject CheckRecipe(List<string> inputIngredients)
+    public List<Recipe> recipes = new List<Recipe>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    public string TryMakeDish(List<string> currentIngredients)
     {
         foreach (var recipe in recipes)
         {
-            if (AreIngredientsEqual(inputIngredients, recipe.ingredientNames))
+            if (AreIngredientsMatching(recipe.requiredIngredients, currentIngredients))
             {
-                return recipe.dishPrefab;
+                return recipe.dishName;
             }
         }
-
         return null;
     }
 
-    private bool AreIngredientsEqual(List<string> list1, List<string> list2)
+    private bool AreIngredientsMatching(List<string> required, List<string> current)
     {
-        if (list1.Count != list2.Count)
-            return false;
-
-        List<string> temp1 = new List<string>(list1);
-        List<string> temp2 = new List<string>(list2);
-
-        temp1.Sort();
-        temp2.Sort();
-
-        for (int i = 0; i < temp1.Count; i++)
-        {
-            if (temp1[i] != temp2[i])
-                return false;
-        }
-
-        return true;
+        var requiredSet = new HashSet<string>(required);
+        var currentSet = new HashSet<string>(current);
+        return requiredSet.SetEquals(currentSet);
     }
 }

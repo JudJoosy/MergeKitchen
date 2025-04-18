@@ -1,28 +1,18 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro; // Assuming you are using TextMeshPro for UI elements
 
 public class InventorySlot : MonoBehaviour
 {
-    public string ingredientName;
-    public Image icon;
+    public TMP_Text ingredientText; // Assuming you use TextMeshPro for ingredient names
+    public SpriteRenderer spriteRenderer; // For showing ingredient sprite (or Image for UI)
 
-    private void Start()
-    {
-        if (icon != null)
-        {
-            icon.enabled = !string.IsNullOrEmpty(ingredientName);
-        }
-    }
-
+    // Set the ingredient name and sprite for this inventory slot
     public void SetIngredient(string name, Sprite sprite)
     {
-        ingredientName = name;
-        icon.sprite = sprite;
-        icon.enabled = true;
-    }
+        if (ingredientText != null)
+            ingredientText.text = name; // Set the ingredient name in the UI
 
-    public void OnSlotClicked()
-    {
-        CookingSlotManager.Instance.TryPlaceIngredient(ingredientName);
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = sprite; // Set the ingredient sprite
     }
 }

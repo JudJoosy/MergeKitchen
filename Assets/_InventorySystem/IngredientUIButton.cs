@@ -4,16 +4,15 @@ using UnityEngine.UI;
 public class IngredientUIButton : MonoBehaviour
 {
     public string ingredientName;
-    private Button button;
+    public Sprite ingredientSprite;
 
-    void Start()
+    private void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
-    void OnClick()
+    public void OnClick()
     {
-        CookingSlotManager.Instance.TryPlaceIngredient(ingredientName);
+        CookingSlotManager.Instance.TryPlaceIngredient(ingredientName, ingredientSprite);
     }
 }

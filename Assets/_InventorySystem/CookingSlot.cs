@@ -1,31 +1,32 @@
-using TMPro; // Add this if you're using TextMeshPro
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookingSlot : MonoBehaviour
 {
-    public string ingredient;  // Store the ingredient's name
-    public TextMeshProUGUI ingredientText;  // Reference to the TMP component
+    [SerializeField] private Image ingredientImage;
+    private string ingredientName;
 
-    // This method will be used to set the ingredient in the cooking slot
-    public void SetIngredient(string ingredient)
+    public void SetIngredient(string name, Sprite sprite)
     {
-        if (string.IsNullOrEmpty(ingredient)) return;  // Avoid setting empty ingredients
-        this.ingredient = ingredient;
-
-        // Update the TMP text with the ingredient name
-        if (ingredientText != null)
-        {
-            ingredientText.text = ingredient;  // Display the ingredient name in TMP text
-        }
-        else
-        {
-            Debug.LogError("Ingredient TextMeshProUGUI not assigned on " + gameObject.name);
-        }
+        ingredientName = name;
+        ingredientImage.sprite = sprite;
+        ingredientImage.enabled = true;
     }
 
-    // Check if the slot is empty
-    public bool IsEmpty()
+    public void ClearSlot()
     {
-        return string.IsNullOrEmpty(ingredient);
+        ingredientName = null;
+        ingredientImage.sprite = null;
+        ingredientImage.enabled = false;
+    }
+
+    public string GetIngredientName()
+    {
+        return ingredientName;
+    }
+
+    public bool HasIngredient()
+    {
+        return !string.IsNullOrEmpty(ingredientName);
     }
 }
