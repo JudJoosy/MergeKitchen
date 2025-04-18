@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for scene management
 
-public class IngredientSpawner : MonoBehaviour
+public class IngredientSpawnerController : MonoBehaviour
 {
     public GameObject[] ingredientPrefabs;
     public int maxIngredientCount = 10;
