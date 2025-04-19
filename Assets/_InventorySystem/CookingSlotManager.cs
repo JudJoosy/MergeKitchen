@@ -1,12 +1,24 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CookingSlotManager : MonoBehaviour
 {
     public static CookingSlotManager Instance;
+
+    [System.Serializable]
+    public class DishData
+    {
+        public string dishName;
+        public GameObject dishPrefab;
+    }
+
     public List<CookingSlot> cookingSlots;
     public RecipeManager recipeManager;
     public Transform dishSpawnPoint;
+    public TMP_Text dishNameText; // UI text to show the dish name
+    public List<DishData> dishPrefabs;
 
     private void Awake()
     {
@@ -25,16 +37,21 @@ public class CookingSlotManager : MonoBehaviour
             }
         }
 
-        string dishPrefabName = recipeManager.TryMakeDish(currentIngredients);
+        string dishName = recipeManager.TryMakeDish(currentIngredients);
 
-        if (!string.IsNullOrEmpty(dishPrefabName))
+        if (!string.IsNullOrEmpty(dishName))
         {
-            SpawnDish(dishPrefabName);
+            ShowDishName(dishName);
             ClearCookingSlots();
         }
         else
         {
             Debug.Log("No valid recipe found.");
+            if (dishNameText != null)
+            {
+                dishNameText.text = "Invalid recipe!";
+                StartCoroutine(ClearDishNameTextAfterDelay());
+            }
         }
     }
 
@@ -52,16 +69,13 @@ public class CookingSlotManager : MonoBehaviour
         Debug.Log("All cooking slots are full!");
     }
 
-    void SpawnDish(string prefabName)
+    // Show the dish name on the UI (without spawning the model)
+    void ShowDishName(string dishName)
     {
-        GameObject dishPrefab = Resources.Load<GameObject>("Dishes/" + prefabName);
-        if (dishPrefab != null)
+        if (dishNameText != null)
         {
-            Instantiate(dishPrefab, dishSpawnPoint.position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.LogWarning("Dish prefab not found in Resources/Dishes/" + prefabName);
+            dishNameText.text = "You made: " + dishName;
+            StartCoroutine(ClearDishNameTextAfterDelay());
         }
     }
 
@@ -70,6 +84,15 @@ public class CookingSlotManager : MonoBehaviour
         foreach (CookingSlot slot in cookingSlots)
         {
             slot.ClearSlot();
+        }
+    }
+
+    IEnumerator ClearDishNameTextAfterDelay()
+    {
+        yield return new WaitForSeconds(2f);
+        if (dishNameText != null)
+        {
+            dishNameText.text = "";
         }
     }
 }

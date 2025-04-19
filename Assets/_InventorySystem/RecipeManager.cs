@@ -1,42 +1,52 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-
-[System.Serializable]
-public class Recipe
-{
-    public string dishName;
-    public List<string> requiredIngredients;
-}
 
 public class RecipeManager : MonoBehaviour
 {
-    public List<Recipe> recipes;
+    private Dictionary<HashSet<string>, string> recipes = new Dictionary<HashSet<string>, string>(HashSetComparer.Instance);
 
-    // Matches ingredients regardless of order
-    public string TryMakeDish(List<string> currentIngredients)
+    private void Awake()
     {
-        foreach (Recipe recipe in recipes)
+        // Define your recipes
+        recipes.Add(new HashSet<string> { "Salt", "Pepper" }, "Salt and pepper");
+        recipes.Add(new HashSet<string> { "Salt", "Pepper", "Thyme" }, "Fancy Salt and pepper ");
+        recipes.Add(new HashSet<string> { "Thyme", "Onion", "Garlic" }, "The holy trinity");
+    }
+
+    public string TryMakeDish(List<string> ingredients)
+    {
+        var ingredientSet = new HashSet<string>(ingredients);
+
+        foreach (var recipe in recipes)
         {
-            if (MatchIngredients(currentIngredients, recipe.requiredIngredients))
+            if (recipe.Key.SetEquals(ingredientSet))
             {
-                return recipe.dishName;
+                return recipe.Value;
             }
         }
+
         return null;
     }
 
-    private bool MatchIngredients(List<string> current, List<string> required)
+    // Custom comparer for HashSet
+    private class HashSetComparer : IEqualityComparer<HashSet<string>>
     {
-        if (current.Count != required.Count) return false;
+        public static readonly HashSetComparer Instance = new HashSetComparer();
 
-        var currentCopy = new List<string>(current);
-        foreach (string ingredient in required)
+        public bool Equals(HashSet<string> x, HashSet<string> y)
         {
-            if (!currentCopy.Remove(ingredient))
-            {
-                return false;
-            }
+            return x.SetEquals(y);
         }
-        return true;
+
+        public int GetHashCode(HashSet<string> obj)
+        {
+            int hash = 0;
+            foreach (string s in obj.OrderBy(e => e))
+            {
+                hash ^= s.GetHashCode();
+            }
+            return hash;
+        }
     }
 }
