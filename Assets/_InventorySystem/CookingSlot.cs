@@ -3,21 +3,19 @@ using UnityEngine.UI;
 
 public class CookingSlot : MonoBehaviour
 {
-    [SerializeField] private Image ingredientImage;
+    public Image icon;
     private string ingredientName;
 
     public void SetIngredient(string name, Sprite sprite)
     {
         ingredientName = name;
-        ingredientImage.sprite = sprite;
-        ingredientImage.enabled = true;
+        icon.sprite = sprite;
+        icon.enabled = true;
     }
 
-    public void ClearSlot()
+    public bool HasIngredient()
     {
-        ingredientName = null;
-        ingredientImage.sprite = null;
-        ingredientImage.enabled = false;
+        return !string.IsNullOrEmpty(ingredientName);
     }
 
     public string GetIngredientName()
@@ -25,8 +23,10 @@ public class CookingSlot : MonoBehaviour
         return ingredientName;
     }
 
-    public bool HasIngredient()
+    public void ClearSlot()
     {
-        return !string.IsNullOrEmpty(ingredientName);
+        ingredientName = null;
+        icon.sprite = null;
+        icon.enabled = false;
     }
 }

@@ -10,27 +10,14 @@ public class Recipe
 
 public class RecipeManager : MonoBehaviour
 {
-    public static RecipeManager Instance { get; private set; }
+    public List<Recipe> recipes;
 
-    public List<Recipe> recipes = new List<Recipe>();
-
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
-    }
-
+    // Matches ingredients regardless of order
     public string TryMakeDish(List<string> currentIngredients)
     {
-        foreach (var recipe in recipes)
+        foreach (Recipe recipe in recipes)
         {
-            if (AreIngredientsMatching(recipe.requiredIngredients, currentIngredients))
+            if (MatchIngredients(currentIngredients, recipe.requiredIngredients))
             {
                 return recipe.dishName;
             }
@@ -38,10 +25,18 @@ public class RecipeManager : MonoBehaviour
         return null;
     }
 
-    private bool AreIngredientsMatching(List<string> required, List<string> current)
+    private bool MatchIngredients(List<string> current, List<string> required)
     {
-        var requiredSet = new HashSet<string>(required);
-        var currentSet = new HashSet<string>(current);
-        return requiredSet.SetEquals(currentSet);
+        if (current.Count != required.Count) return false;
+
+        var currentCopy = new List<string>(current);
+        foreach (string ingredient in required)
+        {
+            if (!currentCopy.Remove(ingredient))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

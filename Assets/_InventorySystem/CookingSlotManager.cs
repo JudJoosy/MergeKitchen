@@ -1,41 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CookingSlotManager : MonoBehaviour
 {
     public static CookingSlotManager Instance;
-
-    [SerializeField] private List<CookingSlot> cookingSlots;
-    [SerializeField] private RecipeManager recipeManager;
-    [SerializeField] private GameObject dishPrefab;
-    [SerializeField] private Transform dishSpawnPoint;
+    public List<CookingSlot> cookingSlots;
+    public RecipeManager recipeManager;
+    public Transform dishSpawnPoint;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void TryPlaceIngredient(string name, Sprite sprite)
-    {
-        foreach (var slot in cookingSlots)
-        {
-            if (!slot.HasIngredient())
-            {
-                slot.SetIngredient(name, sprite);
-                CheckForDish();
-                return;
-            }
-        }
-
-        Debug.Log("All cooking slots are full!");
-    }
-
-    private void CheckForDish()
+    public void TryCook()
     {
         List<string> currentIngredients = new List<string>();
 
-        foreach (var slot in cookingSlots)
+        foreach (CookingSlot slot in cookingSlots)
         {
             if (slot.HasIngredient())
             {
@@ -43,28 +25,49 @@ public class CookingSlotManager : MonoBehaviour
             }
         }
 
-        string dishName = recipeManager.TryMakeDish(currentIngredients);
+        string dishPrefabName = recipeManager.TryMakeDish(currentIngredients);
 
-        if (!string.IsNullOrEmpty(dishName))
+        if (!string.IsNullOrEmpty(dishPrefabName))
         {
-            SpawnDish(dishName);
+            SpawnDish(dishPrefabName);
             ClearCookingSlots();
+        }
+        else
+        {
+            Debug.Log("No valid recipe found.");
         }
     }
 
-    private void SpawnDish(string dishName)
+    public void TryPlaceIngredient(string ingredientName, Sprite icon)
     {
-        GameObject dish = Instantiate(dishPrefab, dishSpawnPoint.position, Quaternion.identity);
-        dish.name = dishName;
+        foreach (CookingSlot slot in cookingSlots)
+        {
+            if (!slot.HasIngredient())
+            {
+                slot.SetIngredient(ingredientName, icon);
+                return;
+            }
+        }
 
-        Debug.Log($"Dish created: {dishName}");
-
-        Destroy(dish, 3f); // Auto remove after 3 seconds
+        Debug.Log("All cooking slots are full!");
     }
 
-    private void ClearCookingSlots()
+    void SpawnDish(string prefabName)
     {
-        foreach (var slot in cookingSlots)
+        GameObject dishPrefab = Resources.Load<GameObject>("Dishes/" + prefabName);
+        if (dishPrefab != null)
+        {
+            Instantiate(dishPrefab, dishSpawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Dish prefab not found in Resources/Dishes/" + prefabName);
+        }
+    }
+
+    public void ClearCookingSlots()
+    {
+        foreach (CookingSlot slot in cookingSlots)
         {
             slot.ClearSlot();
         }

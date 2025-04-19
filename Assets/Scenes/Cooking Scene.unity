@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c583b418042a245abb4663f38b797d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientImage: {fileID: 192963143}
+  icon: {fileID: 192963143}
 --- !u!1001 &207455325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c583b418042a245abb4663f38b797d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientImage: {fileID: 264295755}
+  icon: {fileID: 264295755}
 --- !u!1 &297901287
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +988,6 @@ MonoBehaviour:
   - {fileID: 264295757}
   - {fileID: 192963145}
   recipeManager: {fileID: 628157928}
-  dishPrefab: {fileID: 0}
   dishSpawnPoint: {fileID: 697572199}
 --- !u!4 &479660291
 Transform:
@@ -1090,10 +1089,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564494263}
-        m_TargetAssemblyTypeName: InventorySlotUI, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 564494270}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1153,7 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Garlic
-  ingredientSprite: {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4, type: 3}
 --- !u!114 &564494271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1198,12 +1197,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - dishName: Salt and pepper
-    requiredIngredients: []
-  - dishName: Fancy Salt and pepper
-    requiredIngredients: []
-  - dishName: The holy trinity
-    requiredIngredients: []
+  - ingredients:
+    - Salt
+    - Pepper
+    dishPrefabName: Salt and pepper
+  - ingredients:
+    - Salt
+    - Pepper
+    - Thyme
+    dishPrefabName: Fancy Salt and pepper
+  - ingredients:
+    - Thyme
+    - 'Onion '
+    - Garlic
+    dishPrefabName: The holy trinity
 --- !u!4 &628157929
 Transform:
   m_ObjectHideFlags: 0
@@ -1304,10 +1311,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventorySlotUI, Assembly-CSharp
-        m_MethodName: UpdateQuantity
-        m_Mode: 3
+      - m_Target: {fileID: 675576879}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1367,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Thyme
-  ingredientSprite: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
 --- !u!114 &675576880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,7 +1500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c583b418042a245abb4663f38b797d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientImage: {fileID: 681058415}
+  icon: {fileID: 681058415}
 --- !u!1 &697572198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,10 +2367,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventorySlotUI, Assembly-CSharp
-        m_MethodName: UpdateQuantity
-        m_Mode: 3
+      - m_Target: {fileID: 1077555694}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2423,7 +2430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Onion
-  ingredientSprite: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
 --- !u!114 &1077555695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2628,10 +2635,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventorySlotUI, Assembly-CSharp
-        m_MethodName: UpdateQuantity
-        m_Mode: 3
+      - m_Target: {fileID: 1112157913}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2691,7 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Pepper
-  ingredientSprite: {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e, type: 3}
 --- !u!114 &1112157914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3489,7 +3496,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1506491082}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1506491085}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1506491082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3541,7 +3560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Salt
-  ingredientSprite: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
+  ingredientIcon: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
 --- !u!114 &1506491086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3948,6 +3967,7 @@ GameObject:
   - component: {fileID: 1908328967}
   - component: {fileID: 1908328966}
   - component: {fileID: 1908328965}
+  - component: {fileID: 1908328968}
   m_Layer: 5
   m_Name: CookButton
   m_TagString: Untagged
@@ -4018,7 +4038,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1908328966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1908328968}
+        m_TargetAssemblyTypeName: IngredientUIButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1908328966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4057,6 +4089,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908328963}
   m_CullTransparentMesh: 1
+--- !u!114 &1908328968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908328963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8741a8ea79b504da90a5c67de3ec92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredientName: 
+  ingredientIcon: {fileID: 0}
 --- !u!1 &1989529032
 GameObject:
   m_ObjectHideFlags: 0
