@@ -17,7 +17,7 @@ public class CookingSlotManager : MonoBehaviour
     public List<CookingSlot> cookingSlots;
     public RecipeManager recipeManager;
     public Transform dishSpawnPoint;
-    public TMP_Text dishNameText; // UI text to show the dish name
+    public TMP_Text dishNameText;
     public List<DishData> dishPrefabs;
 
     private void Awake()
@@ -37,11 +37,12 @@ public class CookingSlotManager : MonoBehaviour
             }
         }
 
-        string dishName = recipeManager.TryMakeDish(currentIngredients);
+        DishData result = recipeManager.TryMakeDish(currentIngredients);
 
-        if (!string.IsNullOrEmpty(dishName))
+        if (result != null)
         {
-            ShowDishName(dishName);
+            ShowDishName(result.dishName);
+            SpawnDishModel(result.dishPrefab);
             ClearCookingSlots();
         }
         else
@@ -69,13 +70,30 @@ public class CookingSlotManager : MonoBehaviour
         Debug.Log("All cooking slots are full!");
     }
 
-    // Show the dish name on the UI (without spawning the model)
     void ShowDishName(string dishName)
     {
         if (dishNameText != null)
         {
             dishNameText.text = "You made: " + dishName;
             StartCoroutine(ClearDishNameTextAfterDelay());
+        }
+    }
+
+    void SpawnDishModel(GameObject prefab)
+    {
+        foreach (Transform child in dishSpawnPoint)
+        {
+            Destroy(child.gameObject);
+        }
+
+        if (prefab != null)
+        {
+            GameObject spawnedDish = Instantiate(prefab, dishSpawnPoint.position, dishSpawnPoint.rotation, dishSpawnPoint);
+            spawnedDish.transform.localScale = Vector3.one;
+        }
+        else
+        {
+            Debug.LogWarning("Dish prefab is missing!");
         }
     }
 

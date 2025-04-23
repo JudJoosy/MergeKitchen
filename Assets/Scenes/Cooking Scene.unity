@@ -988,15 +988,17 @@ MonoBehaviour:
   - {fileID: 264295757}
   - {fileID: 192963145}
   recipeManager: {fileID: 628157928}
-  dishSpawnPoint: {fileID: 697572199}
+  dishSpawnPoint: {fileID: 1273151117}
   dishNameText: {fileID: 1124643109}
   dishPrefabs:
   - dishName: Salt and pepper
-    dishPrefab: {fileID: 0}
+    dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
+      type: 3}
   - dishName: Fancy Salt and pepper
     dishPrefab: {fileID: 0}
   - dishName: The holy trinity
-    dishPrefab: {fileID: 0}
+    dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+      type: 3}
 --- !u!4 &479660291
 Transform:
   m_ObjectHideFlags: 0
@@ -1205,6 +1207,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2c8d4f7b77cd64291015508d6e2cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipes:
+  - requiredIngredients:
+    - Salt
+    - Pepper
+    dishData:
+      dishName: Salt and Pepper
+      dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
+        type: 3}
+  - requiredIngredients:
+    - Salt
+    - Pepper
+    - Thyme
+    dishData:
+      dishName: Fancy Salt and Pepper
+      dishPrefab: {fileID: 0}
+  - requiredIngredients:
+    - Thyme
+    - Onion
+    - Garlic
+    dishData:
+      dishName: Somewhat Holy Trinity
+      dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+        type: 3}
 --- !u!4 &628157929
 Transform:
   m_ObjectHideFlags: 0
@@ -1525,7 +1550,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.1796062, y: 2.1796062, z: 2.1796062}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1273151117}
   m_Father: {fileID: 1327423364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3116,6 +3142,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269298525}
   m_CullTransparentMesh: 1
+--- !u!1 &1273151116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1273151117}
+  m_Layer: 0
+  m_Name: DishSpawnerEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1273151117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273151116}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10.131, y: 10.131, z: 10.131}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 697572199}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315556446
 GameObject:
   m_ObjectHideFlags: 0
