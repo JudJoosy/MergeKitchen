@@ -1,52 +1,43 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    private Dictionary<HashSet<string>, string> recipes = new Dictionary<HashSet<string>, string>(HashSetComparer.Instance);
-
-    private void Awake()
+    [System.Serializable]
+    public class Recipe
     {
-        // Define your recipes
-        recipes.Add(new HashSet<string> { "Salt", "Pepper" }, "Salt and pepper");
-        recipes.Add(new HashSet<string> { "Salt", "Pepper", "Thyme" }, "Fancy Salt and pepper ");
-        recipes.Add(new HashSet<string> { "Thyme", "Onion", "Garlic" }, "The holy trinity");
+        public List<string> requiredIngredients;
+        public CookingSlotManager.DishData dishData;
+
+        public bool Matches(List<string> ingredients)
+        {
+            if (ingredients.Count != requiredIngredients.Count)
+                return false;
+
+            List<string> requiredCopy = new List<string>(requiredIngredients);
+
+            foreach (string ing in ingredients)
+            {
+                if (!requiredCopy.Remove(ing))
+                    return false;
+            }
+
+            return requiredCopy.Count == 0;
+        }
     }
 
-    public string TryMakeDish(List<string> ingredients)
-    {
-        var ingredientSet = new HashSet<string>(ingredients);
+    public List<Recipe> recipes;
 
-        foreach (var recipe in recipes)
+    public CookingSlotManager.DishData TryMakeDish(List<string> ingredients)
+    {
+        foreach (Recipe recipe in recipes)
         {
-            if (recipe.Key.SetEquals(ingredientSet))
+            if (recipe.Matches(ingredients))
             {
-                return recipe.Value;
+                return recipe.dishData;
             }
         }
 
         return null;
-    }
-
-    // Custom comparer for HashSet
-    private class HashSetComparer : IEqualityComparer<HashSet<string>>
-    {
-        public static readonly HashSetComparer Instance = new HashSetComparer();
-
-        public bool Equals(HashSet<string> x, HashSet<string> y)
-        {
-            return x.SetEquals(y);
-        }
-
-        public int GetHashCode(HashSet<string> obj)
-        {
-            int hash = 0;
-            foreach (string s in obj.OrderBy(e => e))
-            {
-                hash ^= s.GetHashCode();
-            }
-            return hash;
-        }
     }
 }
