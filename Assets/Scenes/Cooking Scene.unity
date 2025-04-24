@@ -1221,7 +1221,8 @@ MonoBehaviour:
     - Thyme
     dishData:
       dishName: Fancy Salt and Pepper
-      dishPrefab: {fileID: 0}
+      dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
+        type: 3}
   - requiredIngredients:
     - Thyme
     - Onion
@@ -1546,14 +1547,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697572198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.116289325, z: -0, w: 0.9932154}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.1796062, y: 2.1796062, z: 2.1796062}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1273151117}
   m_Father: {fileID: 1327423364}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 13.356, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 253.8, y: 40}
@@ -2098,6 +2099,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 55e23a57c71ed3f44bdaa522b7163401,
         type: 3}
+    - target: {fileID: 369647405694895040, guid: b3236ff9455be124c890138115034bd4,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1462178531}
     - target: {fileID: 369647405694895040, guid: b3236ff9455be124c890138115034bd4,
         type: 3}
       propertyPath: m_RenderMode
@@ -3166,13 +3172,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273151116}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.131, y: 10.131, z: 10.131}
+  m_LocalRotation: {x: -0, y: -0.7940425, z: -0, w: 0.6078622}
+  m_LocalPosition: {x: -16.000002, y: -13.099993, z: -142.99997}
+  m_LocalScale: {x: 21.719023, y: 21.719023, z: 21.719023}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 697572199}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -105.13, z: 0}
 --- !u!1 &1315556446
 GameObject:
   m_ObjectHideFlags: 0
