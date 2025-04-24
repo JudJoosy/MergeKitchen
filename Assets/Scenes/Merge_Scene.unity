@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1794972029}
   - component: {fileID: 1794972028}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,6 +1767,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009889408461043074, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
+        type: 3}
+      propertyPath: mergeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a3d17750631aeec42802594048d72258, type: 3}
+    - target: {fileID: 5009889408461043074, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1794972028}
+    - target: {fileID: 5009889408461043074, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
+        type: 3}
+      propertyPath: inventoryManager
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
