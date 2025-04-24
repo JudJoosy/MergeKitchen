@@ -1565,6 +1565,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause System
       objectReference: {fileID: 0}
+    - target: {fileID: 852359045317206181, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 938689498933734508, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -148
+      objectReference: {fileID: 0}
+    - target: {fileID: 938689498933734508, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -92
+      objectReference: {fileID: 0}
     - target: {fileID: 3143643330886380736, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
         type: 3}
       propertyPath: m_Pivot.x

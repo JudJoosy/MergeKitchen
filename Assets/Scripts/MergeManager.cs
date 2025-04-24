@@ -5,6 +5,8 @@ using UnityEngine;
 public class MergeManager : MonoBehaviour
 {
   public InventoryManager inventoryManager;  // Reference to Inventory Manager
+  public AudioSource audioSource;  
+  public AudioClip mergeSound;
 
   // Merge two identical ingredients
   public void MergeIngredients(Ingredient ingredient1, Ingredient ingredient2)
@@ -17,6 +19,11 @@ public class MergeManager : MonoBehaviour
 	 else
 	 {
 		  Debug.LogError("One or both ingredients are null.");
+	 }
+
+	 if (mergeSound != null && audioSource != null)
+	 {
+		 audioSource.PlayOneShot(mergeSound);
 	 }
   }
 
