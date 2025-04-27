@@ -7,7 +7,6 @@ public class IngredientSpawnerController : MonoBehaviour
 {
     public GameObject[] ingredientPrefabs;
     public int maxIngredientCount = 10;
-    public float spawnInterval = 3f;
     public Vector3 spawnAreaSize = new Vector3(5f, 5f, 5f);
     public float minSpacing = 1.5f;
     public static List<string> savedIngredients = new List<string>();
@@ -33,15 +32,14 @@ public class IngredientSpawnerController : MonoBehaviour
 
     void Start()
     {
-        // Only start the spawn loop if we're in the MergingScene
-        if (SceneManager.GetActiveScene().name == "Merge_Scene")
+        // Only allow placing if we're in the MergingScene
+        if (SceneManager.GetActiveScene().name != "Merge_Scene")
         {
-            StartCoroutine(SpawnLoop()); // Start continuous spawning
-            Debug.Log("Ingredient Spawner Started");
+            gameObject.SetActive(false);  // Disable the spawner in other scenes
         }
         else
         {
-            gameObject.SetActive(false);  // Disable the spawner in other scenes
+            Debug.Log("Ingredient Spawner Ready for Place button");
         }
     }
 
@@ -54,26 +52,20 @@ public class IngredientSpawnerController : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnLoop()
+    // Public function to call from UI button
+    public void PlaceIngredient()
     {
-        while (true) // Infinite loop for continuous spawning
+        if (spawnedIngredients.Count < maxIngredientCount)
         {
-            if (spawnedIngredients.Count < maxIngredientCount)
-            {
-                SpawnIngredients();
-            }
-
-            yield return new WaitForSeconds(spawnInterval); // Wait before next spawn
-
-            if (spawnedIngredients.Count >= maxIngredientCount)
-            {
-                Destroy(spawnedIngredients[0]); // Remove the oldest ingredient
-                spawnedIngredients.RemoveAt(0);
-            }
+            SpawnIngredient();
+        }
+        else
+        {
+            Debug.Log("Max ingredient limit reached!");
         }
     }
 
-    void SpawnIngredients()
+    void SpawnIngredient()
     {
         Vector3 spawnPosition = GetRandomPosition();
 
@@ -88,6 +80,10 @@ public class IngredientSpawnerController : MonoBehaviour
             {
                 ingredientScript.ingredientType = ingredientPrefabs[randomIndex].name;
             }
+        }
+        else
+        {
+            Debug.LogWarning("Failed to find a valid spawn position!");
         }
     }
 
@@ -104,7 +100,7 @@ public class IngredientSpawnerController : MonoBehaviour
     {
         foreach (string ingredient in savedIngredients)
         {
-            // Instantiate ingredient using stored data
+            // Instantiate ingredient using stored data (future feature)
         }
     }
 
