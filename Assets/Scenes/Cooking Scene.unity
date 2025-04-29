@@ -1329,9 +1329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientText: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  ingredientNameText: {fileID: 0}
   quantityText: {fileID: 2025842904}
+  ingredientImage: {fileID: 0}
 --- !u!1 &628157927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,9 +1561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientText: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  ingredientNameText: {fileID: 0}
   quantityText: {fileID: 1269298527}
+  ingredientImage: {fileID: 0}
 --- !u!1 &681058412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,9 +2628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientText: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  ingredientNameText: {fileID: 0}
   quantityText: {fileID: 1195673731}
+  ingredientImage: {fileID: 0}
 --- !u!1 &1100618054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,9 +2897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientText: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  ingredientNameText: {fileID: 0}
   quantityText: {fileID: 909322326}
+  ingredientImage: {fileID: 0}
 --- !u!1 &1124643108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,9 +3875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b8b490595e6d48b470305c521aea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientText: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  ingredientNameText: {fileID: 0}
   quantityText: {fileID: 1989529034}
+  ingredientImage: {fileID: 0}
 --- !u!1 &1558543338
 GameObject:
   m_ObjectHideFlags: 0
