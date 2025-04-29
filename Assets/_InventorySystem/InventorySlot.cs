@@ -1,69 +1,47 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    public TMP_Text ingredientText;
-    public SpriteRenderer spriteRenderer;
-    public TMP_Text quantityText;
+    public TextMeshProUGUI ingredientNameText;
+    public TextMeshProUGUI quantityText;
+    public Image ingredientImage;
 
-    private string ingredientName;
+    private Ingredient ingredient;
     private int quantity;
 
-    public void SetIngredient(string name, Sprite sprite, int amount = 1)
+    public void SetIngredient(Ingredient newIngredient)
     {
-        ingredientName = name;
-        quantity = amount;
-
-        if (ingredientText != null)
-            ingredientText.text = name;
-
-        if (spriteRenderer != null)
-            spriteRenderer.sprite = sprite;
-
-        UpdateQuantityDisplay();
+        ingredient = newIngredient;
+        UpdateUI();
     }
 
-    public void AddQuantity(int amount)
+    public IngredientType GetIngredientType()
     {
-        quantity += amount;
-        UpdateQuantityDisplay();
+        return ingredient.ingredientType;
     }
 
-    public void ReduceQuantity(int amount)
+    public void SetQuantity(int newQuantity)
     {
-        quantity -= amount;
-        if (quantity < 0) quantity = 0;
-        UpdateQuantityDisplay();
+        quantity = newQuantity;
+        UpdateUI();
     }
 
-    public void ClearSlot()
+    public string GetIngredientName()
     {
-        ingredientName = null;
-        quantity = 0;
-
-        if (ingredientText != null)
-            ingredientText.text = "";
-
-        if (spriteRenderer != null)
-            spriteRenderer.sprite = null;
-
-        UpdateQuantityDisplay();
+        return ingredient.ingredientName;  // Keep this if you still need it for displaying names
     }
 
-    private void UpdateQuantityDisplay()
+    private void UpdateUI()
     {
+        if (ingredientNameText != null)
+            ingredientNameText.text = ingredient.ingredientName;
+
         if (quantityText != null)
-        {
-            quantityText.text = quantity > 1 ? $"x{quantity}" : "";
-        }
-    }
+            quantityText.text = quantity.ToString();
 
-    public bool IsEmpty()
-    {
-        return string.IsNullOrEmpty(ingredientName);
+        if (ingredientImage != null && ingredient.icon != null)
+            ingredientImage.sprite = ingredient.icon;
     }
-
-    public string GetIngredientName() => ingredientName;
-    public int GetQuantity() => quantity;
 }

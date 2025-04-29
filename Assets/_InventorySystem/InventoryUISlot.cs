@@ -1,29 +1,69 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;  // For using TextMeshProUGUI
+using TMPro;
 
-public class InventorySlotUI : MonoBehaviour
+public class InventoryUISlot : MonoBehaviour
 {
-    public string ingredientName;
-    public int quantity;
-    public UnityEngine.UI.Image ingredientImage;  // Reference to the image for the ingredient
-    public TextMeshProUGUI quantityText;          // Reference to the TextMeshPro component for displaying quantity
+    public TMP_Text ingredientText;
+    public SpriteRenderer spriteRenderer;
+    public TMP_Text quantityText;
 
-    // This method is called to set up the slot
-    public void SetupSlot(string name, Sprite sprite, int qty)
+    private string ingredientName;
+    private int quantity;
+
+    public void SetIngredient(string name, Sprite sprite, int amount = 1)
     {
         ingredientName = name;
-        ingredientImage.sprite = sprite;        // Set the ingredient image
-        UpdateQuantity(qty);                    // Update the quantity display
+        quantity = amount;
+
+        if (ingredientText != null)
+            ingredientText.text = name;
+
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = sprite;
+
+        UpdateQuantityDisplay();
     }
 
-    // This method updates the quantity text
-    public void UpdateQuantity(int newQuantity)
+    public void AddQuantity(int amount)
     {
-        quantity = newQuantity;
+        quantity += amount;
+        UpdateQuantityDisplay();
+    }
+
+    public void ReduceQuantity(int amount)
+    {
+        quantity -= amount;
+        if (quantity < 0) quantity = 0;
+        UpdateQuantityDisplay();
+    }
+
+    public void ClearSlot()
+    {
+        ingredientName = null;
+        quantity = 0;
+
+        if (ingredientText != null)
+            ingredientText.text = "";
+
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = null;
+
+        UpdateQuantityDisplay();
+    }
+
+    private void UpdateQuantityDisplay()
+    {
         if (quantityText != null)
         {
-            quantityText.text = "x" + quantity.ToString();  // Display the quantity with "x"
+            quantityText.text = quantity > 1 ? $"x{quantity}" : "";
         }
     }
+
+    public bool IsEmpty()
+    {
+        return string.IsNullOrEmpty(ingredientName);
+    }
+
+    public string GetIngredientName() => ingredientName;
+    public int GetQuantity() => quantity;
 }

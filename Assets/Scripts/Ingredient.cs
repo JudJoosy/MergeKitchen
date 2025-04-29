@@ -1,74 +1,75 @@
 ﻿using UnityEngine;
 
+public enum IngredientType
+{
+    Spice,
+    Vegetable,
+    Meat,
+    Fruit
+}
+
 public class Ingredient : MonoBehaviour
 {
-    // Declare the ingredientModel as a reference to a GameObject (3D model)
-    public GameObject ingredientModel;  // Reference to the 3D model of the ingredient
-
-    // Other properties of the ingredient (e.g., name, type, etc.)
     public string ingredientName;
-    public int ingredientID;
-
-    public string ingredientType;  // Name of the Ingredient
-    private Vector3 offset;
-    private bool isDragging = false;
-
-    public int quantity;  // Define quantity as an integer
-
-    private void OnMouseDown()
-    {
-        // Store the offset between the mouse and the object position
-        offset = transform.position - GetMouseWorldPos();
-        isDragging = true;
-    }
-
-    private void OnMouseDrag()
-    {
-        if (isDragging)
-        {
-            transform.position = GetMouseWorldPos() + offset;
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
-    private Vector3 GetMouseWorldPos()
-    {
-        Vector3 mousePoint = Input.mousePosition;
-        mousePoint.z = Camera.main.WorldToScreenPoint(transform.position).z;
-        return Camera.main.ScreenToWorldPoint(mousePoint);
-    }
+    public Sprite ingredientSprite;   // The sprite to represent the ingredient in the UI (if needed)
+    public IngredientType ingredientType;  // Enum type for ingredient type
+    public int quantity = 1;  // Quantity of the ingredient (default 1)
+    public Sprite icon;  // Add this line to define the icon for the ingredient
 
     private void OnTriggerEnter(Collider other)
     {
         Ingredient otherIngredient = other.GetComponent<Ingredient>();
 
-        if (otherIngredient != null && otherIngredient.ingredientType == ingredientType)
+        if (otherIngredient == null)
         {
-            MergeIngredients(otherIngredient);
+            Debug.LogError("The other collider does not contain an Ingredient.");
+            return;
         }
+
+        // Proceed with merging ingredients
+        MergeIngredients(otherIngredient);
     }
 
     private void MergeIngredients(Ingredient otherIngredient)
     {
-        // Calculate the position where both ingredients are
-        Vector3 mergePosition = (transform.position + otherIngredient.transform.position) / 2;
+        if (otherIngredient == null)
+        {
+            Debug.LogError("Other ingredient is null during merge.");
+            return;
+        }
 
-        // Destroy both ingredients when they merge
-        Destroy(otherIngredient.gameObject);
-        Destroy(gameObject);
+        // Ensure both ingredients have names
+        if (string.IsNullOrEmpty(ingredientName) || string.IsNullOrEmpty(otherIngredient.ingredientName))
+        {
+            Debug.LogError("One or both ingredients have no name.");
+            return;
+        }
 
-        // For now, just log the merge event
-        Debug.Log("Merged " + ingredientType + " with " + otherIngredient.ingredientType);
+        // Check if both ingredients are of the same type and name
+        if (ingredientType == otherIngredient.ingredientType && ingredientName == otherIngredient.ingredientName)
+        {
+            // Optionally, check if quantities exceed a certain limit
+            if (quantity >= 100) // Example of a maximum quantity limit
+            {
+                Debug.LogWarning($"Maximum quantity reached for {ingredientName}, cannot merge further.");
+                return;
+            }
 
-        // Update the ingredient database with the quantity of merged ingredients
-        IngredientDatabase.Instance.AddIngredient(ingredientName, 1);  // Add one of this ingredient
-        IngredientDatabase.Instance.AddIngredient(otherIngredient.ingredientName, 1);  // Add the other ingredient as well
+            // Example of merging the ingredients by combining their quantities
+            Debug.Log($"Merging {ingredientName} (Quantity: {quantity}) with {otherIngredient.ingredientName} (Quantity: {otherIngredient.quantity})");
 
-        // Optionally, if you want to increment the merged ingredient count or have a new type:
-        // IngredientDatabase.Instance.AddIngredient("Merged_" + ingredientType, 1);  // Create a merged ingredient
+            // Combine quantities
+            quantity += otherIngredient.quantity;
+
+            // Optionally destroy the other ingredient after merging
+            Destroy(otherIngredient.gameObject);
+
+            // Optional: Check if merging results in a limit or a special state for the ingredient
+            // For example, when merging two vegetables it can result in a "cooked" vegetable or another form of ingredient.
+        }
+        else
+        {
+            Debug.LogWarning("Ingredients are not the same type or name, cannot merge.");
+        }
     }
 }

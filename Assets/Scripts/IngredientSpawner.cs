@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Required for scene management
+using System; // Needed for System.Enum
 
 public class IngredientSpawnerController : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class IngredientSpawnerController : MonoBehaviour
         else
         {
             Debug.Log("Max ingredient limit reached!");
+            // Optionally, disable the button or show a message to the user
         }
     }
 
@@ -71,14 +73,22 @@ public class IngredientSpawnerController : MonoBehaviour
 
         if (spawnPosition != Vector3.zero)
         {
-            int randomIndex = Random.Range(0, ingredientPrefabs.Length);
+            int randomIndex = UnityEngine.Random.Range(0, ingredientPrefabs.Length);
             GameObject ingredient = Instantiate(ingredientPrefabs[randomIndex], spawnPosition, Quaternion.identity);
             spawnedIngredients.Add(ingredient); // Track new ingredient
 
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                ingredientScript.ingredientType = ingredientPrefabs[randomIndex].name;
+                // Convert prefab name to IngredientType
+                if (System.Enum.TryParse(ingredientPrefabs[randomIndex].name, out IngredientType ingredientType))
+                {
+                    ingredientScript.ingredientType = ingredientType;
+                }
+                else
+                {
+                    Debug.LogError("Invalid ingredient type name: " + ingredientPrefabs[randomIndex].name);
+                }
             }
         }
         else
@@ -92,7 +102,7 @@ public class IngredientSpawnerController : MonoBehaviour
         savedIngredients.Clear();
         foreach (Ingredient ingredient in FindObjectsOfType<Ingredient>())
         {
-            savedIngredients.Add(ingredient.ingredientType);
+            savedIngredients.Add(ingredient.ingredientType.ToString()); // Save the ingredient type name
         }
     }
 
@@ -101,6 +111,43 @@ public class IngredientSpawnerController : MonoBehaviour
         foreach (string ingredient in savedIngredients)
         {
             // Instantiate ingredient using stored data (future feature)
+            IngredientType ingredientType;
+            if (Enum.TryParse(ingredient, out ingredientType))
+            {
+                // You will likely need to map the ingredient type to an actual prefab.
+                // Here’s an example to spawn it back (assuming you have the mapping)
+                SpawnIngredientFromSavedData(ingredientType);
+            }
+        }
+    }
+
+    void SpawnIngredientFromSavedData(IngredientType ingredientType)
+    {
+        // Find the prefab based on the saved ingredient type
+        GameObject ingredientPrefab = null;
+        foreach (var prefab in ingredientPrefabs)
+        {
+            if (prefab.name == ingredientType.ToString())
+            {
+                ingredientPrefab = prefab;
+                break;
+            }
+        }
+
+        if (ingredientPrefab != null)
+        {
+            Vector3 spawnPosition = GetRandomPosition();
+            GameObject ingredient = Instantiate(ingredientPrefab, spawnPosition, Quaternion.identity);
+            Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
+            if (ingredientScript != null)
+            {
+                ingredientScript.ingredientType = ingredientType;
+                spawnedIngredients.Add(ingredient);
+            }
+        }
+        else
+        {
+            Debug.LogError("No prefab found for ingredient type: " + ingredientType.ToString());
         }
     }
 
@@ -108,9 +155,9 @@ public class IngredientSpawnerController : MonoBehaviour
     {
         for (int attempts = 0; attempts < 10; attempts++)
         {
-            float x = Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
-            float y = Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
-            float z = Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2);
+            float x = UnityEngine.Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
+            float y = UnityEngine.Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
+            float z = UnityEngine.Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2);
             Vector3 randomPos = new Vector3(x, y, z);
 
             if (IsPositionValid(randomPos))

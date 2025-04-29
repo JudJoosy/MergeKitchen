@@ -122,6 +122,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &34822827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2818377209221751768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f45150b575e1974d8ac383732ed5788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91530113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1148,8 @@ MonoBehaviour:
     dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
       type: 3}
   - dishName: Fancy Salt and pepper
-    dishPrefab: {fileID: 0}
+    dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
+      type: 3}
   - dishName: The holy trinity
     dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
       type: 3}
@@ -1698,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 13.356, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 253.8, y: 40}
+  m_AnchoredPosition: {x: 284, y: 40}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697572200
@@ -3818,7 +3831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4898,6 +4911,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1885384643806733152, guid: 647f9b1d904c3894b870fdda42f5ca96,
+        type: 3}
+      propertyPath: inventoryManager
+      value: 
+      objectReference: {fileID: 34822827}
     - target: {fileID: 5085327531036198383, guid: 647f9b1d904c3894b870fdda42f5ca96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4978,6 +4996,16 @@ PrefabInstance:
       objectReference: {fileID: 628157928}
     - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
         type: 3}
+      propertyPath: inventorySlotParent
+      value: 
+      objectReference: {fileID: 1100618055}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: inventorySlotPrefab
+      value: 
+      objectReference: {fileID: 1506491078}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
       propertyPath: inventorySlots.Array.data[0]
       value: 
       objectReference: {fileID: 1506491086}
@@ -5001,6 +5029,66 @@ PrefabInstance:
       propertyPath: inventorySlots.Array.data[4]
       value: 
       objectReference: {fileID: 564494271}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[0].name
+      value: Salt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[1].name
+      value: Pepper
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[2].name
+      value: Thyme
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[3].name
+      value: Onion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[4].name
+      value: Garlic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873,
+        type: 3}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e,
+        type: 3}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775,
+        type: 3}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[3].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56,
+        type: 3}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: initialIngredients.Array.data[4].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4,
+        type: 3}
     - target: {fileID: 7323078842986894567, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
         type: 3}
       propertyPath: m_LocalPosition.x
