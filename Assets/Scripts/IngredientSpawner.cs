@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
-using System; // Needed for System.Enum
+using UnityEngine.SceneManagement;
 
 public class IngredientSpawnerController : MonoBehaviour
 {
@@ -17,26 +16,23 @@ public class IngredientSpawnerController : MonoBehaviour
 
     void Awake()
     {
-        // Don't destroy the spawner in MergingScene, destroy in others
-        if (SceneManager.GetActiveScene().name == "Merge_Scene") // Replace with your actual scene name
+        if (SceneManager.GetActiveScene().name == "Merge_Scene")
         {
-            DontDestroyOnLoad(gameObject); // Keep the spawner in the MergingScene
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);  // Destroy the spawner if it's not in MergingScene
+            Destroy(gameObject);
         }
 
-        // Add scene loaded listener
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Start()
     {
-        // Only allow placing if we're in the MergingScene
         if (SceneManager.GetActiveScene().name != "Merge_Scene")
         {
-            gameObject.SetActive(false);  // Disable the spawner in other scenes
+            gameObject.SetActive(false);
         }
         else
         {
@@ -46,14 +42,12 @@ public class IngredientSpawnerController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Ensure spawner is destroyed or disabled in other scenes
         if (scene.name != "Merge_Scene")
         {
-            Destroy(gameObject);  // Destroy the spawner if the scene is not MergingScene
+            Destroy(gameObject);
         }
     }
 
-    // Public function to call from UI button
     public void PlaceIngredient()
     {
         if (spawnedIngredients.Count < maxIngredientCount)
@@ -63,7 +57,6 @@ public class IngredientSpawnerController : MonoBehaviour
         else
         {
             Debug.Log("Max ingredient limit reached!");
-            // Optionally, disable the button or show a message to the user
         }
     }
 
@@ -75,20 +68,13 @@ public class IngredientSpawnerController : MonoBehaviour
         {
             int randomIndex = UnityEngine.Random.Range(0, ingredientPrefabs.Length);
             GameObject ingredient = Instantiate(ingredientPrefabs[randomIndex], spawnPosition, Quaternion.identity);
-            spawnedIngredients.Add(ingredient); // Track new ingredient
+            spawnedIngredients.Add(ingredient);
 
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                // Convert prefab name to IngredientType
-                if (System.Enum.TryParse(ingredientPrefabs[randomIndex].name, out IngredientType ingredientType))
-                {
-                    ingredientScript.ingredientType = ingredientType;
-                }
-                else
-                {
-                    Debug.LogError("Invalid ingredient type name: " + ingredientPrefabs[randomIndex].name);
-                }
+                // Set the name based on prefab
+                ingredientScript.ingredientName = ingredientPrefabs[randomIndex].name;
             }
         }
         else
@@ -102,32 +88,24 @@ public class IngredientSpawnerController : MonoBehaviour
         savedIngredients.Clear();
         foreach (Ingredient ingredient in FindObjectsOfType<Ingredient>())
         {
-            savedIngredients.Add(ingredient.ingredientType.ToString()); // Save the ingredient type name
+            savedIngredients.Add(ingredient.ingredientName); // Use string name
         }
     }
 
     void LoadIngredients()
     {
-        foreach (string ingredient in savedIngredients)
+        foreach (string ingredientName in savedIngredients)
         {
-            // Instantiate ingredient using stored data (future feature)
-            IngredientType ingredientType;
-            if (Enum.TryParse(ingredient, out ingredientType))
-            {
-                // You will likely need to map the ingredient type to an actual prefab.
-                // Here’s an example to spawn it back (assuming you have the mapping)
-                SpawnIngredientFromSavedData(ingredientType);
-            }
+            SpawnIngredientFromSavedData(ingredientName);
         }
     }
 
-    void SpawnIngredientFromSavedData(IngredientType ingredientType)
+    void SpawnIngredientFromSavedData(string ingredientName)
     {
-        // Find the prefab based on the saved ingredient type
         GameObject ingredientPrefab = null;
         foreach (var prefab in ingredientPrefabs)
         {
-            if (prefab.name == ingredientType.ToString())
+            if (prefab.name == ingredientName)
             {
                 ingredientPrefab = prefab;
                 break;
@@ -141,13 +119,13 @@ public class IngredientSpawnerController : MonoBehaviour
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                ingredientScript.ingredientType = ingredientType;
+                ingredientScript.ingredientName = ingredientName;
                 spawnedIngredients.Add(ingredient);
             }
         }
         else
         {
-            Debug.LogError("No prefab found for ingredient type: " + ingredientType.ToString());
+            Debug.LogError("No prefab found for ingredient: " + ingredientName);
         }
     }
 
@@ -183,7 +161,6 @@ public class IngredientSpawnerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Remove the scene listener when the object is destroyed to prevent memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

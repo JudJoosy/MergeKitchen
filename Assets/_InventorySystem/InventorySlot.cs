@@ -17,20 +17,15 @@ public class InventorySlot : MonoBehaviour
         UpdateUI();
     }
 
-    public IngredientType GetIngredientType()
+    public string GetIngredientName()
     {
-        return ingredient.ingredientType;
+        return ingredient.ingredientName;
     }
 
     public void SetQuantity(int newQuantity)
     {
         quantity = newQuantity;
         UpdateUI();
-    }
-
-    public string GetIngredientName()
-    {
-        return ingredient.ingredientName;  // Keep this if you still need it for displaying names
     }
 
     private void UpdateUI()

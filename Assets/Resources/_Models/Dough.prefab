@@ -10,53 +10,68 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.3681965
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.664309
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.5261946
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7525991
+      value: 0.7526
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.4973
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -11.949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6968901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.28912494
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.6062145
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.2515055
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -5.627
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -84.359
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 44.788
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
@@ -70,11 +85,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1658380817561928158}
+      addedObject: {fileID: -8147696379323987069}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16713bb4326de744db72d58d859f8eca,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 722457876603657231}
+      addedObject: {fileID: -9203872220317779141}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16713bb4326de744db72d58d859f8eca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4655418658826219170}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 16713bb4326de744db72d58d859f8eca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4837650150214481379}
   m_SourcePrefab: {fileID: 100100000, guid: 16713bb4326de744db72d58d859f8eca, type: 3}
 --- !u!1 &7596437342300379481 stripped
 GameObject:
@@ -82,7 +105,55 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7325841819002905608}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1658380817561928158
+--- !u!54 &-8147696379323987069
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596437342300379481}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-9203872220317779141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596437342300379481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000007, y: 1.0000004, z: 2.0000007}
+  m_Center: {x: -0.00000002980233, y: 0.50000006, z: -0.00000012852254}
+--- !u!114 &4655418658826219170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c058ac40ec6c7ed46adf4890f17ac0f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientModel: {fileID: 7596437342300379481}
-  ingredientName: 
-  ingredientID: 0
-  ingredientType: 
+  ingredientName: Dough
+  ingredientSprite: {fileID: 0}
   quantity: 0
---- !u!114 &722457876603657231
+  icon: {fileID: 0}
+--- !u!114 &4837650150214481379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +178,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7596437342300379481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad280ea83f6b90848978b5128779ccea, type: 3}
+  m_Script: {fileID: 11500000, guid: 42be6925ccfdb3b4e9a84cfd54eb26d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientData: {fileID: 0}
