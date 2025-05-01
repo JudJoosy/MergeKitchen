@@ -1,21 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class CurrencyManager : MonoBehaviour
 {
-    public int playerMoney = 0;
-    public TextMeshProUGUI moneyText; // Assignthe UI text in the Inspector
+    public static CurrencyManager Instance;
+    public int currentMoney = 0;
+    public Text currencyText; // Regular UI Text
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        UpdateCurrencyUI();
+    }
 
     public void AddMoney(int amount)
     {
-        playerMoney += amount;
-        UpdateUI();
+        currentMoney += amount;
+        UpdateCurrencyUI();
     }
 
-    private void UpdateUI()
+    private void UpdateCurrencyUI()
     {
-        moneyText.text = "$" + playerMoney.ToString();
+        currencyText.text = "$" + currentMoney.ToString();
     }
 }
