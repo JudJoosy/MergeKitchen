@@ -1423,8 +1423,8 @@ Transform:
   m_GameObject: {fileID: 351026550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: 3.4, z: -0.7}
-  m_LocalScale: {x: 0.23644, y: 0.23633, z: 0.23633}
+  m_LocalPosition: {x: 1.847, y: 3.005, z: -1.23}
+  m_LocalScale: {x: 0.3404713, y: 0.34031287, z: 0.34031287}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1469,11 +1469,23 @@ MonoBehaviour:
   - dishName: Salt and pepper
     dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
       type: 3}
+  - dishName: The holy trinity
+    dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+      type: 3}
+  - dishName: Garlic Fries
+    dishPrefab: {fileID: 4964369649323934653, guid: 92d3365e85f13ed4da55cab9029729f8,
+      type: 3}
+  - dishName: Mashed Potatos
+    dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
+      type: 3}
   - dishName: Fancy Salt and pepper
     dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
       type: 3}
-  - dishName: The holy trinity
-    dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+  - dishName: Garlic Butter Pasta
+    dishPrefab: {fileID: 919132149155446097, guid: a0b1e67b136f27142b0f18e3cb37cf65,
+      type: 3}
+  - dishName: Garlic bread
+    dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
       type: 3}
 --- !u!4 &479660291
 Transform:
@@ -1832,6 +1844,46 @@ MonoBehaviour:
     dishData:
       dishName: Somewhat Holy Trinity
       dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+        type: 3}
+  - requiredIngredients:
+    - Salt
+    - Potato
+    - Garlic
+    dishData:
+      dishName: Garlic Fries
+      dishPrefab: {fileID: 4964369649323934653, guid: 92d3365e85f13ed4da55cab9029729f8,
+        type: 3}
+  - requiredIngredients:
+    - Potato
+    - Milk
+    - Butter
+    dishData:
+      dishName: 'Mashed Potatos '
+      dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
+        type: 3}
+  - requiredIngredients:
+    - Garlic
+    - Butter
+    - Dough
+    dishData:
+      dishName: Garlic Butter Pasta
+      dishPrefab: {fileID: 919132149155446097, guid: a0b1e67b136f27142b0f18e3cb37cf65,
+        type: 3}
+  - requiredIngredients:
+    - Garlic
+    - Butter
+    - Bread
+    dishData:
+      dishName: Garlic Bread
+      dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
+        type: 3}
+  - requiredIngredients:
+    - Garlic
+    - Butter
+    - Bread
+    dishData:
+      dishName: Garlic Bread
+      dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
         type: 3}
 --- !u!4 &628157929
 Transform:
