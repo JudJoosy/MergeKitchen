@@ -1482,7 +1482,7 @@ MonoBehaviour:
     dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
       type: 3}
   - dishName: Garlic Butter Pasta
-    dishPrefab: {fileID: 919132149155446097, guid: a0b1e67b136f27142b0f18e3cb37cf65,
+    dishPrefab: {fileID: 6017439574488259036, guid: 43b38c103815d4248bcf2eb16976d3f4,
       type: 3}
   - dishName: Garlic bread
     dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
@@ -1868,14 +1868,6 @@ MonoBehaviour:
     dishData:
       dishName: Garlic Butter Pasta
       dishPrefab: {fileID: 919132149155446097, guid: a0b1e67b136f27142b0f18e3cb37cf65,
-        type: 3}
-  - requiredIngredients:
-    - Garlic
-    - Butter
-    - Bread
-    dishData:
-      dishName: Garlic Bread
-      dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
         type: 3}
   - requiredIngredients:
     - Garlic
