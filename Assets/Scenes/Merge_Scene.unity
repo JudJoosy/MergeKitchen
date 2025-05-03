@@ -281,7 +281,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 521486392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1312,11 +1312,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b4ab0e874fbd1444b999bda1fe4f07ea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3d17750631aeec42802594048d72258, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1419,6 +1419,81 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2157491546149777584}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2012650689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012650690}
+  - component: {fileID: 2012650692}
+  - component: {fileID: 2012650691}
+  m_Layer: 0
+  m_Name: Merge_Background (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2012650690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012650689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1056045784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.55002, y: 68}
+  m_SizeDelta: {x: 1003.9, y: 1332.7136}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2012650691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012650689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 191791f154d913047833d75952af972c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2012650692
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012650689}
+  m_CullTransparentMesh: 1
 --- !u!1 &2037316178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,9 +1847,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1201202535444750831, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
         type: 3}
+      propertyPath: Cooking
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201202535444750831, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
       propertyPath: Mergeing
       value: 
-      objectReference: {fileID: 488165146}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201202535444750831, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
+      propertyPath: Mergeback
+      value: 
+      objectReference: {fileID: 2012650689}
+    - target: {fileID: 1201202535444750831, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
+        type: 3}
+      propertyPath: BackgroundMerge
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3143643330886380736, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1977,6 +2067,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009889408461043074, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
+        type: 3}
+      propertyPath: isMerging
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5009889408461043074, guid: e9eae1acf9e0e8e45b4fd129fa04b74a,
         type: 3}
@@ -2269,6 +2364,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 0
       addedObject: {fileID: 521486393}
+    - targetCorrespondingSourceObject: {fileID: 4434439343598601528, guid: b3236ff9455be124c890138115034bd4,
+        type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2012650690}
     - targetCorrespondingSourceObject: {fileID: 4434439343598601528, guid: b3236ff9455be124c890138115034bd4,
         type: 3}
       insertIndex: -1
