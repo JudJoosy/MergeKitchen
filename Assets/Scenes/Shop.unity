@@ -1211,7 +1211,6 @@ GameObject:
   - component: {fileID: 257856623}
   - component: {fileID: 257856622}
   - component: {fileID: 257856621}
-  - component: {fileID: 257856620}
   - component: {fileID: 257856624}
   m_Layer: 5
   m_Name: Cheese_Button
@@ -1241,18 +1240,6 @@ RectTransform:
   m_AnchoredPosition: {x: 718.3031, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &257856620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257856618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &257856621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,7 +1481,6 @@ GameObject:
   - component: {fileID: 264066799}
   - component: {fileID: 264066798}
   - component: {fileID: 264066797}
-  - component: {fileID: 264066796}
   - component: {fileID: 264066800}
   m_Layer: 5
   m_Name: Rice_Button
@@ -1524,18 +1510,6 @@ RectTransform:
   m_AnchoredPosition: {x: -539.1516, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &264066796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264066794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &264066797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,7 +1630,6 @@ GameObject:
   - component: {fileID: 278672188}
   - component: {fileID: 278672187}
   - component: {fileID: 278672186}
-  - component: {fileID: 278672185}
   - component: {fileID: 278672189}
   m_Layer: 5
   m_Name: Paprika_Button
@@ -1686,18 +1659,6 @@ RectTransform:
   m_AnchoredPosition: {x: 539.1516, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &278672185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278672183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &278672186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,7 +1911,6 @@ GameObject:
   - component: {fileID: 291097806}
   - component: {fileID: 291097805}
   - component: {fileID: 291097804}
-  - component: {fileID: 291097803}
   - component: {fileID: 291097807}
   m_Layer: 5
   m_Name: Fish_Button
@@ -1980,18 +1940,6 @@ RectTransform:
   m_AnchoredPosition: {x: -180.84854, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &291097803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291097801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &291097804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2311,7 +2259,6 @@ GameObject:
   - component: {fileID: 362977568}
   - component: {fileID: 362977567}
   - component: {fileID: 362977566}
-  - component: {fileID: 362977565}
   - component: {fileID: 362977569}
   m_Layer: 5
   m_Name: Dough_Button
@@ -2341,18 +2288,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &362977565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362977563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &362977566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2408,6 @@ GameObject:
   - component: {fileID: 388030242}
   - component: {fileID: 388030241}
   - component: {fileID: 388030240}
-  - component: {fileID: 388030239}
   - component: {fileID: 388030243}
   m_Layer: 5
   m_Name: Lobster
@@ -2503,18 +2437,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1078.3032, y: -450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &388030239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388030237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &388030240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4075,7 +3997,6 @@ GameObject:
   - component: {fileID: 819597625}
   - component: {fileID: 819597624}
   - component: {fileID: 819597623}
-  - component: {fileID: 819597622}
   - component: {fileID: 819597626}
   m_Layer: 5
   m_Name: Bread_Button
@@ -4105,18 +4026,6 @@ RectTransform:
   m_AnchoredPosition: {x: 358.30307, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &819597622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819597620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &819597623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4237,7 +4146,6 @@ GameObject:
   - component: {fileID: 832571808}
   - component: {fileID: 832571807}
   - component: {fileID: 832571806}
-  - component: {fileID: 832571805}
   - component: {fileID: 832571809}
   m_Layer: 5
   m_Name: Chili_Pepper
@@ -4267,18 +4175,6 @@ RectTransform:
   m_AnchoredPosition: {x: 179.15155, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &832571805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832571803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &832571806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4554,7 +4450,6 @@ GameObject:
   - component: {fileID: 913956719}
   - component: {fileID: 913956718}
   - component: {fileID: 913956717}
-  - component: {fileID: 913956716}
   - component: {fileID: 913956720}
   m_Layer: 5
   m_Name: Potato_Button
@@ -4584,18 +4479,6 @@ RectTransform:
   m_AnchoredPosition: {x: -180.84848, y: 367}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &913956716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913956714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &913956717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,7 +4815,6 @@ GameObject:
   - component: {fileID: 931225778}
   - component: {fileID: 931225777}
   - component: {fileID: 931225776}
-  - component: {fileID: 931225775}
   - component: {fileID: 931225779}
   m_Layer: 5
   m_Name: Thyme_Button
@@ -4962,18 +4844,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: 750.13916}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &931225775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931225773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &931225776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5252,7 +5122,6 @@ GameObject:
   - component: {fileID: 956518782}
   - component: {fileID: 956518781}
   - component: {fileID: 956518780}
-  - component: {fileID: 956518779}
   - component: {fileID: 956518783}
   m_Layer: 5
   m_Name: Egg_Button
@@ -5282,18 +5151,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1078.3032, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &956518779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956518777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &956518780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6172,7 +6029,6 @@ GameObject:
   - component: {fileID: 1174566589}
   - component: {fileID: 1174566588}
   - component: {fileID: 1174566587}
-  - component: {fileID: 1174566586}
   - component: {fileID: 1174566590}
   m_Layer: 5
   m_Name: Butter_Button
@@ -6202,18 +6058,6 @@ RectTransform:
   m_AnchoredPosition: {x: 539.1516, y: 367}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1174566586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1174566584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1174566587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7198,7 +7042,6 @@ GameObject:
   - component: {fileID: 1378694893}
   - component: {fileID: 1378694892}
   - component: {fileID: 1378694891}
-  - component: {fileID: 1378694890}
   - component: {fileID: 1378694894}
   m_Layer: 5
   m_Name: Tortilla_Button
@@ -7228,18 +7071,6 @@ RectTransform:
   m_AnchoredPosition: {x: 358.30307, y: -450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1378694890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378694888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1378694891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7559,7 +7390,6 @@ GameObject:
   - component: {fileID: 1428682820}
   - component: {fileID: 1428682819}
   - component: {fileID: 1428682818}
-  - component: {fileID: 1428682817}
   - component: {fileID: 1428682821}
   m_Layer: 5
   m_Name: Onion_Button
@@ -7589,18 +7419,6 @@ RectTransform:
   m_AnchoredPosition: {x: 370, y: 750.13916}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1428682817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428682815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1428682818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7721,7 +7539,6 @@ GameObject:
   - component: {fileID: 1443332495}
   - component: {fileID: 1443332494}
   - component: {fileID: 1443332493}
-  - component: {fileID: 1443332492}
   - component: {fileID: 1443332496}
   m_Layer: 5
   m_Name: Pepper_Button
@@ -7751,18 +7568,6 @@ RectTransform:
   m_AnchoredPosition: {x: -350, y: 750.13916}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1443332492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443332490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1443332493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8870,7 +8675,6 @@ GameObject:
   - component: {fileID: 1768052182}
   - component: {fileID: 1768052181}
   - component: {fileID: 1768052180}
-  - component: {fileID: 1768052179}
   - component: {fileID: 1768052183}
   m_Layer: 5
   m_Name: Shrimp_Button
@@ -8900,18 +8704,6 @@ RectTransform:
   m_AnchoredPosition: {x: 718.30316, y: -450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1768052179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768052177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1768052180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9113,7 +8905,6 @@ GameObject:
   - component: {fileID: 1805754564}
   - component: {fileID: 1805754563}
   - component: {fileID: 1805754562}
-  - component: {fileID: 1805754565}
   - component: {fileID: 1805754566}
   m_Layer: 5
   m_Name: Salt_Button
@@ -9237,18 +9028,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805754560}
   m_CullTransparentMesh: 1
---- !u!114 &1805754565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805754560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1805754566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9522,7 +9301,6 @@ GameObject:
   - component: {fileID: 1919579711}
   - component: {fileID: 1919579710}
   - component: {fileID: 1919579709}
-  - component: {fileID: 1919579708}
   - component: {fileID: 1919579712}
   m_Layer: 5
   m_Name: Garlic_Button
@@ -9552,18 +9330,6 @@ RectTransform:
   m_AnchoredPosition: {x: -539.15155, y: 367}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1919579708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919579706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1919579709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9684,7 +9450,6 @@ GameObject:
   - component: {fileID: 1925473219}
   - component: {fileID: 1925473218}
   - component: {fileID: 1925473217}
-  - component: {fileID: 1925473216}
   - component: {fileID: 1925473220}
   m_Layer: 5
   m_Name: Steak_Button
@@ -9714,18 +9479,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.000015258789, y: -450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1925473216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925473214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1925473217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10039,7 +9792,6 @@ GameObject:
   - component: {fileID: 1978806521}
   - component: {fileID: 1978806520}
   - component: {fileID: 1978806519}
-  - component: {fileID: 1978806518}
   - component: {fileID: 1978806522}
   m_Layer: 5
   m_Name: Milk_Button
@@ -10069,18 +9821,6 @@ RectTransform:
   m_AnchoredPosition: {x: 179.15149, y: 367}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1978806518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1978806516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1978806519
 MonoBehaviour:
   m_ObjectHideFlags: 0
