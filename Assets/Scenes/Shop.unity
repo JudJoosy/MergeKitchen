@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2397,7 +2397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -3440,27 +3440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultUnlockables:
-  - ingredientName: Salt
-    isUnlocked: 0
-  - ingredientName: Pepper
-    isUnlocked: 0
-  - ingredientName: Thyme
-    isUnlocked: 0
-  - ingredientName: Onion
-    isUnlocked: 0
-  - ingredientName: Garlic
-    isUnlocked: 0
-  - ingredientName: Potato
-    isUnlocked: 0
-  - ingredientName: Milk
-    isUnlocked: 0
-  - ingredientName: Butter
-    isUnlocked: 0
-  - ingredientName: Dough
-    isUnlocked: 0
-  - ingredientName: Bread
-    isUnlocked: 0
+  unlockableIngredients: []
+  spawnArea: {fileID: 0}
 --- !u!4 &614302180
 Transform:
   m_ObjectHideFlags: 0
@@ -4124,7 +4105,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -4286,7 +4267,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -4603,7 +4584,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -4981,7 +4962,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -5301,7 +5282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -6221,7 +6202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -7247,7 +7228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -7608,7 +7589,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -7770,7 +7751,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -7922,7 +7903,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1506019107}
-  - component: {fileID: 1506019106}
   m_Layer: 0
   m_Name: ShopManager
   m_TagString: Untagged
@@ -7930,18 +7910,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1506019106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506019105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22d5beacd632104b92ee4b69220b711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1506019107
 Transform:
   m_ObjectHideFlags: 0
@@ -8901,7 +8869,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -9132,7 +9100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -9553,7 +9521,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -9715,7 +9683,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -10070,7 +10038,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1506019106}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: shopManager, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -10134,6 +10102,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 7
   itemName: Milk
+--- !u!1 &2016809931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2016809933}
+  - component: {fileID: 2016809932}
+  m_Layer: 0
+  m_Name: CurrencyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2016809932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016809931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54796da2538d12f4e889ba435cf63246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 1000
+  moneyText: {fileID: 0}
+--- !u!4 &2016809933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016809931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.442356, y: 6.1144867, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017383377
 GameObject:
   m_ObjectHideFlags: 0
@@ -10567,3 +10581,4 @@ SceneRoots:
   - {fileID: 1506019107}
   - {fileID: 614302180}
   - {fileID: 142547211}
+  - {fileID: 2016809933}
