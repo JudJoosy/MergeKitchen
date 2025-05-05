@@ -3,22 +3,32 @@
 [System.Serializable]
 public class Ingredient : MonoBehaviour
 {
-    public string displayName;  // Ingredient name, e.g., "Salt"
-    public Sprite ingredientSprite; // Ingredient image
-    public int quantity = 1;     // Quantity of the ingredient
-    public int cost;             // Cost of the ingredient
-    public Sprite icon;          // Icon to show in the inventory or UI
+    public string displayName;  // Renamed to avoid conflict with Object.name
+    public Sprite ingredientSprite;
+    public int quantity = 1;
+    public Sprite icon;
+    public int cost;
 
-    // This will trigger when ingredients collide (for merging)
-    private void OnTriggerEnter(Collider other)
+    // For merging in the MergeManager system
+    public void MergeWith(Ingredient otherIngredient)
     {
-        Ingredient otherIngredient = other.GetComponent<Ingredient>();
-        if (otherIngredient == null) return;
-
         if (displayName == otherIngredient.displayName)
         {
             quantity += otherIngredient.quantity;
             Destroy(otherIngredient.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Optional, but if you want to handle merges using colliders, keep it
+        Ingredient otherIngredient = other.GetComponent<Ingredient>();
+        if (otherIngredient == null) return;
+
+        // Merging happens if the ingredients match
+        if (displayName == otherIngredient.displayName)
+        {
+            MergeWith(otherIngredient);  // Use the merge logic
         }
     }
 }
