@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour
 
     public string GetIngredientName()
     {
-        return ingredient.ingredientName;
+        return ingredient.displayName; // Updated from ingredientName to displayName
     }
 
     public void SetQuantity(int newQuantity)
@@ -31,7 +31,7 @@ public class InventorySlot : MonoBehaviour
     private void UpdateUI()
     {
         if (ingredientNameText != null)
-            ingredientNameText.text = ingredient.ingredientName;
+            ingredientNameText.text = ingredient.displayName; // Updated from ingredientName to displayName
 
         if (quantityText != null)
             quantityText.text = quantity.ToString();

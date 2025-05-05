@@ -73,8 +73,8 @@ public class IngredientSpawnerController : MonoBehaviour
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                // Set the name based on prefab
-                ingredientScript.ingredientName = ingredientPrefabs[randomIndex].name;
+                // Set the displayName based on prefab
+                ingredientScript.displayName = ingredientPrefabs[randomIndex].name; // Updated to displayName
             }
         }
         else
@@ -88,7 +88,7 @@ public class IngredientSpawnerController : MonoBehaviour
         savedIngredients.Clear();
         foreach (Ingredient ingredient in FindObjectsOfType<Ingredient>())
         {
-            savedIngredients.Add(ingredient.ingredientName); // Use string name
+            savedIngredients.Add(ingredient.displayName); // Updated to displayName
         }
     }
 
@@ -119,7 +119,7 @@ public class IngredientSpawnerController : MonoBehaviour
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                ingredientScript.ingredientName = ingredientName;
+                ingredientScript.displayName = ingredientName; // Updated to displayName
                 spawnedIngredients.Add(ingredient);
             }
         }

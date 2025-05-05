@@ -4,34 +4,47 @@ using UnityEngine.UI;
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance;
-    public int currentMoney = 0;
-    public Text currencyText; // Regular UI Text
+
+    public int currentMoney = 1000; // Starting money
+    public Text moneyText; // Optional: connect to your UI
 
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        UpdateMoneyUI();
+    }
+
+    public bool SpendMoney(int amount)
+    {
+        if (currentMoney >= amount)
+        {
+            currentMoney -= amount;
+            UpdateMoneyUI();
+            return true;
         }
         else
         {
-            Destroy(gameObject);
+            Debug.Log("Not enough money!");
+            return false;
         }
-    }
-
-    void Start()
-    {
-        UpdateCurrencyUI();
     }
 
     public void AddMoney(int amount)
     {
         currentMoney += amount;
-        UpdateCurrencyUI();
+        UpdateMoneyUI();
     }
 
-    private void UpdateCurrencyUI()
+    private void UpdateMoneyUI()
     {
-        currencyText.text = "$" + currentMoney.ToString();
+        if (moneyText != null)
+            moneyText.text = "$" + currentMoney.ToString();
     }
 }

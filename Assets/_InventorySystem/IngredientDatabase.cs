@@ -1,16 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class IngredientDatabase : MonoBehaviour
 {
     public static IngredientDatabase Instance;
 
-    // Ingredient database, with ingredient names as keys and quantities as values
+    public List<IngredientData> availableIngredients = new List<IngredientData>()
+    {
+        new IngredientData { name = "Salt",  cost = 10 },
+        new IngredientData { name = "Pepper", cost = 25 },
+        new IngredientData { name = "Thyme", cost = 60 },
+        new IngredientData { name = "Onion", cost = 125 },
+        new IngredientData { name = "Garlic", cost = 175 },
+        new IngredientData { name = "Potato", cost = 500 },
+        new IngredientData { name = "Milk", cost = 1250 },
+        new IngredientData { name = "Butter", cost = 2500 },
+        new IngredientData { name = "Dough", cost = 5000 },
+        new IngredientData { name = "Bread", cost = 10000 }
+    };
+
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
 
     private void Awake()
     {
-        // Ensure there's only one instance of the IngredientDatabase
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -18,22 +31,24 @@ public class IngredientDatabase : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);  // Keep this across scenes if needed
+            DontDestroyOnLoad(gameObject);
             Debug.Log("IngredientDatabase instance initialized.");
         }
     }
 
-    // Adds an ingredient to the inventory
+    public IngredientData GetIngredientByName(string name)
+    {
+        return availableIngredients.FirstOrDefault(i => i.name == name);
+    }
+
     public void AddIngredient(string ingredientName, int amount)
     {
-        // Validate singleton instance
         if (Instance == null)
         {
             Debug.LogError("IngredientDatabase.Instance is not initialized.");
             return;
         }
 
-        // Validate ingredient name and amount
         if (string.IsNullOrEmpty(ingredientName))
         {
             Debug.LogError("Invalid ingredient name.");
@@ -46,7 +61,6 @@ public class IngredientDatabase : MonoBehaviour
             return;
         }
 
-        // Add or update the ingredient quantity in the inventory
         if (inventory.ContainsKey(ingredientName))
         {
             inventory[ingredientName] += amount;
@@ -59,26 +73,17 @@ public class IngredientDatabase : MonoBehaviour
         Debug.Log($"Added {amount} of {ingredientName}. Current count: {inventory[ingredientName]}");
     }
 
-    // Retrieves the quantity of a specific ingredient
     public int GetIngredientQuantity(string ingredientName)
     {
-        // Validate ingredient name
         if (string.IsNullOrEmpty(ingredientName))
         {
             Debug.LogError("Invalid ingredient name.");
             return 0;
         }
 
-        // Return the quantity if ingredient exists
-        if (inventory.ContainsKey(ingredientName))
-        {
-            return inventory[ingredientName];
-        }
-
-        return 0; // Return 0 if ingredient doesn't exist
+        return inventory.TryGetValue(ingredientName, out int quantity) ? quantity : 0;
     }
 
-    // Optionally, you can have a method to check if an ingredient exists
     public bool IngredientExists(string ingredientName)
     {
         return inventory.ContainsKey(ingredientName);
