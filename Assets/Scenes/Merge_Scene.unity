@@ -413,12 +413,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb5ee34791f4c44a993630ab83e494d, type: 3}
---- !u!4 &646002034 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
-    type: 3}
-  m_PrefabInstance: {fileID: 646002033}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &793175908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,16 +1316,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockableIngredients:
-  - ingredientName: 
-    prefab: {fileID: 0}
-    unlockCost: 0
+  defaultUnlockables:
+  - ingredientName: Salt
     isUnlocked: 0
-  - ingredientName: 
-    prefab: {fileID: 0}
-    unlockCost: 0
+  - ingredientName: Pepper
     isUnlocked: 0
-  spawnArea: {fileID: 646002034}
+  - ingredientName: Thyme
+    isUnlocked: 0
+  - ingredientName: Onion
+    isUnlocked: 0
+  - ingredientName: Garlic
+    isUnlocked: 0
+  - ingredientName: Potato
+    isUnlocked: 0
+  - ingredientName: Milk
+    isUnlocked: 0
+  - ingredientName: Butter
+    isUnlocked: 0
+  - ingredientName: Dough
+    isUnlocked: 0
+  - ingredientName: Bread
+    isUnlocked: 0
 --- !u!4 &1700282066
 Transform:
   m_ObjectHideFlags: 0
