@@ -13,6 +13,8 @@ public class IngredientSpawnerController : MonoBehaviour
     private List<GameObject> spawnedIngredients = new List<GameObject>();
     private List<Vector3> usedPositions = new List<Vector3>();
 
+    private UnlockManager unlockManager;  // Reference to UnlockManager
+
     void Awake()
     {
         if (SceneManager.GetActiveScene().name == "Merge_Scene")
@@ -25,6 +27,9 @@ public class IngredientSpawnerController : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // Get UnlockManager instance
+        unlockManager = FindObjectOfType<UnlockManager>();
     }
 
     void Start()
@@ -72,7 +77,8 @@ public class IngredientSpawnerController : MonoBehaviour
         List<GameObject> unlockedPrefabs = new List<GameObject>();
         foreach (var prefabCandidate in ingredientPrefabs)
         {
-            if (UnlockManager.IsIngredientUnlocked(prefabCandidate.name))
+            // Use unlockManager instance to check if ingredient is unlocked
+            if (unlockManager.IsIngredientUnlocked(prefabCandidate.name))
             {
                 unlockedPrefabs.Add(prefabCandidate);
             }
@@ -94,52 +100,6 @@ public class IngredientSpawnerController : MonoBehaviour
         if (ingredientScript != null)
         {
             ingredientScript.displayName = selectedPrefab.name;
-        }
-    }
-
-    void SaveIngredients()
-    {
-        savedIngredients.Clear();
-        foreach (Ingredient ingredient in FindObjectsOfType<Ingredient>())
-        {
-            savedIngredients.Add(ingredient.displayName);
-        }
-    }
-
-    void LoadIngredients()
-    {
-        foreach (string ingredientName in savedIngredients)
-        {
-            SpawnIngredientFromSavedData(ingredientName);
-        }
-    }
-
-    void SpawnIngredientFromSavedData(string ingredientName)
-    {
-        GameObject ingredientPrefab = null;
-        foreach (var prefabOption in ingredientPrefabs)
-        {
-            if (prefabOption.name == ingredientName)
-            {
-                ingredientPrefab = prefabOption;
-                break;
-            }
-        }
-
-        if (ingredientPrefab != null)
-        {
-            Vector3 spawnPosition = GetRandomPosition();
-            GameObject ingredient = Instantiate(ingredientPrefab, spawnPosition, Quaternion.identity);
-            Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
-            if (ingredientScript != null)
-            {
-                ingredientScript.displayName = ingredientName;
-                spawnedIngredients.Add(ingredient);
-            }
-        }
-        else
-        {
-            Debug.LogError("No prefab found for ingredient: " + ingredientName);
         }
     }
 
