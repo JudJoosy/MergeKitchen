@@ -827,6 +827,8 @@ MonoBehaviour:
   m_Text: 'Spend coins to purchase ingredients which can be used to merge or used
     to cook.
 
+    1K = 1,000 Coins
+
 '
 --- !u!222 &1218768321
 CanvasRenderer:
