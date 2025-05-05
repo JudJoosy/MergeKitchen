@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 0
-  currencyText: {fileID: 2004382805}
+  moneyText: {fileID: 2004382805}
 --- !u!4 &632134848
 Transform:
   m_ObjectHideFlags: 0
@@ -7570,6 +7570,11 @@ PrefabInstance:
       objectReference: {fileID: 628157928}
     - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
         type: 3}
+      propertyPath: slots.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
       propertyPath: inventorySlotParent
       value: 
       objectReference: {fileID: 1100618055}
@@ -7578,6 +7583,56 @@ PrefabInstance:
       propertyPath: inventorySlotPrefab
       value: 
       objectReference: {fileID: 1506491078}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[0]
+      value: 
+      objectReference: {fileID: 1506491086}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[1]
+      value: 
+      objectReference: {fileID: 1112157914}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[2]
+      value: 
+      objectReference: {fileID: 675576880}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[3]
+      value: 
+      objectReference: {fileID: 1077555695}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[4]
+      value: 
+      objectReference: {fileID: 564494271}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[5]
+      value: 
+      objectReference: {fileID: 1823105558}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[6]
+      value: 
+      objectReference: {fileID: 1814517033}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[7]
+      value: 
+      objectReference: {fileID: 762269057}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[8]
+      value: 
+      objectReference: {fileID: 2045050015}
+    - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
+        type: 3}
+      propertyPath: slots.Array.data[9]
+      value: 
+      objectReference: {fileID: 1047377540}
     - target: {fileID: 5659702056736939538, guid: 5f2d7ffc84aa3b34c86dee99e72a0d0c,
         type: 3}
       propertyPath: inventorySlots.Array.data[0]
