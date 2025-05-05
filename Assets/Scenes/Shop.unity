@@ -1148,7 +1148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 234252663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Butter
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &234252663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,8 +1253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 11
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &257856621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,8 +1536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 17
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &264066797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,8 +1698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 20
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &278672186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1881,7 +1887,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 279053513}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Potato
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &279053513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1974,8 +1992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 18
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &291097804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2337,8 +2353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 9
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &362977566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,8 +2515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 16
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &388030240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2846,7 +2858,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 494278953}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Salt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &494278953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3416,7 +3440,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultUnlockables: []
+  defaultUnlockables:
+  - ingredientName: Salt
+    isUnlocked: 0
+  - ingredientName: Pepper
+    isUnlocked: 0
+  - ingredientName: Thyme
+    isUnlocked: 0
+  - ingredientName: Onion
+    isUnlocked: 0
+  - ingredientName: Garlic
+    isUnlocked: 0
+  - ingredientName: Potato
+    isUnlocked: 0
+  - ingredientName: Milk
+    isUnlocked: 0
+  - ingredientName: Butter
+    isUnlocked: 0
+  - ingredientName: Dough
+    isUnlocked: 0
+  - ingredientName: Bread
+    isUnlocked: 0
 --- !u!4 &614302180
 Transform:
   m_ObjectHideFlags: 0
@@ -4036,8 +4080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 10
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &819597623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4200,8 +4242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 19
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &832571806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4519,8 +4559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 6
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &913956717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4899,8 +4937,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 3
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &931225776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5221,8 +5257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 12
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &956518780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5491,7 +5525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1080488747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bread
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1080488747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5690,7 +5736,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1090781477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dough
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1090781477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,8 +6177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 8
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1174566587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6928,7 +6984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1338863736}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Onion
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1338863736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7135,8 +7203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 14
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1378694891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7498,8 +7564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 4
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1428682818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7662,8 +7726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 2
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1443332493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7880,8 +7942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22d5beacd632104b92ee4b69220b711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 10000
-  coinsText: {fileID: 0}
 --- !u!4 &1506019107
 Transform:
   m_ObjectHideFlags: 0
@@ -8613,7 +8673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1730823355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Milk
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1730823355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8785,8 +8857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 15
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1768052180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9124,8 +9194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 1
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1805754566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9221,7 +9289,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1900944100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Garlic
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1900944100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9429,8 +9509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 5
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1919579709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9593,8 +9671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 13
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1925473217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9950,8 +10026,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a422dd7d9679df4ba67bebd388a8ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemID: 7
-  ShopManager: {fileID: 1506019105}
 --- !u!114 &1978806519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10299,7 +10373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2054376735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pepper
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2054376735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10419,7 +10505,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063065779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 614302179}
+        m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
+        m_MethodName: UnlockIngredient
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Thyme
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063065779
 MonoBehaviour:
   m_ObjectHideFlags: 0
