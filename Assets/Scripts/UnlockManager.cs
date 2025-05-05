@@ -5,89 +5,56 @@ using UnityEngine;
 public class UnlockableIngredient
 {
     public string ingredientName;
+    public GameObject prefab;
+    public int unlockCost;    // Cost to unlock the ingredient
     public bool isUnlocked;
 }
 
 public class UnlockManager : MonoBehaviour
 {
-    public static UnlockManager Instance;
-    public static List<UnlockableIngredient> unlockedList = new List<UnlockableIngredient>();
+    public List<UnlockableIngredient> unlockableIngredients;
+    public Transform spawnArea; // Where to spawn in the merge scene
 
-    [SerializeField] private List<UnlockableIngredient> defaultUnlockables;
-
-    private void Awake()
+    // Check if an ingredient is unlocked
+    public bool IsIngredientUnlocked(string ingredientName)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            InitializeUnlocks();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void InitializeUnlocks()
-    {
-        // Clone defaultUnlockables into the static unlockedList
-        unlockedList = new List<UnlockableIngredient>();
-        foreach (var item in defaultUnlockables)
-        {
-            unlockedList.Add(new UnlockableIngredient
-            {
-                ingredientName = item.ingredientName,
-                isUnlocked = item.isUnlocked
-            });
-        }
-    }
-
-    public static bool IsIngredientUnlocked(string ingredientName)
-    {
-        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
+        UnlockableIngredient item = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
         return item != null && item.isUnlocked;
     }
 
-    public static void UnlockIngredient(string ingredientName)
+    // Attempt to unlock the ingredient
+    public void TryUnlockIngredient(string ingredientName)
     {
-        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
-        if (item != null)
+        UnlockableIngredient item = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
+
+        if (item != null && !item.isUnlocked)
         {
-            item.isUnlocked = true;
-            Debug.Log($"{ingredientName} has been unlocked.");
+            // Check if the player has enough money
+            if (CurrencyManager.Instance.SpendMoney(item.unlockCost))
+            {
+                item.isUnlocked = true;
+                SpawnInMergeScene(item.prefab);
+                Debug.Log($"{item.ingredientName} unlocked and spawned!");
+            }
+            else
+            {
+                Debug.LogWarning("Not enough money to unlock this ingredient!");
+            }
+        }
+        else if (item != null && item.isUnlocked)
+        {
+            Debug.Log($"{item.ingredientName} is already unlocked.");
         }
         else
         {
-            // If the ingredient doesn't exist yet, add it
-            unlockedList.Add(new UnlockableIngredient
-            {
-                ingredientName = ingredientName,
-                isUnlocked = true
-            });
-            Debug.Log($"{ingredientName} added and unlocked.");
+            Debug.LogWarning("Ingredient not found.");
         }
     }
 
-    public static void LockIngredient(string ingredientName)
+    private void SpawnInMergeScene(GameObject prefab)
     {
-        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
-        if (item != null)
-        {
-            item.isUnlocked = false;
-        }
-    }
-
-    public static List<string> GetUnlockedIngredientNames()
-    {
-        List<string> result = new List<string>();
-        foreach (var item in unlockedList)
-        {
-            if (item.isUnlocked)
-            {
-                result.Add(item.ingredientName);
-            }
-        }
-        return result;
+        // Spawn the ingredient prefab in the merge scene
+        Vector3 randomOffset = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+        Instantiate(prefab, spawnArea.position + randomOffset, Quaternion.identity);
     }
 }
