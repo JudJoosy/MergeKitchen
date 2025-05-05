@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -64,22 +63,37 @@ public class IngredientSpawnerController : MonoBehaviour
     {
         Vector3 spawnPosition = GetRandomPosition();
 
-        if (spawnPosition != Vector3.zero)
+        if (spawnPosition == Vector3.zero)
         {
-            int randomIndex = UnityEngine.Random.Range(0, ingredientPrefabs.Length);
-            GameObject ingredient = Instantiate(ingredientPrefabs[randomIndex], spawnPosition, Quaternion.identity);
-            spawnedIngredients.Add(ingredient);
+            Debug.LogWarning("No valid position found.");
+            return;
+        }
 
-            Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
-            if (ingredientScript != null)
+        List<GameObject> unlockedPrefabs = new List<GameObject>();
+        foreach (var prefabCandidate in ingredientPrefabs)
+        {
+            if (UnlockManager.IsIngredientUnlocked(prefabCandidate.name))
             {
-                // Set the displayName based on prefab
-                ingredientScript.displayName = ingredientPrefabs[randomIndex].name; // Updated to displayName
+                unlockedPrefabs.Add(prefabCandidate);
             }
         }
-        else
+
+        if (unlockedPrefabs.Count == 0)
         {
-            Debug.LogWarning("Failed to find a valid spawn position!");
+            Debug.LogWarning("No unlocked ingredients to spawn.");
+            return;
+        }
+
+        int index = Random.Range(0, unlockedPrefabs.Count);
+        GameObject selectedPrefab = unlockedPrefabs[index];
+
+        GameObject ingredient = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+        spawnedIngredients.Add(ingredient);
+
+        Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
+        if (ingredientScript != null)
+        {
+            ingredientScript.displayName = selectedPrefab.name;
         }
     }
 
@@ -88,7 +102,7 @@ public class IngredientSpawnerController : MonoBehaviour
         savedIngredients.Clear();
         foreach (Ingredient ingredient in FindObjectsOfType<Ingredient>())
         {
-            savedIngredients.Add(ingredient.displayName); // Updated to displayName
+            savedIngredients.Add(ingredient.displayName);
         }
     }
 
@@ -103,11 +117,11 @@ public class IngredientSpawnerController : MonoBehaviour
     void SpawnIngredientFromSavedData(string ingredientName)
     {
         GameObject ingredientPrefab = null;
-        foreach (var prefab in ingredientPrefabs)
+        foreach (var prefabOption in ingredientPrefabs)
         {
-            if (prefab.name == ingredientName)
+            if (prefabOption.name == ingredientName)
             {
-                ingredientPrefab = prefab;
+                ingredientPrefab = prefabOption;
                 break;
             }
         }
@@ -119,7 +133,7 @@ public class IngredientSpawnerController : MonoBehaviour
             Ingredient ingredientScript = ingredient.GetComponent<Ingredient>();
             if (ingredientScript != null)
             {
-                ingredientScript.displayName = ingredientName; // Updated to displayName
+                ingredientScript.displayName = ingredientName;
                 spawnedIngredients.Add(ingredient);
             }
         }
@@ -133,9 +147,9 @@ public class IngredientSpawnerController : MonoBehaviour
     {
         for (int attempts = 0; attempts < 10; attempts++)
         {
-            float x = UnityEngine.Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
-            float y = UnityEngine.Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
-            float z = UnityEngine.Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2);
+            float x = Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2);
+            float y = Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2);
+            float z = Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2);
             Vector3 randomPos = new Vector3(x, y, z);
 
             if (IsPositionValid(randomPos))

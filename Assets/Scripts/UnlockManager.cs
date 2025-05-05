@@ -5,42 +5,89 @@ using UnityEngine;
 public class UnlockableIngredient
 {
     public string ingredientName;
-    public GameObject prefab;
-    public int unlockCost;
     public bool isUnlocked;
 }
 
 public class UnlockManager : MonoBehaviour
 {
-    public List<UnlockableIngredient> unlockableIngredients;
-    public Transform spawnArea; // Where to spawn in the merge scene
+    public static UnlockManager Instance;
+    public static List<UnlockableIngredient> unlockedList = new List<UnlockableIngredient>();
 
-    public void TryUnlockIngredient(string ingredientName)
+    [SerializeField] private List<UnlockableIngredient> defaultUnlockables;
+
+    private void Awake()
     {
-        UnlockableIngredient item = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
-
-        if (item != null && !item.isUnlocked)
+        if (Instance == null)
         {
-            if (CurrencyManager.Instance.SpendMoney(item.unlockCost))
-            {
-                item.isUnlocked = true;
-                SpawnInMergeScene(item.prefab);
-                Debug.Log($"{item.ingredientName} unlocked and spawned!");
-            }
-        }
-        else if (item != null && item.isUnlocked)
-        {
-            Debug.Log($"{item.ingredientName} is already unlocked.");
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            InitializeUnlocks();
         }
         else
         {
-            Debug.LogWarning("Ingredient not found.");
+            Destroy(gameObject);
         }
     }
 
-    private void SpawnInMergeScene(GameObject prefab)
+    private void InitializeUnlocks()
     {
-        Vector3 randomOffset = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
-        Instantiate(prefab, spawnArea.position + randomOffset, Quaternion.identity);
+        // Clone defaultUnlockables into the static unlockedList
+        unlockedList = new List<UnlockableIngredient>();
+        foreach (var item in defaultUnlockables)
+        {
+            unlockedList.Add(new UnlockableIngredient
+            {
+                ingredientName = item.ingredientName,
+                isUnlocked = item.isUnlocked
+            });
+        }
+    }
+
+    public static bool IsIngredientUnlocked(string ingredientName)
+    {
+        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
+        return item != null && item.isUnlocked;
+    }
+
+    public static void UnlockIngredient(string ingredientName)
+    {
+        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
+        if (item != null)
+        {
+            item.isUnlocked = true;
+            Debug.Log($"{ingredientName} has been unlocked.");
+        }
+        else
+        {
+            // If the ingredient doesn't exist yet, add it
+            unlockedList.Add(new UnlockableIngredient
+            {
+                ingredientName = ingredientName,
+                isUnlocked = true
+            });
+            Debug.Log($"{ingredientName} added and unlocked.");
+        }
+    }
+
+    public static void LockIngredient(string ingredientName)
+    {
+        var item = unlockedList.Find(i => i.ingredientName == ingredientName);
+        if (item != null)
+        {
+            item.isUnlocked = false;
+        }
+    }
+
+    public static List<string> GetUnlockedIngredientNames()
+    {
+        List<string> result = new List<string>();
+        foreach (var item in unlockedList)
+        {
+            if (item.isUnlocked)
+            {
+                result.Add(item.ingredientName);
+            }
+        }
+        return result;
     }
 }

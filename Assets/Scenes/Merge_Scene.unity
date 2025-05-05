@@ -1320,7 +1320,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockableIngredients: []
+  unlockableIngredients:
+  - ingredientName: 
+    prefab: {fileID: 0}
+    unlockCost: 0
+    isUnlocked: 0
+  - ingredientName: 
+    prefab: {fileID: 0}
+    unlockCost: 0
+    isUnlocked: 0
   spawnArea: {fileID: 646002034}
 --- !u!4 &1700282066
 Transform:
