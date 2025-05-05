@@ -9,10 +9,9 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var slot in slots)
         {
-            // Use displayName instead of ingredientName
             if (slot.GetIngredientName() == ingredient.displayName)
             {
-                slot.SetQuantity(slot.GetComponent<Ingredient>().quantity + ingredient.quantity);
+                slot.AddQuantity(ingredient.quantity); // Corrected to use InventorySlot logic
                 return;
             }
         }
@@ -22,7 +21,6 @@ public class InventoryManager : MonoBehaviour
             if (string.IsNullOrEmpty(slot.GetIngredientName()))
             {
                 slot.SetIngredient(ingredient);
-                slot.SetQuantity(ingredient.quantity);
                 return;
             }
         }

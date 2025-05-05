@@ -10,7 +10,6 @@ public class MergeManager : MonoBehaviour
     {
         if (ingredient1 != null && ingredient2 != null)
         {
-            // Change ingredientName to displayName
             if (ingredient1.displayName == ingredient2.displayName)
             {
                 ingredient1.quantity += ingredient2.quantity;
@@ -33,9 +32,11 @@ public class MergeManager : MonoBehaviour
     {
         GameObject mergedObj = Instantiate(ingredient.gameObject);
         Ingredient merged = mergedObj.GetComponent<Ingredient>();
-        // Update ingredientName to displayName
-        merged.displayName = ingredient.displayName + "_merged";
+
+        // Clean up displayName to avoid merged_merged_merged
+        merged.displayName = ingredient.displayName.Replace("_merged", "") + "_merged";
         merged.quantity = 1;
+
         return merged;
     }
 

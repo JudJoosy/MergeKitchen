@@ -14,12 +14,13 @@ public class InventorySlot : MonoBehaviour
     public void SetIngredient(Ingredient newIngredient)
     {
         ingredient = newIngredient;
+        quantity = newIngredient.quantity; // Set initial quantity
         UpdateUI();
     }
 
     public string GetIngredientName()
     {
-        return ingredient.displayName; // Updated from ingredientName to displayName
+        return ingredient != null ? ingredient.displayName : "";
     }
 
     public void SetQuantity(int newQuantity)
@@ -28,10 +29,18 @@ public class InventorySlot : MonoBehaviour
         UpdateUI();
     }
 
+    public void AddQuantity(int additionalAmount)
+    {
+        quantity += additionalAmount;
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
+        if (ingredient == null) return;
+
         if (ingredientNameText != null)
-            ingredientNameText.text = ingredient.displayName; // Updated from ingredientName to displayName
+            ingredientNameText.text = ingredient.displayName;
 
         if (quantityText != null)
             quantityText.text = quantity.ToString();
