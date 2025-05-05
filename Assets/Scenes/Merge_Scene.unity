@@ -1314,27 +1314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultUnlockables:
-  - ingredientName: Salt
+  unlockableIngredients:
+  - ingredientName: 
+    prefab: {fileID: 0}
+    unlockCost: 0
     isUnlocked: 0
-  - ingredientName: Pepper
-    isUnlocked: 0
-  - ingredientName: Thyme
-    isUnlocked: 0
-  - ingredientName: Onion
-    isUnlocked: 0
-  - ingredientName: Garlic
-    isUnlocked: 0
-  - ingredientName: Potato
-    isUnlocked: 0
-  - ingredientName: Milk
-    isUnlocked: 0
-  - ingredientName: Butter
-    isUnlocked: 0
-  - ingredientName: Dough
-    isUnlocked: 0
-  - ingredientName: Bread
-    isUnlocked: 0
+  spawnArea: {fileID: 0}
 --- !u!4 &1700282066
 Transform:
   m_ObjectHideFlags: 0
