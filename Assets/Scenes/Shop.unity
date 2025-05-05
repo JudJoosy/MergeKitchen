@@ -2861,7 +2861,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 614302179}
         m_TargetAssemblyTypeName: UnlockManager, Assembly-CSharp
-        m_MethodName: UnlockIngredient
+        m_MethodName: TryUnlockIngredient
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3440,8 +3440,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7e539ed9e89de4681c53b07229d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlockableIngredients: []
-  spawnArea: {fileID: 0}
+  unlockableIngredients:
+  - ingredientName: Salt
+    prefab: {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06,
+      type: 3}
+    unlockCost: 10
+    isUnlocked: 0
+  - ingredientName: Pepper
+    prefab: {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003,
+      type: 3}
+    unlockCost: 10
+    isUnlocked: 0
+  spawnArea: {fileID: 1750908683}
 --- !u!4 &614302180
 Transform:
   m_ObjectHideFlags: 0
@@ -8692,6 +8702,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730823352}
   m_CullTransparentMesh: 1
+--- !u!1 &1750908682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1750908683}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1750908683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750908682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9234271, y: 3.5946045, z: -0.7337843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1753941573
 GameObject:
   m_ObjectHideFlags: 0
@@ -10582,3 +10623,4 @@ SceneRoots:
   - {fileID: 614302180}
   - {fileID: 142547211}
   - {fileID: 2016809933}
+  - {fileID: 1750908683}
