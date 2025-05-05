@@ -2871,18 +2871,6 @@ MonoBehaviour:
           m_StringArgument: Salt
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2016809932}
-        m_TargetAssemblyTypeName: CurrencyManager, Assembly-CSharp
-        m_MethodName: AddMoney
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &494278953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3478,7 +3466,7 @@ MonoBehaviour:
     unlockCost: 275
     isUnlocked: 0
   - ingredientName: Potato
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
+    prefab: {fileID: 270748565906933595, guid: 466ea51503a3f374abb13e9e6dc83358, type: 3}
     unlockCost: 500
     isUnlocked: 0
   - ingredientName: Milk
@@ -10219,7 +10207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 1000
-  moneyText: {fileID: 0}
+  moneyText: {fileID: 189333783}
 --- !u!4 &2016809933
 Transform:
   m_ObjectHideFlags: 0

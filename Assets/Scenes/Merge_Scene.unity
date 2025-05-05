@@ -1140,12 +1140,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478396557}
   m_CullTransparentMesh: 1
---- !u!4 &1609508591 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8645292584664628264, guid: 2fb5ee34791f4c44a993630ab83e494d,
-    type: 3}
-  m_PrefabInstance: {fileID: 646002033}
+--- !u!1 &1586482460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586482461}
+  m_Layer: 0
+  m_Name: spawncheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586482461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586482460}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9234271, y: 3.5946045, z: -0.7337843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624772408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1350,7 @@ MonoBehaviour:
     prefab: {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06,
       type: 3}
     unlockCost: 10
-    isUnlocked: 0
+    isUnlocked: 1
   - ingredientName: Pepper
     prefab: {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003,
       type: 3}
@@ -1369,7 +1394,7 @@ MonoBehaviour:
     prefab: {fileID: 270748565906933595, guid: 466ea51503a3f374abb13e9e6dc83358, type: 3}
     unlockCost: 10
     isUnlocked: 0
-  spawnArea: {fileID: 1609508591}
+  spawnArea: {fileID: 1586482461}
 --- !u!4 &1700282066
 Transform:
   m_ObjectHideFlags: 0
@@ -2523,3 +2548,4 @@ SceneRoots:
   - {fileID: 1416604096}
   - {fileID: 1794972029}
   - {fileID: 1700282066}
+  - {fileID: 1586482461}
