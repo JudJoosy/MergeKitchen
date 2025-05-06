@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
   m_Name: Fancy Salt And pepper
   m_EditorClassIdentifier: 
-  dishName: Fancy Salt and Pepper
+  dishName: Fancy Salt and pepper
   dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
     type: 3}
   dishValue: 120

@@ -9,6 +9,7 @@ TagManager:
   - Event
   - Pause
   - Collider
+  - MoneyText
   layers:
   - Default
   - TransparentFX
