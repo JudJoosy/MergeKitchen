@@ -1684,7 +1684,7 @@ MonoBehaviour:
   - requiredIngredients:
     - Potato
     - Milk
-    - Salt
+    - Butter
     dishData: {fileID: 11400000, guid: 38e734917c34e2f44a3f69ca7cb17d9a, type: 2}
   - requiredIngredients:
     - Dough
@@ -1692,7 +1692,7 @@ MonoBehaviour:
     - Garlic
     dishData: {fileID: 11400000, guid: b1c125d29cd6e7f4481118075e5aa261, type: 2}
   - requiredIngredients:
-    - 'Bread '
+    - Bread
     - Garlic
     - Butter
     dishData: {fileID: 11400000, guid: 165fed383f9b7a24594dd9ca1252dcf4, type: 2}
