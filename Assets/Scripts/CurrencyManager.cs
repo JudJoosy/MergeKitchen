@@ -13,7 +13,7 @@ public class CurrencyManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scenes
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -32,13 +32,12 @@ public class CurrencyManager : MonoBehaviour
         {
             currentMoney -= amount;
             UpdateMoneyUI();
+            Debug.Log($"Spent ${amount}. Remaining: ${currentMoney}");
             return true;
         }
-        else
-        {
-            Debug.Log("Not enough money!");
-            return false;
-        }
+
+        Debug.Log("Not enough money!");
+        return false;
     }
 
     public void AddMoney(int amount)
@@ -55,7 +54,7 @@ public class CurrencyManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("moneyText UI reference is missing.");
+            Debug.LogWarning("CurrencyManager: moneyText UI reference is missing.");
         }
     }
 }

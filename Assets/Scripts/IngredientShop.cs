@@ -20,11 +20,15 @@ public class IngredientShop : MonoBehaviour
                 Debug.Log("Not enough money to buy " + ingredient.name);
             }
         }
+        else
+        {
+            Debug.LogWarning("Ingredient not found in database: " + ingredientName);
+        }
     }
 
     private void SpawnIngredient(string ingredientName)
     {
-        // Replace this with actual spawning logic for the 3D model
+        // You can later replace this with actual spawn logic
         Debug.Log("Spawning ingredient: " + ingredientName);
     }
 }
