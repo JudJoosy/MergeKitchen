@@ -687,7 +687,7 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 1
+  m_CameraType: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -733,8 +733,8 @@ Camera:
   m_GameObject: {fileID: 1296869440}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4641509, g: 0.46152365, b: 0.46152365, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1067,7 +1067,7 @@ RectTransform:
   m_GameObject: {fileID: 1553536477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90101, y: 0.90101, z: 0.90101}
+  m_LocalScale: {x: 0.7926906, y: 0.7926906, z: 0.7926906}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1484417868}
