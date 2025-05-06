@@ -3,75 +3,41 @@ using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    [Header("Dish Recipes (Scriptable Objects)")]
-    [Tooltip("Assign DishDataSO ScriptableObjects here")]
-    public List<DishDataSO> recipes = new List<DishDataSO>();
-
-    /// <summary>
-    /// Attempts to make a dish from the given list of ingredient names.
-    /// Iterates through the assigned DishDataSO recipes to find a matching set of ingredients.
-    /// Returns the instantiated dish GameObject if a match is found; otherwise returns null.
-    /// </summary>
-    public GameObject TryMakeDish(List<string> inputIngredients)
+    [System.Serializable]
+    public class Recipe
     {
-        if (inputIngredients == null || inputIngredients.Count == 0)
-        {
-            Debug.LogWarning("Input ingredient list is empty or null.");
-            return null;
-        }
+        public List<string> requiredIngredients;
+        public DishDataSO dishData;
 
-        // Check each recipe (DishDataSO) for a matching ingredients list
-        foreach (DishDataSO dishData in recipes)
+        public bool Matches(List<string> ingredients)
         {
-            if (dishData == null) continue;
-            // Compare ingredients ignoring order
-            if (IngredientsMatch(inputIngredients, dishData.requiredIngredients))
+            if (ingredients.Count != requiredIngredients.Count)
+                return false;
+
+            List<string> requiredCopy = new List<string>(requiredIngredients);
+
+            foreach (string ing in ingredients)
             {
-                // If there's a matching recipe, instantiate its dishPrefab
-                if (dishData.dishPrefab != null)
-                {
-                    return Instantiate(dishData.dishPrefab);
-                }
-                else
-                {
-                    Debug.LogWarning($"DishDataSO '{dishData.name}' has no dishPrefab assigned.");
-                }
+                if (!requiredCopy.Remove(ing))
+                    return false;
             }
-        }
 
-        // No matching recipe found
-        return null;
+            return requiredCopy.Count == 0;
+        }
     }
 
-    /// <summary>
-    /// Compares two lists of ingredient names, ignoring order.
-    /// Returns true if they contain the exact same elements.
-    /// </summary>
-    private bool IngredientsMatch(List<string> input, List<string> required)
+    public List<Recipe> recipes;
+
+    public DishDataSO TryMakeDish(List<string> ingredients)
     {
-        if (input == null || required == null)
-            return false;
-        if (input.Count != required.Count)
-            return false;
-
-        // Make a copy of the input list so we can remove items
-        List<string> remaining = new List<string>(input);
-
-        // Try to match every required ingredient
-        foreach (string ingredient in required)
+        foreach (Recipe recipe in recipes)
         {
-            if (remaining.Contains(ingredient))
+            if (recipe.Matches(ingredients))
             {
-                remaining.Remove(ingredient);
-            }
-            else
-            {
-                // Missing a required ingredient
-                return false;
+                return recipe.dishData;
             }
         }
 
-        // If all required ingredients were found, no extras should remain
-        return remaining.Count == 0;
+        return null;
     }
 }

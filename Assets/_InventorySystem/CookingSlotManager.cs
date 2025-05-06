@@ -7,18 +7,10 @@ public class CookingSlotManager : MonoBehaviour
 {
     public static CookingSlotManager Instance;
 
-    [System.Serializable]
-    public class DishData
-    {
-        public string dishName;
-        public GameObject dishPrefab;
-    }
-
     public List<CookingSlot> cookingSlots;
     public RecipeManager recipeManager;
     public Transform dishSpawnPoint;
     public TMP_Text dishNameText;
-    public List<DishData> dishPrefabs;
 
     private void Awake()
     {
@@ -38,13 +30,15 @@ public class CookingSlotManager : MonoBehaviour
             }
         }
 
-        GameObject resultDish = recipeManager.TryMakeDish(currentIngredients);
+        DishDataSO resultDish = recipeManager.TryMakeDish(currentIngredients);
 
         if (resultDish != null)
         {
-            ShowDishName(resultDish.name);
-            SpawnDishModel(resultDish);
+            ShowDishName(resultDish.dishName);
+            SpawnDishModel(resultDish.dishPrefab);
             ClearCookingSlots();
+
+            // TODO: Add dishValue to currency here (e.g., CurrencyManager.Instance.AddMoney(resultDish.dishValue);)
         }
         else
         {
@@ -57,7 +51,6 @@ public class CookingSlotManager : MonoBehaviour
         }
     }
 
-    // ✅ MAKE SURE THIS IS PUBLIC AND SPELLING MATCHES
     public void TryPlaceIngredient(string ingredientName, Sprite icon)
     {
         foreach (CookingSlot slot in cookingSlots)

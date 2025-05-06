@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class IngredientUIButton : MonoBehaviour
 {
+    [Header("Ingredient Info")]
     public string ingredientName;
     public Image ingredientIcon;
 
@@ -11,11 +12,18 @@ public class IngredientUIButton : MonoBehaviour
     {
         if (CookingSlotManager.Instance != null)
         {
-            CookingSlotManager.Instance.TryPlaceIngredient(ingredientName, ingredientIcon.sprite);
+            if (!string.IsNullOrEmpty(ingredientName) && ingredientIcon != null)
+            {
+                CookingSlotManager.Instance.TryPlaceIngredient(ingredientName, ingredientIcon.sprite);
+            }
+            else
+            {
+                Debug.LogWarning("Ingredient name or icon is not assigned.");
+            }
         }
         else
         {
-            Debug.LogWarning("CookingSlotManager.Instance is null!");
+            Debug.LogError("CookingSlotManager.Instance is null! Make sure there's a CookingSlotManager in the scene.");
         }
     }
 }
