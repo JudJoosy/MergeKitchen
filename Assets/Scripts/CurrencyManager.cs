@@ -1,21 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CurrencyManager : MonoBehaviour
 {
     public static CurrencyManager Instance;
 
-    public int currentMoney = 1000; // Starting money
-    public Text moneyText; // Optional: connect to your UI
+    public int currentMoney = 1000;
+    public Text moneyText;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to scene change
+            DontDestroyOnLoad(gameObject); // Persist across scenes
         }
         else
         {
@@ -25,26 +23,6 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateMoneyUI();
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Try to find and reassign the moneyText in the new scene
-        if (moneyText == null)
-        {
-            GameObject foundText = GameObject.Find("MoneyText");
-            if (foundText != null)
-            {
-                moneyText = foundText.GetComponent<Text>();
-                Debug.Log("MoneyText UI re-assigned.");
-            }
-            else
-            {
-                Debug.LogWarning("MoneyText UI not found in this scene.");
-            }
-        }
-
         UpdateMoneyUI();
     }
 
@@ -72,8 +50,12 @@ public class CurrencyManager : MonoBehaviour
     private void UpdateMoneyUI()
     {
         if (moneyText != null)
-            moneyText.text = "$" + currentMoney.ToString();
+        {
+            moneyText.text = "$" + currentMoney;
+        }
         else
+        {
             Debug.LogWarning("moneyText UI reference is missing.");
+        }
     }
 }

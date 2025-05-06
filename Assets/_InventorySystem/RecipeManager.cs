@@ -3,41 +3,75 @@ using UnityEngine;
 
 public class RecipeManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Recipe
+    [Header("Dish Recipes (Scriptable Objects)")]
+    [Tooltip("Assign DishDataSO ScriptableObjects here")]
+    public List<DishDataSO> recipes = new List<DishDataSO>();
+
+    /// <summary>
+    /// Attempts to make a dish from the given list of ingredient names.
+    /// Iterates through the assigned DishDataSO recipes to find a matching set of ingredients.
+    /// Returns the instantiated dish GameObject if a match is found; otherwise returns null.
+    /// </summary>
+    public GameObject TryMakeDish(List<string> inputIngredients)
     {
-        public List<string> requiredIngredients;
-        public CookingSlotManager.DishData dishData;
-
-        public bool Matches(List<string> ingredients)
+        if (inputIngredients == null || inputIngredients.Count == 0)
         {
-            if (ingredients.Count != requiredIngredients.Count)
-                return false;
-
-            List<string> requiredCopy = new List<string>(requiredIngredients);
-
-            foreach (string ing in ingredients)
-            {
-                if (!requiredCopy.Remove(ing))
-                    return false;
-            }
-
-            return requiredCopy.Count == 0;
+            Debug.LogWarning("Input ingredient list is empty or null.");
+            return null;
         }
+
+        // Check each recipe (DishDataSO) for a matching ingredients list
+        foreach (DishDataSO dishData in recipes)
+        {
+            if (dishData == null) continue;
+            // Compare ingredients ignoring order
+            if (IngredientsMatch(inputIngredients, dishData.requiredIngredients))
+            {
+                // If there's a matching recipe, instantiate its dishPrefab
+                if (dishData.dishPrefab != null)
+                {
+                    return Instantiate(dishData.dishPrefab);
+                }
+                else
+                {
+                    Debug.LogWarning($"DishDataSO '{dishData.name}' has no dishPrefab assigned.");
+                }
+            }
+        }
+
+        // No matching recipe found
+        return null;
     }
 
-    public List<Recipe> recipes;
-
-    public CookingSlotManager.DishData TryMakeDish(List<string> ingredients)
+    /// <summary>
+    /// Compares two lists of ingredient names, ignoring order.
+    /// Returns true if they contain the exact same elements.
+    /// </summary>
+    private bool IngredientsMatch(List<string> input, List<string> required)
     {
-        foreach (Recipe recipe in recipes)
+        if (input == null || required == null)
+            return false;
+        if (input.Count != required.Count)
+            return false;
+
+        // Make a copy of the input list so we can remove items
+        List<string> remaining = new List<string>(input);
+
+        // Try to match every required ingredient
+        foreach (string ingredient in required)
         {
-            if (recipe.Matches(ingredients))
+            if (remaining.Contains(ingredient))
             {
-                return recipe.dishData;
+                remaining.Remove(ingredient);
+            }
+            else
+            {
+                // Missing a required ingredient
+                return false;
             }
         }
 
-        return null;
+        // If all required ingredients were found, no extras should remain
+        return remaining.Count == 0;
     }
 }

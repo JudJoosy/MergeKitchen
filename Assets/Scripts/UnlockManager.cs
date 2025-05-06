@@ -1,60 +1,73 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class UnlockableIngredient
-{
-    public string ingredientName;
-    public GameObject prefab;
-    public int unlockCost;    // Cost to unlock the ingredient
-    public bool isUnlocked;
-}
-
 public class UnlockManager : MonoBehaviour
 {
-    public List<UnlockableIngredient> unlockableIngredients;
-    public Transform spawnArea; // Where to spawn in the merge scene
-
-    // Check if an ingredient is unlocked
-    public bool IsIngredientUnlocked(string ingredientName)
+    [System.Serializable]
+    public class IngredientUnlockData
     {
-        UnlockableIngredient item = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
-        return item != null && item.isUnlocked;
+        public string ingredientName;
+        public int cost;
+        public GameObject ingredientPrefab;
     }
 
-    // Attempt to unlock the ingredient
-    public void TryUnlockIngredient(string ingredientName)
-    {
-        UnlockableIngredient item = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
+    public List<IngredientUnlockData> unlockableIngredients;
+    private HashSet<string> unlockedIngredients = new HashSet<string>();
 
-        if (item != null && !item.isUnlocked)
+    private void Start()
+    {
+        LoadUnlockedIngredients();
+    }
+
+    public bool TryUnlockIngredient(string ingredientName)
+    {
+        IngredientUnlockData data = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
+        if (data == null)
         {
-            // Check if the player has enough money
-            if (CurrencyManager.Instance.SpendMoney(item.unlockCost))
-            {
-                item.isUnlocked = true;
-                SpawnInMergeScene(item.prefab);
-                Debug.Log($"{item.ingredientName} unlocked and spawned!");
-            }
-            else
-            {
-                Debug.LogWarning("Not enough money to unlock this ingredient!");
-            }
+            Debug.LogWarning($"Ingredient {ingredientName} not found in list.");
+            return false;
         }
-        else if (item != null && item.isUnlocked)
+
+        if (unlockedIngredients.Contains(ingredientName))
         {
-            Debug.Log($"{item.ingredientName} is already unlocked.");
+            Debug.Log($"{ingredientName} already unlocked.");
+            return true;
         }
-        else
+
+        if (CurrencyManager.Instance.SpendMoney(data.cost))
         {
-            Debug.LogWarning("Ingredient not found.");
+            unlockedIngredients.Add(ingredientName);
+            PlayerPrefs.SetInt("Unlocked_" + ingredientName, 1);
+            PlayerPrefs.Save();
+            Debug.Log($"{ingredientName} unlocked!");
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool IsIngredientUnlocked(string name)
+    {
+        return unlockedIngredients.Contains(name);
+    }
+
+    void LoadUnlockedIngredients()
+    {
+        foreach (var data in unlockableIngredients)
+        {
+            if (PlayerPrefs.GetInt("Unlocked_" + data.ingredientName, 0) == 1)
+                unlockedIngredients.Add(data.ingredientName);
         }
     }
 
-    private void SpawnInMergeScene(GameObject prefab)
+    public List<GameObject> GetUnlockedIngredientPrefabs()
     {
-        // Spawn the ingredient prefab in the merge scene
-        Vector3 randomOffset = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
-        Instantiate(prefab, spawnArea.position + randomOffset, Quaternion.identity);
+        List<GameObject> result = new List<GameObject>();
+        foreach (var data in unlockableIngredients)
+        {
+            if (unlockedIngredients.Contains(data.ingredientName))
+                result.Add(data.ingredientPrefab);
+        }
+        return result;
     }
 }

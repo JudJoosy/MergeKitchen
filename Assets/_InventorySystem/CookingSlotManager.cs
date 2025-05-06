@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -22,7 +22,8 @@ public class CookingSlotManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
     }
 
     public void TryCook()
@@ -37,12 +38,12 @@ public class CookingSlotManager : MonoBehaviour
             }
         }
 
-        DishData result = recipeManager.TryMakeDish(currentIngredients);
+        GameObject resultDish = recipeManager.TryMakeDish(currentIngredients);
 
-        if (result != null)
+        if (resultDish != null)
         {
-            ShowDishName(result.dishName);
-            SpawnDishModel(result.dishPrefab);
+            ShowDishName(resultDish.name);
+            SpawnDishModel(resultDish);
             ClearCookingSlots();
         }
         else
@@ -56,6 +57,7 @@ public class CookingSlotManager : MonoBehaviour
         }
     }
 
+    // ✅ MAKE SURE THIS IS PUBLIC AND SPELLING MATCHES
     public void TryPlaceIngredient(string ingredientName, Sprite icon)
     {
         foreach (CookingSlot slot in cookingSlots)
@@ -79,16 +81,16 @@ public class CookingSlotManager : MonoBehaviour
         }
     }
 
-    void SpawnDishModel(GameObject prefab)
+    void SpawnDishModel(GameObject dishPrefab)
     {
         foreach (Transform child in dishSpawnPoint)
         {
             Destroy(child.gameObject);
         }
 
-        if (prefab != null)
+        if (dishPrefab != null)
         {
-            GameObject spawnedDish = Instantiate(prefab, dishSpawnPoint.position, dishSpawnPoint.rotation, dishSpawnPoint);
+            GameObject spawnedDish = Instantiate(dishPrefab, dishSpawnPoint.position, dishSpawnPoint.rotation, dishSpawnPoint);
             spawnedDish.transform.localScale = Vector3.one;
         }
         else
