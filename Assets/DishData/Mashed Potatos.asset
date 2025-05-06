@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
+  m_Name: Mashed Potatos
+  m_EditorClassIdentifier: 
+  dishName: Mashed Potatos
+  requiredIngredients:
+  - 'Potato '
+  - Milk
+  - Butter
+  rewardAmount: 5
+  dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
+    type: 3}
