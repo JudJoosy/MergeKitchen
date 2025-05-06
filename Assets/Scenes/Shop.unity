@@ -3296,50 +3296,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockableIngredients:
   - ingredientName: Salt
-    prefab: {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06,
+    cost: 10
+    ingredientPrefab: {fileID: 2685440809815277647, guid: 083e21a543192da49a02bf1be5cc7d06,
       type: 3}
-    unlockCost: 10
-    isUnlocked: 0
   - ingredientName: Pepper
-    prefab: {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003,
+    cost: 25
+    ingredientPrefab: {fileID: 9017684224641638786, guid: 7690b7a221a6e83459f2b84db16ae003,
       type: 3}
-    unlockCost: 25
-    isUnlocked: 0
   - ingredientName: Thyme
-    prefab: {fileID: 2185201842584178971, guid: cfbd089687a3e084891964ac1a234a45,
+    cost: 60
+    ingredientPrefab: {fileID: 2185201842584178971, guid: cfbd089687a3e084891964ac1a234a45,
       type: 3}
-    unlockCost: 60
-    isUnlocked: 0
   - ingredientName: Onion
-    prefab: {fileID: 2350284839554241873, guid: e2620f541d597ff4c9e7a8b35eec87a2,
+    cost: 125
+    ingredientPrefab: {fileID: 2350284839554241873, guid: e2620f541d597ff4c9e7a8b35eec87a2,
       type: 3}
-    unlockCost: 125
-    isUnlocked: 0
   - ingredientName: Garlic
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
-    unlockCost: 275
-    isUnlocked: 0
+    cost: 275
+    ingredientPrefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5,
+      type: 3}
   - ingredientName: Potato
-    prefab: {fileID: 270748565906933595, guid: 466ea51503a3f374abb13e9e6dc83358, type: 3}
-    unlockCost: 500
-    isUnlocked: 0
+    cost: 500
+    ingredientPrefab: {fileID: 270748565906933595, guid: 466ea51503a3f374abb13e9e6dc83358,
+      type: 3}
   - ingredientName: Milk
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
-    unlockCost: 1250
-    isUnlocked: 0
+    cost: 1250
+    ingredientPrefab: {fileID: 3190594312203270079, guid: 35ad17e9dbadc9d43838cc2b4ccb4f9b,
+      type: 3}
   - ingredientName: Butter
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
-    unlockCost: 2500
-    isUnlocked: 0
+    cost: 2500
+    ingredientPrefab: {fileID: 9014225683367304001, guid: 725485f022263094c8212c7c314b7cfc,
+      type: 3}
   - ingredientName: Dough
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
-    unlockCost: 5000
-    isUnlocked: 0
+    cost: 5000
+    ingredientPrefab: {fileID: 7596437342300379481, guid: 632a7cd86b2fcf94ebdb2e52bff68b2c,
+      type: 3}
   - ingredientName: Bread
-    prefab: {fileID: 381803822861688234, guid: c6a2d80880ed2fb42b7a7d0915f639e5, type: 3}
-    unlockCost: 10000
-    isUnlocked: 0
-  spawnArea: {fileID: 1750908683}
+    cost: 10000
+    ingredientPrefab: {fileID: 6616787696620895705, guid: 543c091ae93e1cb469419f0acf0a6766,
+      type: 3}
 --- !u!4 &614302180
 Transform:
   m_ObjectHideFlags: 0
