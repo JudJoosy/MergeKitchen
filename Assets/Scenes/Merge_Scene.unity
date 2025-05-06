@@ -685,7 +685,7 @@ RectTransform:
   m_GameObject: {fileID: 1099655916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.2, y: 0.19, z: 1}
+  m_LocalScale: {x: 4.3, y: 0.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 793175909}
@@ -693,7 +693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: -115.8609}
+  m_AnchoredPosition: {x: 0.3, y: -115.8609}
   m_SizeDelta: {x: 116.143, y: 648.071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1099655918
@@ -768,8 +768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.3, y: 805.5}
-  m_SizeDelta: {x: 1065.7, y: 50}
+  m_AnchoredPosition: {x: 50.5, y: 707.3}
+  m_SizeDelta: {x: 666.5, y: 256.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193383557
 MonoBehaviour:
@@ -792,7 +792,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Merge identical  items  together to be able to use them in the cooking
-    scene
+    scene.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1146,7 +1146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 427.4, y: 916.8001}
+  m_AnchoredPosition: {x: 302.44, y: 898.7}
   m_SizeDelta: {x: 148.61, y: 198.507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624772410
@@ -2055,12 +2055,12 @@ PrefabInstance:
     - target: {fileID: 5057954142742007837, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -427.1
+      value: -314.7
       objectReference: {fileID: 0}
     - target: {fileID: 5057954142742007837, guid: 3f6f4bc4aaec3c44f94b13efa7401ff0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 915
+      value: 906.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
