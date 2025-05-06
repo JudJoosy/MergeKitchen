@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockManager : MonoBehaviour
 {
@@ -99,7 +100,7 @@ public class UnlockManager : MonoBehaviour
 
             if (IsIngredientUnlocked(data.ingredientName))
             {
-                var button = buttonObj.GetComponent<UnityEngine.UI.Button>();
+                var button = buttonObj.GetComponent<Button>();
                 if (button != null)
                     button.interactable = false;
             }

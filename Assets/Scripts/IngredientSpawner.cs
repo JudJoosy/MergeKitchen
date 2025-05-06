@@ -27,9 +27,6 @@ public class IngredientSpawnerController : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
-        // Get UnlockManager instance
-        unlockManager = FindObjectOfType<UnlockManager>();
     }
 
     void Start()
@@ -46,7 +43,11 @@ public class IngredientSpawnerController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name != "Merge_Scene")
+        if (scene.name == "Merge_Scene")
+        {
+            unlockManager = FindObjectOfType<UnlockManager>();  // Re-assign after scene load
+        }
+        else
         {
             Destroy(gameObject);
         }
@@ -66,6 +67,12 @@ public class IngredientSpawnerController : MonoBehaviour
 
     void SpawnIngredient()
     {
+        if (unlockManager == null)
+        {
+            Debug.LogWarning("UnlockManager is not assigned.");
+            return;
+        }
+
         Vector3 spawnPosition = GetRandomPosition();
 
         if (spawnPosition == Vector3.zero)
