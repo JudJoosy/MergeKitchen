@@ -7,14 +7,14 @@ public class DishManager : MonoBehaviour
     {
         int totalDishCost = 0;
 
-        // Calculate the total cost of all ingredients used
+        // Log the ingredients used and calculate the total cost
         foreach (var ingredient in ingredients)
         {
-            totalDishCost += ingredient.cost;
+            Debug.Log($"Ingredient: {ingredient.ingredientName}, Cost: {ingredient.cost}");  // Log each ingredient
+            totalDishCost += ingredient.cost;  // Sum the costs
         }
 
-        // Log the total dish cost
-        Debug.Log($"Total dish cost: ${totalDishCost}");
+        Debug.Log($"Total dish cost: ${totalDishCost}");  // Log the total cost
 
         // Spend money to make the dish
         if (CurrencyManager.Instance.SpendMoney(totalDishCost))
@@ -24,7 +24,7 @@ public class DishManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough money to make the dish.");
+            Debug.Log("Not enough money to make the dish.");  // Log if not enough money
         }
     }
 
@@ -32,7 +32,7 @@ public class DishManager : MonoBehaviour
     private void RewardPlayerForDish()
     {
         int rewardAmount = 500;  // The reward for making a dish
-        CurrencyManager.Instance.AddMoney(rewardAmount);
-        Debug.Log($"Player rewarded with ${rewardAmount}!");  // Debug message
+        CurrencyManager.Instance.AddMoney(rewardAmount);  // Add reward money
+        Debug.Log($"Player rewarded with ${rewardAmount}!");  // Log the reward
     }
 }
