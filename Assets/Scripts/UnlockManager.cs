@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UnlockManager : MonoBehaviour
 {
@@ -18,8 +17,8 @@ public class UnlockManager : MonoBehaviour
     private HashSet<string> unlockedIngredients = new HashSet<string>();
 
     [Header("UI Setup")]
-    public GameObject buttonPrefab; // Prefab with Image and Button only
-    public Transform buttonContainer;
+    public GameObject buttonPrefab; // Prefab with Image UI and IngredientUnlockButton
+    public Transform buttonContainer; // Parent layout group
 
     private void Start()
     {
@@ -86,22 +85,24 @@ public class UnlockManager : MonoBehaviour
         foreach (var data in unlockableIngredients)
         {
             GameObject buttonObj = Instantiate(buttonPrefab, buttonContainer);
-            Button button = buttonObj.GetComponent<Button>();
 
-            string ingredientName = data.ingredientName;
-            bool alreadyUnlocked = IsIngredientUnlocked(ingredientName);
-
-            button.onClick.AddListener(() =>
+            IngredientUnlockButton unlockButton = buttonObj.GetComponent<IngredientUnlockButton>();
+            if (unlockButton != null)
             {
-                if (TryUnlockIngredient(ingredientName))
-                {
-                    button.interactable = false; // Disable button after unlocking
-                }
-            });
+                unlockButton.ingredientName = data.ingredientName;
+                unlockButton.unlockManager = this;
+            }
+            else
+            {
+                Debug.LogWarning($"IngredientUnlockButton script missing on prefab: {buttonObj.name}");
+            }
 
-            // If already unlocked, disable the button right away
-            if (alreadyUnlocked)
-                button.interactable = false;
+            if (IsIngredientUnlocked(data.ingredientName))
+            {
+                var button = buttonObj.GetComponent<UnityEngine.UI.Button>();
+                if (button != null)
+                    button.interactable = false;
+            }
         }
     }
 }
