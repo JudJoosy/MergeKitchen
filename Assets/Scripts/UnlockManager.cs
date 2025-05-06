@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using UnityEngine.UI; // Using Unity's default UI Text instead of TMP_Text
 
 public class UnlockManager : MonoBehaviour
 {
@@ -19,8 +18,8 @@ public class UnlockManager : MonoBehaviour
     private HashSet<string> unlockedIngredients = new HashSet<string>();
 
     [Header("UI Setup")]
-    public GameObject buttonPrefab; // Prefab with Button + TMP_Text
-    public Transform buttonContainer;
+    public GameObject buttonPrefab; // Prefab with Button + Text
+    public Transform buttonContainer; // Parent layout object (e.g. Vertical Layout Group)
 
     private void Start()
     {
@@ -33,20 +32,14 @@ public class UnlockManager : MonoBehaviour
         IngredientUnlockData data = unlockableIngredients.Find(i => i.ingredientName == ingredientName);
         if (data == null)
         {
-            Debug.LogWarning($"Ingredient '{ingredientName}' not found in list.");
+            Debug.LogWarning($"Ingredient {ingredientName} not found in list.");
             return false;
         }
 
         if (unlockedIngredients.Contains(ingredientName))
         {
-            Debug.Log($"Ingredient '{ingredientName}' already unlocked.");
+            Debug.Log($"{ingredientName} already unlocked.");
             return true;
-        }
-
-        if (CurrencyManager.Instance == null)
-        {
-            Debug.LogError("CurrencyManager.Instance is null. Ensure CurrencyManager is in the scene.");
-            return false;
         }
 
         if (CurrencyManager.Instance.SpendMoney(data.cost))
@@ -54,15 +47,17 @@ public class UnlockManager : MonoBehaviour
             unlockedIngredients.Add(ingredientName);
             PlayerPrefs.SetInt("Unlocked_" + ingredientName, 1);
             PlayerPrefs.Save();
-            Debug.Log($"Unlocked '{ingredientName}'!");
+            Debug.Log($"{ingredientName} unlocked!");
             return true;
         }
 
-        Debug.Log($"Not enough money to unlock '{ingredientName}'.");
         return false;
     }
 
-    public bool IsIngredientUnlocked(string name) => unlockedIngredients.Contains(name);
+    public bool IsIngredientUnlocked(string name)
+    {
+        return unlockedIngredients.Contains(name);
+    }
 
     private void LoadUnlockedIngredients()
     {
@@ -92,34 +87,28 @@ public class UnlockManager : MonoBehaviour
         {
             GameObject buttonObj = Instantiate(buttonPrefab, buttonContainer);
             Button button = buttonObj.GetComponent<Button>();
-            TMP_Text buttonText = buttonObj.GetComponentInChildren<TMP_Text>();
-
-            string ingredientName = data.ingredientName;
-            bool alreadyUnlocked = IsIngredientUnlocked(ingredientName);
+            Text buttonText = buttonObj.GetComponentInChildren<Text>(); // Use Text instead of TMP_Text
 
             if (buttonText != null)
             {
+                bool alreadyUnlocked = IsIngredientUnlocked(data.ingredientName);
                 buttonText.text = alreadyUnlocked
-                    ? $"{ingredientName} (Unlocked)"
-                    : $"{ingredientName} - ${data.cost}";
+                    ? $"{data.ingredientName} (Unlocked)"
+                    : $"{data.ingredientName} - ${data.cost}";
             }
 
-            if (alreadyUnlocked)
+            string ingredientName = data.ingredientName;
+            button.onClick.AddListener(() =>
             {
-                button.interactable = false;
-            }
-            else
-            {
-                button.onClick.AddListener(() =>
+                if (TryUnlockIngredient(ingredientName))
                 {
-                    if (TryUnlockIngredient(ingredientName))
-                    {
-                        if (buttonText != null)
-                            buttonText.text = $"{ingredientName} (Unlocked)";
-                        button.interactable = false;
-                    }
-                });
-            }
+                    if (buttonText != null)
+                        buttonText.text = $"{ingredientName} (Unlocked)";
+                }
+            });
+
+            if (IsIngredientUnlocked(data.ingredientName))
+                button.interactable = false;
         }
     }
 }
