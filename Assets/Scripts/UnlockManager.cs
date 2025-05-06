@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Use TextMeshPro or switch to UnityEngine.UI.Text if needed
 
 public class UnlockManager : MonoBehaviour
 {
@@ -19,8 +18,8 @@ public class UnlockManager : MonoBehaviour
     private HashSet<string> unlockedIngredients = new HashSet<string>();
 
     [Header("UI Setup")]
-    public GameObject buttonPrefab; // Prefab with Button + Text (or TMP_Text)
-    public Transform buttonContainer; // Parent layout object (e.g. Vertical Layout Group)
+    public GameObject buttonPrefab; // Prefab with Image and Button only
+    public Transform buttonContainer;
 
     private void Start()
     {
@@ -88,46 +87,21 @@ public class UnlockManager : MonoBehaviour
         {
             GameObject buttonObj = Instantiate(buttonPrefab, buttonContainer);
             Button button = buttonObj.GetComponent<Button>();
-            TMP_Text buttonText = buttonObj.GetComponentInChildren<TMP_Text>(); // Or use Text if not TMP
-
-            if (buttonText != null)
-            {
-                bool alreadyUnlocked = IsIngredientUnlocked(data.ingredientName);
-                buttonText.text = alreadyUnlocked
-                    ? $"{data.ingredientName} (Unlocked)"
-                    : $"{data.ingredientName} - ${data.cost}";
-
-                // Debugging to check if the button text is set correctly
-                Debug.Log($"Button Text Set: {buttonText.text}");
-            }
-            else
-            {
-                Debug.LogWarning("Button Text component not found!");
-            }
 
             string ingredientName = data.ingredientName;
+            bool alreadyUnlocked = IsIngredientUnlocked(ingredientName);
+
             button.onClick.AddListener(() =>
             {
                 if (TryUnlockIngredient(ingredientName))
                 {
-                    if (buttonText != null)
-                    {
-                        buttonText.text = $"{ingredientName} (Unlocked)";
-                    }
+                    button.interactable = false; // Disable button after unlocking
                 }
             });
 
-            // Debugging button interactability
-            if (IsIngredientUnlocked(data.ingredientName))
-            {
+            // If already unlocked, disable the button right away
+            if (alreadyUnlocked)
                 button.interactable = false;
-                Debug.Log($"Button for {data.ingredientName} set to non-interactable (already unlocked).");
-            }
-            else
-            {
-                button.interactable = true;
-                Debug.Log($"Button for {data.ingredientName} is interactable.");
-            }
         }
     }
 }
