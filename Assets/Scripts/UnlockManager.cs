@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro; // Use TextMeshPro or switch to UnityEngine.UI.Text if needed
 
 public class UnlockManager : MonoBehaviour
 {
@@ -11,12 +13,19 @@ public class UnlockManager : MonoBehaviour
         public GameObject ingredientPrefab;
     }
 
+    [Header("Ingredient Data")]
     public List<IngredientUnlockData> unlockableIngredients;
+
     private HashSet<string> unlockedIngredients = new HashSet<string>();
+
+    [Header("UI Setup")]
+    public GameObject buttonPrefab; // Prefab with Button + Text (or TMP_Text)
+    public Transform buttonContainer; // Parent layout object (e.g. Vertical Layout Group)
 
     private void Start()
     {
         LoadUnlockedIngredients();
+        GenerateShopButtons();
     }
 
     public bool TryUnlockIngredient(string ingredientName)
@@ -51,12 +60,14 @@ public class UnlockManager : MonoBehaviour
         return unlockedIngredients.Contains(name);
     }
 
-    void LoadUnlockedIngredients()
+    private void LoadUnlockedIngredients()
     {
         foreach (var data in unlockableIngredients)
         {
             if (PlayerPrefs.GetInt("Unlocked_" + data.ingredientName, 0) == 1)
+            {
                 unlockedIngredients.Add(data.ingredientName);
+            }
         }
     }
 
@@ -69,5 +80,36 @@ public class UnlockManager : MonoBehaviour
                 result.Add(data.ingredientPrefab);
         }
         return result;
+    }
+
+    private void GenerateShopButtons()
+    {
+        foreach (var data in unlockableIngredients)
+        {
+            GameObject buttonObj = Instantiate(buttonPrefab, buttonContainer);
+            Button button = buttonObj.GetComponent<Button>();
+            TMP_Text buttonText = buttonObj.GetComponentInChildren<TMP_Text>(); // Or use Text if not TMP
+
+            if (buttonText != null)
+            {
+                bool alreadyUnlocked = IsIngredientUnlocked(data.ingredientName);
+                buttonText.text = alreadyUnlocked
+                    ? $"{data.ingredientName} (Unlocked)"
+                    : $"{data.ingredientName} - ${data.cost}";
+            }
+
+            string ingredientName = data.ingredientName;
+            button.onClick.AddListener(() =>
+            {
+                if (TryUnlockIngredient(ingredientName))
+                {
+                    if (buttonText != null)
+                        buttonText.text = $"{ingredientName} (Unlocked)";
+                }
+            });
+
+            if (IsIngredientUnlocked(data.ingredientName))
+                button.interactable = false;
+        }
     }
 }
