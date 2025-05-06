@@ -4457,6 +4457,7 @@ GameObject:
   - component: {fileID: 849494532}
   - component: {fileID: 849494534}
   - component: {fileID: 849494533}
+  - component: {fileID: 849494535}
   m_Layer: 5
   m_Name: Coin UI
   m_TagString: Untagged
@@ -4481,7 +4482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000011444092, y: -103.18713}
+  m_AnchoredPosition: {x: -0.000011444092, y: -103.18701}
   m_SizeDelta: {x: 64.639, y: 209.8717}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &849494533
@@ -4522,6 +4523,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849494531}
   m_CullTransparentMesh: 1
+--- !u!114 &849494535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849494531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54796da2538d12f4e889ba435cf63246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 1000
+  moneyText: {fileID: 189333783}
 --- !u!1 &913956714
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,6 +6823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CurrencyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3995612336263220133, guid: b4d92e40d23c3b047a824c5998b034e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5524092482767720587, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
       propertyPath: moneyText
@@ -6820,13 +6840,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.442356
+      value: -0.44232178
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1144867
+      value: 6.114624
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
@@ -6841,17 +6876,17 @@ PrefabInstance:
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7904192659098803686, guid: b4d92e40d23c3b047a824c5998b034e9,
         type: 3}

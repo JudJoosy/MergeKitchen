@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CurrencyManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded; // 👈 Rehook UI on scene load
         }
         else
         {
@@ -23,9 +25,13 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
-        if (moneyText == null)
-            Debug.LogError("CurrencyManager: moneyText UI reference is NOT assigned!");
+        UpdateMoneyUI();
+    }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Try to find the new moneyText UI in the loaded scene
+        moneyText = GameObject.FindWithTag("MoneyText")?.GetComponent<Text>();
         UpdateMoneyUI();
     }
 
@@ -35,11 +41,9 @@ public class CurrencyManager : MonoBehaviour
         {
             currentMoney -= amount;
             UpdateMoneyUI();
-            Debug.Log($"Spent ${amount}. Remaining: ${currentMoney}");
             return true;
         }
 
-        Debug.Log("Not enough money!");
         return false;
     }
 
@@ -47,7 +51,6 @@ public class CurrencyManager : MonoBehaviour
     {
         currentMoney += amount;
         UpdateMoneyUI();
-        Debug.Log($"Added ${amount}. New balance: ${currentMoney}");
     }
 
     private void UpdateMoneyUI()
@@ -55,11 +58,6 @@ public class CurrencyManager : MonoBehaviour
         if (moneyText != null)
         {
             moneyText.text = "$" + currentMoney;
-            Debug.Log("UI updated: $" + currentMoney);
-        }
-        else
-        {
-            Debug.LogWarning("CurrencyManager: moneyText UI reference is missing.");
         }
     }
 }
