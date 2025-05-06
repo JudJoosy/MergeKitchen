@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5638b599ec7159d40a74ec19796d82b1,
         type: 3}
       propertyPath: m_Name
-      value: Potato_Prop
+      value: Potato
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -179,6 +179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Potato
   ingredientSprite: {fileID: 0}
-  quantity: 1
+  quantity: 0
   cost: 0
   icon: {fileID: 0}
