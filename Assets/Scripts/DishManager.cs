@@ -1,38 +1,51 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DishManager : MonoBehaviour
 {
-    // Attempt to make a dish using the provided ingredients
     public void MakeDish(Ingredient[] ingredients)
     {
-        int totalDishCost = 0;
-
-        // Log the ingredients used and calculate the total cost
-        foreach (var ingredient in ingredients)
+        if (ingredients == null || ingredients.Length == 0)
         {
-            Debug.Log($"Ingredient: {ingredient.ingredientName}, Cost: {ingredient.cost}");  // Log each ingredient
-            totalDishCost += ingredient.cost;  // Sum the costs
+            Debug.LogWarning("No ingredients provided to MakeDish.");
+            return;
         }
 
-        Debug.Log($"Total dish cost: ${totalDishCost}");  // Log the total cost
+        int totalDishCost = 0;
+        List<string> ingredientNames = new List<string>();
 
-        // Spend money to make the dish
+        foreach (var ingredient in ingredients)
+        {
+            if (ingredient == null) continue;
+
+            totalDishCost += ingredient.cost;
+            ingredientNames.Add(ingredient.displayName); // FIXED LINE
+            Debug.Log($"Ingredient used: {ingredient.displayName} with cost {ingredient.cost}");
+        }
+
+        Debug.Log($"Attempting to spend {totalDishCost}");
+
+        if (CurrencyManager.Instance == null)
+        {
+            Debug.LogError("CurrencyManager.Instance is null!");
+            return;
+        }
+
         if (CurrencyManager.Instance.SpendMoney(totalDishCost))
         {
             Debug.Log("Dish made successfully!");
-            RewardPlayerForDish();  // Reward the player for making the dish
+            RewardPlayerForDish();
         }
         else
         {
-            Debug.Log("Not enough money to make the dish.");  // Log if not enough money
+            Debug.Log("Not enough money to make the dish!");
         }
     }
 
-    // Reward the player for successfully making a dish
     private void RewardPlayerForDish()
     {
-        int rewardAmount = 500;  // The reward for making a dish
-        CurrencyManager.Instance.AddMoney(rewardAmount);  // Add reward money
-        Debug.Log($"Player rewarded with ${rewardAmount}!");  // Log the reward
+        int rewardAmount = 500;
+        CurrencyManager.Instance.AddMoney(rewardAmount);
+        Debug.Log($"Player rewarded with {rewardAmount} money!");
     }
 }
