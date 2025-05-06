@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
   m_Name: Somewhat Holy Trinity
   m_EditorClassIdentifier: 
-  dishName: 
-  requiredIngredients: []
-  rewardAmount: 0
-  dishPrefab: {fileID: 0}
+  dishName: Somewhat Holy Trinity
+  dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
+    type: 3}
+  dishValue: 500

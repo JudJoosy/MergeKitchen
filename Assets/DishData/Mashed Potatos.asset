@@ -13,10 +13,6 @@ MonoBehaviour:
   m_Name: Mashed Potatos
   m_EditorClassIdentifier: 
   dishName: Mashed Potatos
-  requiredIngredients:
-  - 'Potato '
-  - Milk
-  - Butter
-  rewardAmount: 5
   dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
     type: 3}
+  dishValue: 5000

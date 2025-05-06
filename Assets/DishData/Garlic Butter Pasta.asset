@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
   m_Name: Garlic Butter Pasta
   m_EditorClassIdentifier: 
-  dishName: 
-  requiredIngredients: []
-  rewardAmount: 0
-  dishPrefab: {fileID: 0}
+  dishName: Garlic Butter Pasta
+  dishPrefab: {fileID: 6017439574488259036, guid: 43b38c103815d4248bcf2eb16976d3f4,
+    type: 3}
+  dishValue: 8500

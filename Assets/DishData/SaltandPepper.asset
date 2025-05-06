@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
   m_Name: SaltandPepper
   m_EditorClassIdentifier: 
-  dishName: 
-  requiredIngredients: []
-  rewardAmount: 0
-  dishPrefab: {fileID: 0}
+  dishName: Salt and Pepper
+  dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
+    type: 3}
+  dishValue: 50

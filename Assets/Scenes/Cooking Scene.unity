@@ -1327,28 +1327,6 @@ MonoBehaviour:
   recipeManager: {fileID: 628157928}
   dishSpawnPoint: {fileID: 351026551}
   dishNameText: {fileID: 1124643109}
-  dishPrefabs:
-  - dishName: Salt and pepper
-    dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
-      type: 3}
-  - dishName: The holy trinity
-    dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
-      type: 3}
-  - dishName: Garlic Fries
-    dishPrefab: {fileID: 4964369649323934653, guid: 92d3365e85f13ed4da55cab9029729f8,
-      type: 3}
-  - dishName: Mashed Potatos
-    dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
-      type: 3}
-  - dishName: Fancy Salt and pepper
-    dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
-      type: 3}
-  - dishName: Garlic Butter Pasta
-    dishPrefab: {fileID: 6017439574488259036, guid: 43b38c103815d4248bcf2eb16976d3f4,
-      type: 3}
-  - dishName: Garlic bread
-    dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
-      type: 3}
 --- !u!4 &479660291
 Transform:
   m_ObjectHideFlags: 0
@@ -1638,7 +1616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Garlic
-  ingredientIcon: {fileID: 21300000, guid: c905d9f12c2bda04db738a18b5f1cdd4, type: 3}
+  ingredientIcon: {fileID: 564494267}
 --- !u!114 &564494271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1687,58 +1665,37 @@ MonoBehaviour:
   - requiredIngredients:
     - Salt
     - Pepper
-    dishData:
-      dishName: Salt and Pepper
-      dishPrefab: {fileID: 7599703862794599005, guid: d52975677f77e1643bbf95b0bc8da7af,
-        type: 3}
+    dishData: {fileID: 11400000, guid: bf5e746d858cf1d469ad990bb188bc0f, type: 2}
   - requiredIngredients:
     - Salt
     - Pepper
     - Thyme
-    dishData:
-      dishName: Fancy Salt and Pepper
-      dishPrefab: {fileID: 4129128829638570820, guid: f644ed2052d58e54c8120e3ccf3b8f78,
-        type: 3}
+    dishData: {fileID: 11400000, guid: af3fa99ca9a8f9a4b8e5d58953217b18, type: 2}
   - requiredIngredients:
     - Thyme
+    - Garlic
     - Onion
-    - Garlic
-    dishData:
-      dishName: Somewhat Holy Trinity
-      dishPrefab: {fileID: 5526024377082685580, guid: 91990ae506599b145b02f63ebb5f9568,
-        type: 3}
+    dishData: {fileID: 11400000, guid: 9549861e15c5b9846aa27ba0caa257cc, type: 2}
   - requiredIngredients:
-    - Salt
-    - Potato
     - Garlic
-    dishData:
-      dishName: Garlic Fries
-      dishPrefab: {fileID: 4964369649323934653, guid: 92d3365e85f13ed4da55cab9029729f8,
-        type: 3}
+    - Potato
+    - Salt
+    dishData: {fileID: 11400000, guid: 221c340aff9edb34e8ac1bfb7b0327a3, type: 2}
   - requiredIngredients:
     - Potato
     - Milk
-    - Butter
-    dishData:
-      dishName: 'Mashed Potatos '
-      dishPrefab: {fileID: 958538764646257777, guid: c0bf79166b63a2a40b3016934f489326,
-        type: 3}
+    - Salt
+    dishData: {fileID: 11400000, guid: 38e734917c34e2f44a3f69ca7cb17d9a, type: 2}
   - requiredIngredients:
-    - Garlic
-    - Butter
     - Dough
-    dishData:
-      dishName: Garlic Butter Pasta
-      dishPrefab: {fileID: 919132149155446097, guid: a0b1e67b136f27142b0f18e3cb37cf65,
-        type: 3}
+    - Butter
+    - Garlic
+    dishData: {fileID: 11400000, guid: b1c125d29cd6e7f4481118075e5aa261, type: 2}
   - requiredIngredients:
+    - 'Bread '
     - Garlic
     - Butter
-    - Bread
-    dishData:
-      dishName: Garlic Bread
-      dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
-        type: 3}
+    dishData: {fileID: 11400000, guid: 165fed383f9b7a24594dd9ca1252dcf4, type: 2}
 --- !u!4 &628157929
 Transform:
   m_ObjectHideFlags: 0
@@ -2023,7 +1980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Thyme
-  ingredientIcon: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
+  ingredientIcon: {fileID: 675576876}
 --- !u!114 &675576880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2177,7 +2134,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697572198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.6}
   m_LocalScale: {x: 2.1796062, y: 2.1796062, z: 2.1796062}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2186,8 +2143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284, y: 40}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 265.2, y: -69.02}
+  m_SizeDelta: {x: 97.64, y: 78.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697572200
 MonoBehaviour:
@@ -2432,7 +2389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Dough
-  ingredientIcon: {fileID: 21300000, guid: 906c0d9210fe3564aa00899115559ca4, type: 3}
+  ingredientIcon: {fileID: 762269060}
 --- !u!114 &762269059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3645,7 +3602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Potato
-  ingredientIcon: {fileID: 21300000, guid: 34d36fe01a6bd20498798ae4f2dcc693, type: 3}
+  ingredientIcon: {fileID: 1047377543}
 --- !u!114 &1047377542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3888,7 +3845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Onion
-  ingredientIcon: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
+  ingredientIcon: {fileID: 1077555691}
 --- !u!114 &1077555695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4177,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Pepper
-  ingredientIcon: {fileID: 21300000, guid: 43484647da486324ab3001af3ff0cf5e, type: 3}
+  ingredientIcon: {fileID: 1112157910}
 --- !u!114 &1112157914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4324,7 +4281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.66681, y: 29}
+  m_AnchoredPosition: {x: 252.66681, y: -48}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1195673729
@@ -5245,7 +5202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Salt
-  ingredientIcon: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
+  ingredientIcon: {fileID: 1506491082}
 --- !u!114 &1506491086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5702,7 +5659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Butter
-  ingredientIcon: {fileID: 21300000, guid: d4a1dfc02749c2c4da063dd952f895e4, type: 3}
+  ingredientIcon: {fileID: 1814517036}
 --- !u!114 &1814517035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5866,7 +5823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Bread
-  ingredientIcon: {fileID: 21300000, guid: 7fa6223e1e7414646ad506992b102395, type: 3}
+  ingredientIcon: {fileID: 1823105561}
 --- !u!114 &1823105560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7090,7 +7047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Milk
-  ingredientIcon: {fileID: 21300000, guid: df3c411105653e5489b2a16e219e1978, type: 3}
+  ingredientIcon: {fileID: 2045050018}
 --- !u!114 &2045050017
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026c834c873c4fc44be44844c4885cb5, type: 3}
   m_Name: Garlic Bread
   m_EditorClassIdentifier: 
-  dishName: 
-  requiredIngredients: []
-  rewardAmount: 0
-  dishPrefab: {fileID: 0}
+  dishName: Garlic Bread
+  dishPrefab: {fileID: 919132149155446097, guid: 1d5096aa77166b3439d53b61de160de2,
+    type: 3}
+  dishValue: 15000
