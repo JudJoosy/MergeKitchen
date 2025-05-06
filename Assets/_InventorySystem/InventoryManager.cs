@@ -3,28 +3,42 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<InventorySlot> slots;
+    public List<InventorySlot> slots; // List of inventory slots
 
+    // Adds an ingredient to the inventory
     public void AddToInventory(Ingredient ingredient)
     {
+        bool ingredientAdded = false;
+
+        // Try to find a slot with the same ingredient
         foreach (var slot in slots)
         {
             if (slot.GetIngredientName() == ingredient.displayName)
             {
-                slot.AddQuantity(ingredient.quantity); // Corrected to use InventorySlot logic
-                return;
+                slot.AddQuantity(ingredient.quantity); // Add quantity to the existing slot
+                ingredientAdded = true;
+                break;
             }
         }
 
-        foreach (var slot in slots)
+        // If no existing slot found, try to find an empty one
+        if (!ingredientAdded)
         {
-            if (string.IsNullOrEmpty(slot.GetIngredientName()))
+            foreach (var slot in slots)
             {
-                slot.SetIngredient(ingredient);
-                return;
+                if (string.IsNullOrEmpty(slot.GetIngredientName()))
+                {
+                    slot.SetIngredient(ingredient); // Assign new ingredient to an empty slot
+                    ingredientAdded = true;
+                    break;
+                }
             }
         }
 
-        Debug.LogWarning("Inventory is full!");
+        // If no space found, inventory is full
+        if (!ingredientAdded)
+        {
+            Debug.LogWarning("Inventory is full!");
+        }
     }
 }
