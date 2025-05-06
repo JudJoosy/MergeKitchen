@@ -1386,6 +1386,8 @@ MonoBehaviour:
     cost: 0
     ingredientPrefab: {fileID: 270748565906933595, guid: 466ea51503a3f374abb13e9e6dc83358,
       type: 3}
+  buttonPrefab: {fileID: 0}
+  buttonContainer: {fileID: 0}
 --- !u!4 &1700282066
 Transform:
   m_ObjectHideFlags: 0
