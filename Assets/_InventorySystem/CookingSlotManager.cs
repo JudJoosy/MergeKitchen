@@ -36,9 +36,15 @@ public class CookingSlotManager : MonoBehaviour
         {
             ShowDishName(resultDish.dishName);
             SpawnDishModel(resultDish.dishPrefab);
-            ClearCookingSlots();
 
-            // TODO: Add dishValue to currency here (e.g., CurrencyManager.Instance.AddMoney(resultDish.dishValue);)
+            // ✅ Give the player money for creating the dish
+            if (CurrencyManager.Instance != null)
+            {
+                CurrencyManager.Instance.AddMoney(resultDish.dishValue);
+                Debug.Log($"Player earned ${resultDish.dishValue} for cooking {resultDish.dishName}.");
+            }
+
+            ClearCookingSlots();
         }
         else
         {

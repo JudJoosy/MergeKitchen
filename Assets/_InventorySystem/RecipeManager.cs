@@ -9,7 +9,6 @@ public class RecipeManager : MonoBehaviour
         public List<string> requiredIngredients;
         public DishDataSO dishData;
 
-        // Check if the recipe matches the given ingredients
         public bool Matches(List<string> ingredients)
         {
             if (ingredients.Count != requiredIngredients.Count)
@@ -29,17 +28,18 @@ public class RecipeManager : MonoBehaviour
 
     public List<Recipe> recipes;
 
-    // Attempt to make a dish from the provided ingredients
     public DishDataSO TryMakeDish(List<string> ingredients)
     {
         foreach (Recipe recipe in recipes)
         {
             if (recipe.Matches(ingredients))
             {
-                return recipe.dishData;  // Return dish data if the recipe matches
+                Debug.Log("Valid recipe found!");
+                return recipe.dishData;
             }
         }
 
-        return null;  // Return null if no match is found
+        Debug.Log("No valid recipe found.");
+        return null;
     }
 }
