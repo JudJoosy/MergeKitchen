@@ -2,48 +2,32 @@ using UnityEngine;
 
 public class DishManager : MonoBehaviour
 {
-    // Reference to the CurrencyManager
-    private CurrencyManager currencyManager;
-
-    private void Start()
-    {
-        // Ensure we have a reference to the CurrencyManager
-        if (CurrencyManager.Instance != null)
-        {
-            currencyManager = CurrencyManager.Instance;
-        }
-        else
-        {
-            Debug.LogError("DishManager: CurrencyManager instance not found.");
-        }
-    }
-
-    // Call this to make a dish from an array of ingredients
+    // This method is called after a recipe has matched
     public void MakeDish(Ingredient[] ingredients)
     {
-        if (ingredients == null || ingredients.Length == 0)
+        int totalDishCost = 0;
+
+        foreach (var ingredient in ingredients)
         {
-            Debug.LogWarning("DishManager: No ingredients provided.");
-            return;
+            totalDishCost += ingredient.cost;
         }
 
-        Debug.Log("Dish made successfully with " + ingredients.Length + " ingredients.");
-        RewardPlayerForDish();
-    }
-
-    // Rewards the player for making a dish
-    private void RewardPlayerForDish()
-    {
-        int rewardAmount = 500;
-
-        if (currencyManager != null)
+        // Spend money for ingredients (optional - depends on your design)
+        if (CurrencyManager.Instance.SpendMoney(totalDishCost))
         {
-            currencyManager.AddMoney(rewardAmount);
-            Debug.Log($"Player rewarded with ${rewardAmount}. New balance: ${currencyManager.currentMoney}");
+            Debug.Log("Dish made successfully!");
+            RewardPlayerForDish();
         }
         else
         {
-            Debug.LogWarning("DishManager: CurrencyManager reference missing.");
+            Debug.Log("Not enough money to make the dish.");
         }
+    }
+
+    private void RewardPlayerForDish()
+    {
+        int rewardAmount = 500; // You can scale this with difficulty later
+        CurrencyManager.Instance.AddMoney(rewardAmount);
+        Debug.Log($"Player rewarded with ${rewardAmount}!");
     }
 }
