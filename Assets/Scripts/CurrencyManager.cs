@@ -13,11 +13,11 @@ public class CurrencyManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  // Make sure the CurrencyManager persists across scenes
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject);  // If an instance already exists, destroy this one
         }
     }
 
@@ -32,7 +32,7 @@ public class CurrencyManager : MonoBehaviour
         {
             currentMoney -= amount;
             UpdateMoneyUI();
-            Debug.Log($"Spent ${amount}. Remaining: ${currentMoney}");
+            Debug.Log($"Spent ${amount}. Remaining: ${currentMoney}");  // Debug message
             return true;
         }
 
@@ -44,6 +44,7 @@ public class CurrencyManager : MonoBehaviour
     {
         currentMoney += amount;
         UpdateMoneyUI();
+        Debug.Log($"Added ${amount}. Current money: ${currentMoney}");  // Debug message
     }
 
     private void UpdateMoneyUI()
@@ -51,6 +52,7 @@ public class CurrencyManager : MonoBehaviour
         if (moneyText != null)
         {
             moneyText.text = "$" + currentMoney;
+            Debug.Log("UI updated: " + moneyText.text);  // Debug message
         }
         else
         {

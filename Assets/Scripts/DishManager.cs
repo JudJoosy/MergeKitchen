@@ -2,21 +2,25 @@ using UnityEngine;
 
 public class DishManager : MonoBehaviour
 {
-    // This method is called after a recipe has matched
+    // Attempt to make a dish using the provided ingredients
     public void MakeDish(Ingredient[] ingredients)
     {
         int totalDishCost = 0;
 
+        // Calculate the total cost of all ingredients used
         foreach (var ingredient in ingredients)
         {
             totalDishCost += ingredient.cost;
         }
 
-        // Spend money for ingredients (optional - depends on your design)
+        // Log the total dish cost
+        Debug.Log($"Total dish cost: ${totalDishCost}");
+
+        // Spend money to make the dish
         if (CurrencyManager.Instance.SpendMoney(totalDishCost))
         {
             Debug.Log("Dish made successfully!");
-            RewardPlayerForDish();
+            RewardPlayerForDish();  // Reward the player for making the dish
         }
         else
         {
@@ -24,10 +28,11 @@ public class DishManager : MonoBehaviour
         }
     }
 
+    // Reward the player for successfully making a dish
     private void RewardPlayerForDish()
     {
-        int rewardAmount = 500; // You can scale this with difficulty later
+        int rewardAmount = 500;  // The reward for making a dish
         CurrencyManager.Instance.AddMoney(rewardAmount);
-        Debug.Log($"Player rewarded with ${rewardAmount}!");
+        Debug.Log($"Player rewarded with ${rewardAmount}!");  // Debug message
     }
 }
