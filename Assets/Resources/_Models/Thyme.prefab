@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Thyme
-  ingredientSprite: {fileID: 0}
-  quantity: 0
+  ingredientSprite: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
+  quantity: 1
   cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
 --- !u!114 &1541474809796418633
 MonoBehaviour:
   m_ObjectHideFlags: 0

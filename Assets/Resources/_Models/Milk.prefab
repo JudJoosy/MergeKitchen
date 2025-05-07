@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Milk
-  ingredientSprite: {fileID: 0}
-  quantity: 0
+  ingredientSprite: {fileID: 21300000, guid: df3c411105653e5489b2a16e219e1978, type: 3}
+  quantity: 1
   cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: df3c411105653e5489b2a16e219e1978, type: 3}
 --- !u!114 &7761663256040771624
 MonoBehaviour:
   m_ObjectHideFlags: 0

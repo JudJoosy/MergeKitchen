@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Onion
-  ingredientSprite: {fileID: 0}
-  quantity: 0
+  ingredientSprite: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
+  quantity: 1
   cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7fd85f5b80aea2b45b3890979c2bfd56, type: 3}
 --- !u!114 &-2937575658476012042
 MonoBehaviour:
   m_ObjectHideFlags: 0

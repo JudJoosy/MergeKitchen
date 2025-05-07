@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Salt
-  ingredientSprite: {fileID: 0}
-  quantity: 0
+  ingredientSprite: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
+  quantity: 1
   cost: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 56a0b9a664fdc3f41aaec0354a91f873, type: 3}
 --- !u!114 &872878730737105801
 MonoBehaviour:
   m_ObjectHideFlags: 0
