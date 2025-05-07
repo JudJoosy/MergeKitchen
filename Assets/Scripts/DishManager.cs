@@ -8,8 +8,8 @@ public class DishManager : MonoBehaviour
 
         foreach (var ingredient in ingredients)
         {
-            Debug.Log($"Using ingredient: {ingredient.displayName}, cost: {ingredient.cost}");
-            totalDishCost += ingredient.cost;
+            Debug.Log($"Using ingredient: {ingredient.displayName}, cooking value: {ingredient.cookingValue}");
+            totalDishCost += ingredient.cookingValue;
         }
 
         bool spent = CurrencyManager.Instance.SpendMoney(totalDishCost);
