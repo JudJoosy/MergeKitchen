@@ -41,4 +41,28 @@ public class InventoryManager : MonoBehaviour
             Debug.LogWarning("Inventory is full!");
         }
     }
+
+    // Reduces the quantity of an ingredient
+    public void ReduceIngredientQuantity(string name, int amount)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.GetIngredientName() == name)
+            {
+                slot.ReduceQuantity(amount);
+                break;
+            }
+        }
+    }
+
+    // Checks if there’s at least 1 of the ingredient in inventory
+    public bool HasIngredient(string name)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.GetIngredientName() == name && slot.GetQuantity() > 0)
+                return true;
+        }
+        return false;
+    }
 }
