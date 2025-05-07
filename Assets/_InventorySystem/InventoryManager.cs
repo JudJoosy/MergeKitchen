@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
             if (slot.GetIngredientName() == ingredient.displayName)
             {
                 slot.AddQuantity(ingredient.quantity); // Add quantity to the existing slot
+                Destroy(ingredient.gameObject); // Prevent clutter
                 ingredientAdded = true;
                 break;
             }
@@ -40,6 +41,8 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.LogWarning("Inventory is full!");
         }
+
+        UpdateInventoryUI();
     }
 
     // Reduces the quantity of an ingredient
@@ -50,9 +53,29 @@ public class InventoryManager : MonoBehaviour
             if (slot.GetIngredientName() == name)
             {
                 slot.ReduceQuantity(amount);
+                if (slot.GetQuantity() <= 0)
+                {
+                    slot.ClearSlot();
+                    UpdateInventoryUI();
+                }
                 break;
             }
         }
+    }
+
+    // Removes a specific ingredient instance from inventory
+    public void RemoveIngredient(Ingredient ingredient)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.ContainsIngredient(ingredient))
+            {
+                slot.ClearSlot();
+                break;
+            }
+        }
+
+        UpdateInventoryUI();
     }
 
     // Checks if there’s at least 1 of the ingredient in inventory
@@ -64,5 +87,27 @@ public class InventoryManager : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    // Reorders the inventory to keep slots compact and ordered
+    public void UpdateInventoryUI()
+    {
+        List<Ingredient> allIngredients = new List<Ingredient>();
+
+        // Extract all ingredients
+        foreach (var slot in slots)
+        {
+            if (slot.GetIngredient() != null)
+            {
+                allIngredients.Add(slot.GetIngredient());
+            }
+            slot.ClearSlot(); // Clear everything first
+        }
+
+        // Reassign to the front slots
+        for (int i = 0; i < allIngredients.Count && i < slots.Count; i++)
+        {
+            slots[i].SetIngredient(allIngredients[i]);
+        }
     }
 }

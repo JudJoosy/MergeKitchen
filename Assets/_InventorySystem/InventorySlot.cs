@@ -23,6 +23,11 @@ public class InventorySlot : MonoBehaviour
         return ingredient != null ? ingredient.displayName : "";
     }
 
+    public Ingredient GetIngredient()
+    {
+        return ingredient;
+    }
+
     public int GetQuantity()
     {
         return quantity;
@@ -43,21 +48,51 @@ public class InventorySlot : MonoBehaviour
     public void ReduceQuantity(int amount)
     {
         quantity -= amount;
-        if (quantity < 0) quantity = 0;
-        UpdateUI();
+        if (quantity <= 0)
+        {
+            ClearSlot();
+        }
+        else
+        {
+            UpdateUI();
+        }
+    }
+
+    public bool ContainsIngredient(Ingredient target)
+    {
+        return ingredient == target;
+    }
+
+    public void ClearSlot()
+    {
+        ingredient = null;
+        quantity = 0;
+
+        if (ingredientNameText != null)
+            ingredientNameText.text = "";
+
+        if (quantityText != null)
+            quantityText.text = "";
+
+        if (ingredientImage != null)
+            ingredientImage.sprite = null;
+
+        // Optionally disable UI elements if needed
+        // gameObject.SetActive(false); // Uncomment if your slots are dynamically shown
     }
 
     private void UpdateUI()
     {
-        if (ingredient == null) return;
+        if (ingredient != null)
+        {
+            if (ingredientNameText != null)
+                ingredientNameText.text = ingredient.displayName;
 
-        if (ingredientNameText != null)
-            ingredientNameText.text = ingredient.displayName;
+            if (quantityText != null)
+                quantityText.text = quantity > 1 ? $"x{quantity}" : "";
 
-        if (quantityText != null)
-            quantityText.text = quantity > 1 ? $"x{quantity}" : "";
-
-        if (ingredientImage != null && ingredient.icon != null)
-            ingredientImage.sprite = ingredient.icon;
+            if (ingredientImage != null && ingredient.icon != null)
+                ingredientImage.sprite = ingredient.icon;
+        }
     }
 }
