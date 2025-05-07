@@ -2438,19 +2438,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 576550374802924239, guid: c6a2d80880ed2fb42b7a7d0915f639e5,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &564494267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2736,19 +2723,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6536022268115095412, guid: cfbd089687a3e084891964ac1a234a45,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3131,19 +3105,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4655418658826219170, guid: 632a7cd86b2fcf94ebdb2e52bff68b2c,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4826,19 +4787,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3158905838351480210, guid: 466ea51503a3f374abb13e9e6dc83358,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1047377543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4970,19 +4918,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 5161575366728102534, guid: e2620f541d597ff4c9e7a8b35eec87a2,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5273,19 +5208,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: -4450078141958876324, guid: 7690b7a221a6e83459f2b84db16ae003,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6674,19 +6596,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: -1646839281547344206, guid: 083e21a543192da49a02bf1be5cc7d06,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1506491082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7253,19 +7162,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 396763308992768049, guid: 725485f022263094c8212c7c314b7cfc,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1814517036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7426,19 +7322,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8587199845441934485, guid: 543c091ae93e1cb469419f0acf0a6766,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8768,19 +8651,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 34822827}
-        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: AddToInventory
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6766784747095312619, guid: 35ad17e9dbadc9d43838cc2b4ccb4f9b,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: Ingredient, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
