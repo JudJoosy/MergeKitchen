@@ -168,7 +168,8 @@ MonoBehaviour:
   displayName: Thyme
   ingredientSprite: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
   quantity: 1
-  cost: 0
+  shopCost: 60
+  cookingValue: 1
   icon: {fileID: 21300000, guid: ab5fcdf047031fc4daeaf20f70ba9775, type: 3}
 --- !u!114 &1541474809796418633
 MonoBehaviour:

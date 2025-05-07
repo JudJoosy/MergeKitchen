@@ -168,7 +168,8 @@ MonoBehaviour:
   displayName: Bread
   ingredientSprite: {fileID: 21300000, guid: 7fa6223e1e7414646ad506992b102395, type: 3}
   quantity: 1
-  cost: 0
+  shopCost: 10000
+  cookingValue: 1
   icon: {fileID: 21300000, guid: 7fa6223e1e7414646ad506992b102395, type: 3}
 --- !u!114 &-689935186263849919
 MonoBehaviour:
