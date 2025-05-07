@@ -8,24 +8,21 @@ public class InventorySlot : MonoBehaviour
     public TextMeshProUGUI quantityText;
     public Image ingredientImage;
 
-    private Ingredient ingredient;
+    private string ingredientName;
+    private Sprite ingredientIcon;
     private int quantity;
 
-    public void SetIngredient(Ingredient newIngredient)
+    public void SetIngredient(string name, Sprite icon, int initialQuantity = 1)
     {
-        ingredient = newIngredient;
-        quantity = newIngredient.quantity;
+        ingredientName = name;
+        ingredientIcon = icon;
+        quantity = initialQuantity;
         UpdateUI();
     }
 
     public string GetIngredientName()
     {
-        return ingredient != null ? ingredient.displayName : "";
-    }
-
-    public Ingredient GetIngredient()
-    {
-        return ingredient;
+        return ingredientName;
     }
 
     public int GetQuantity()
@@ -39,60 +36,38 @@ public class InventorySlot : MonoBehaviour
         UpdateUI();
     }
 
-    public void AddQuantity(int additionalAmount)
+    public void AddQuantity(int amount)
     {
-        quantity += additionalAmount;
+        quantity += amount;
         UpdateUI();
     }
 
     public void ReduceQuantity(int amount)
     {
         quantity -= amount;
-        if (quantity <= 0)
-        {
-            ClearSlot();
-        }
-        else
-        {
-            UpdateUI();
-        }
-    }
-
-    public bool ContainsIngredient(Ingredient target)
-    {
-        return ingredient == target;
+        if (quantity < 0) quantity = 0;
+        UpdateUI();
     }
 
     public void ClearSlot()
     {
-        ingredient = null;
+        ingredientName = "";
+        ingredientIcon = null;
         quantity = 0;
-
-        if (ingredientNameText != null)
-            ingredientNameText.text = "";
-
-        if (quantityText != null)
-            quantityText.text = "";
-
-        if (ingredientImage != null)
-            ingredientImage.sprite = null;
-
-        // Optionally disable UI elements if needed
-        // gameObject.SetActive(false); // Uncomment if your slots are dynamically shown
+        UpdateUI();
     }
 
     private void UpdateUI()
     {
-        if (ingredient != null)
-        {
-            if (ingredientNameText != null)
-                ingredientNameText.text = ingredient.displayName;
+        if (ingredientNameText != null)
+            ingredientNameText.text = ingredientName;
 
-            if (quantityText != null)
-                quantityText.text = quantity > 1 ? $"x{quantity}" : "";
+        if (quantityText != null)
+            quantityText.text = quantity > 1 ? $"x{quantity}" : "";
 
-            if (ingredientImage != null && ingredient.icon != null)
-                ingredientImage.sprite = ingredient.icon;
-        }
+        if (ingredientImage != null)
+            ingredientImage.sprite = ingredientIcon;
+
+        gameObject.SetActive(!string.IsNullOrEmpty(ingredientName) && quantity > 0);
     }
 }
