@@ -14,15 +14,5 @@ public class Ingredient : MonoBehaviour
         return displayName;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Ingredient otherIngredient = other.GetComponent<Ingredient>();
-        if (otherIngredient == null) return;
-
-        if (displayName == otherIngredient.displayName)
-        {
-            quantity += otherIngredient.quantity;
-            Destroy(otherIngredient.gameObject);
-        }
-    }
+    // Merging is now managed by MergeManager, so no OnTriggerEnter here
 }
